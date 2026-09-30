@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HERO_SLIDES = [
   {
@@ -16,6 +16,13 @@ const HERO_SLIDES = [
     src: "/images/hero/3.jpg",
     alt: "NEXTEAK Sunset Yacht Terrace Decking",
   },
+];
+
+const NAV_ITEMS = [
+  { label: "PRODUCTS", href: "#innovation" },
+  { label: "SUSTAINABILITY", href: "#sustainability" },
+  { label: "GALLERY", href: "#our-story" },
+  { label: "CONTACT US", href: "#contact" },
 ];
 
 const STORY_CARDS = [
@@ -85,6 +92,8 @@ const fadeUp = {
 export default function NexteakHomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const touchStartX = useRef<number | null>(null);
 
   const nextSlide = useCallback(() => {
     setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
@@ -102,10 +111,24 @@ export default function NexteakHomePage() {
     return () => clearInterval(timer);
   }, [isPaused, nextSlide]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(deltaX) > 40) {
+      if (deltaX < 0) nextSlide();
+      else prevSlide();
+    }
+    touchStartX.current = null;
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#13262D] font-outfit selection:bg-[#13262D] selection:text-white overflow-x-hidden">
       {/* =========================================================
-          1. HEADER / NAVBAR
+          1. HEADER / NAVBAR (Desktop + Mobile Hamburger Menu)
       ========================================================= */}
       <motion.header
         initial={{ y: -20, opacity: 0 }}
@@ -113,24 +136,19 @@ export default function NexteakHomePage() {
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         className="sticky top-0 z-50 w-full bg-[#13262D] text-white shadow-md"
       >
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 h-20 lg:h-[92px] flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 h-16 sm:h-20 lg:h-[92px] flex items-center justify-between">
           {/* Brand Logo */}
           <a href="#" className="flex items-center shrink-0 group">
             <img
               src="/images/brand/logo-nexteak.png"
               alt="NEXTEAK"
-              className="h-7 sm:h-9 lg:h-[40px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+              className="h-6 sm:h-8 lg:h-[40px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
             />
           </a>
 
-          {/* Navigation Menu */}
-          <nav className="hidden md:flex items-center gap-10 lg:gap-16 font-outfit-thin text-xs lg:text-[14px] uppercase text-white/95">
-            {[
-              { label: "PRODUCTS", href: "#innovation" },
-              { label: "SUSTAINABILITY", href: "#sustainability" },
-              { label: "GALLERY", href: "#our-story" },
-              { label: "CONTACT US", href: "#contact" },
-            ].map((item) => (
+          {/* Desktop Navigation Menu */}
+          <nav className="hidden md:flex items-center gap-8 lg:gap-16 font-outfit-thin text-xs lg:text-[14px] uppercase text-white/95">
+            {NAV_ITEMS.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
@@ -142,8 +160,8 @@ export default function NexteakHomePage() {
             ))}
           </nav>
 
-          {/* Right User & Language Selector */}
-          <div className="flex items-center gap-4 lg:gap-5 text-white/95">
+          {/* Right User, Language & Mobile Hamburger Button */}
+          <div className="flex items-center gap-3.5 sm:gap-4 lg:gap-5 text-white/95">
             <button
               type="button"
               aria-label="User Account"
@@ -165,7 +183,7 @@ export default function NexteakHomePage() {
               </svg>
             </button>
 
-            <span className="h-6 w-[1px] bg-white/60" />
+            <span className="h-5 sm:h-6 w-[1px] bg-white/60" />
 
             <button
               type="button"
@@ -187,18 +205,78 @@ export default function NexteakHomePage() {
                 />
               </svg>
             </button>
+
+            {/* Mobile Hamburger Button (Visible on < md) */}
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              aria-label="Toggle Menu"
+              aria-expanded={mobileMenuOpen}
+              className="md:hidden ml-1 p-2 -mr-1 rounded-lg text-white hover:bg-white/10 transition-colors focus:outline-none"
+            >
+              <div className="w-6 h-5 relative flex flex-col justify-between">
+                <span
+                  className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${
+                    mobileMenuOpen ? "rotate-45 translate-y-[9px]" : ""
+                  }`}
+                />
+                <span
+                  className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 ${
+                    mobileMenuOpen ? "opacity-0 scale-x-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`w-full h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${
+                    mobileMenuOpen ? "-rotate-45 -translate-y-[9px]" : ""
+                  }`}
+                />
+              </div>
+            </button>
           </div>
         </div>
+
+        {/* Mobile Dropdown Drawer */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden overflow-hidden bg-[#0E1E24] border-t border-white/10"
+            >
+              <nav className="px-6 py-5 flex flex-col divide-y divide-white/10">
+                {NAV_ITEMS.map((item, idx) => (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: idx * 0.06 }}
+                    style={{ letterSpacing: "0.16em" }}
+                    className="py-4 flex items-center justify-between font-outfit-thin text-sm uppercase text-white/90 hover:text-white transition-colors"
+                  >
+                    <span>{item.label}</span>
+                    <LongThinArrow className="w-5 h-2.5 opacity-70" />
+                  </motion.a>
+                ))}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.header>
 
       <main className="flex-1">
         {/* =========================================================
-            2. HERO SECTION (Smooth Horizontal Sliding Carousel)
+            2. HERO SECTION (Smooth Horizontal Sliding Carousel + Touch Swipe)
         ========================================================= */}
         <section
-          className="relative w-full min-h-[600px] lg:aspect-[5196/2568] overflow-hidden bg-[#0A181E] group"
+          className="relative w-full min-h-[520px] sm:min-h-[580px] lg:min-h-0 lg:aspect-[5196/2568] overflow-hidden bg-[#0A181E] group flex items-center"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Horizontal Sliding Track */}
           <div
@@ -217,23 +295,23 @@ export default function NexteakHomePage() {
                   <img
                     src={`${slide.src}?v=2`}
                     alt={slide.alt}
-                    className={`w-full h-full object-cover transition-transform duration-[4500ms] ease-out ${
+                    className={`w-full h-full object-cover object-[65%_center] sm:object-center transition-transform duration-[4500ms] ease-out ${
                       isActive ? "scale-[1.05]" : "scale-100"
                     }`}
                   />
-                  {/* Subtle left gradient for text legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#08161C]/75 via-[#08161C]/30 to-transparent" />
+                  {/* Gradient for text legibility on both mobile and desktop */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#08161C]/85 via-[#08161C]/50 sm:via-[#08161C]/35 to-[#08161C]/20 sm:to-transparent" />
                 </div>
               );
             })}
           </div>
 
-          {/* Left / Right Slide Arrows (visible on hover) */}
+          {/* Left / Right Slide Arrows (visible on desktop hover) */}
           <button
             type="button"
             onClick={prevSlide}
             aria-label="Previous slide"
-            className="absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-black/25 hover:bg-black/50 border border-white/25 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-xs"
+            className="hidden sm:flex absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-black/25 hover:bg-black/50 border border-white/25 text-white items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-xs"
           >
             <svg
               viewBox="0 0 24 24"
@@ -254,7 +332,7 @@ export default function NexteakHomePage() {
             type="button"
             onClick={nextSlide}
             aria-label="Next slide"
-            className="absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-black/25 hover:bg-black/50 border border-white/25 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-xs"
+            className="hidden sm:flex absolute right-4 lg:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-black/25 hover:bg-black/50 border border-white/25 text-white items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-xs"
           >
             <svg
               viewBox="0 0 24 24"
@@ -271,27 +349,27 @@ export default function NexteakHomePage() {
             </svg>
           </button>
 
-          {/* Hero Text Content — Exact Proportions from ตำแหน่งฟอนต์ 1.png */}
-          <div className="relative z-20 h-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-[9.2%] py-16 sm:py-24 lg:py-0 flex flex-col justify-center pointer-events-none">
+          {/* Hero Text Content */}
+          <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-[9.2%] py-14 sm:py-20 lg:py-0 flex flex-col justify-center pointer-events-none">
             <div className="max-w-[680px] pointer-events-auto">
-              {/* 1. THE FUTURE OF TEAK (Outfit ExtraLight, wide tracking, extends past REFINED) */}
+              {/* 1. THE FUTURE OF TEAK */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
                 style={{ letterSpacing: "0.26em" }}
-                className="font-outfit-thin text-white text-base sm:text-xl lg:text-[24px] xl:text-[26px] uppercase mb-2 lg:mb-2.5 pl-0.5"
+                className="font-outfit-thin text-white text-sm sm:text-xl lg:text-[24px] xl:text-[26px] uppercase mb-2 lg:mb-2.5 pl-0.5"
               >
                 THE FUTURE OF TEAK
               </motion.p>
 
-              {/* 2. REFINED / FORMARINE / DECKING. (Mistical Spring Regular, VA=100 -> 0.11em) */}
+              {/* 2. REFINED / FORMARINE / DECKING. */}
               <motion.h1
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.85, delay: 0.25 }}
                 style={{ letterSpacing: "0.11em" }}
-                className="font-mistical font-normal text-white text-4xl sm:text-5xl lg:text-[62px] xl:text-[68px] leading-[1.1] uppercase mb-8 lg:mb-11"
+                className="font-mistical font-normal text-white text-[34px] sm:text-5xl lg:text-[62px] xl:text-[68px] leading-[1.1] uppercase mb-6 sm:mb-8 lg:mb-11"
               >
                 REFINED
                 <br />
@@ -300,13 +378,13 @@ export default function NexteakHomePage() {
                 DECKING.
               </motion.h1>
 
-              {/* 3. Description (Outfit ExtraLight, hairline crisp, 4 lines wider than FORMARINE) */}
+              {/* 3. Description */}
               <motion.p
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.85, delay: 0.4 }}
-                style={{ letterSpacing: "0.17em" }}
-                className="font-outfit-thin text-white/95 text-[10px] sm:text-[12px] lg:text-[13px] xl:text-[14px] leading-[2.05] uppercase mb-9 lg:mb-12"
+                style={{ letterSpacing: "0.16em" }}
+                className="font-outfit-thin text-white/95 text-[10.5px] sm:text-[12px] lg:text-[13px] xl:text-[14px] leading-[1.95] sm:leading-[2.05] uppercase mb-7 sm:mb-9 lg:mb-12 max-w-[540px] sm:max-w-none"
               >
                 NEXTEAK COMBINES THE BEAUTY OF NATURAL TEAK WITH
                 <br className="hidden sm:inline" /> ADVANCED TECHNOLOGY AND A
@@ -317,7 +395,7 @@ export default function NexteakHomePage() {
                 TOMORROW.
               </motion.p>
 
-              {/* 4. Button: EXPLORE NEXTEAK -> (Outfit ExtraLight, #E7E2DA bg, long thin arrow) */}
+              {/* 4. Button: EXPLORE NEXTEAK -> */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -326,11 +404,11 @@ export default function NexteakHomePage() {
                 <a
                   href="#our-story"
                   style={{ letterSpacing: "0.16em" }}
-                  className="group/btn inline-flex items-center gap-6 bg-[#E7E2DA] hover:bg-white text-[#1B1A17] font-outfit-thin text-sm sm:text-[15px] lg:text-[17px] uppercase px-7 sm:px-9 py-3.5 sm:py-4 rounded-[10px] transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="group/btn inline-flex items-center gap-4 sm:gap-6 bg-[#E7E2DA] hover:bg-white text-[#1B1A17] font-outfit-thin text-xs sm:text-[15px] lg:text-[17px] uppercase px-6 sm:px-9 py-3 sm:py-4 rounded-[8px] sm:rounded-[10px] transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <span>EXPLORE NEXTEAK</span>
                   <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
-                    <LongThinArrow className="w-8 sm:w-9 h-4" />
+                    <LongThinArrow className="w-7 sm:w-9 h-3.5 sm:h-4" />
                   </span>
                 </a>
               </motion.div>
@@ -338,7 +416,7 @@ export default function NexteakHomePage() {
           </div>
 
           {/* Carousel Dots */}
-          <div className="absolute bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-4">
+          <div className="absolute bottom-5 sm:bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3.5 sm:gap-4">
             {HERO_SLIDES.map((_, idx) => (
               <button
                 key={idx}
@@ -347,8 +425,8 @@ export default function NexteakHomePage() {
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`rounded-full transition-all duration-500 ${
                   activeSlide === idx
-                    ? "w-3 h-3 bg-white scale-110 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
-                    : "w-2.5 h-2.5 bg-white/50 hover:bg-white/80"
+                    ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white scale-110 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                    : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white/50 hover:bg-white/80"
                 }`}
               />
             ))}
@@ -360,9 +438,9 @@ export default function NexteakHomePage() {
         ========================================================= */}
         <section
           id="our-story"
-          className="bg-white text-[#13262D] pt-16 sm:pt-20 lg:pt-24 pb-14 sm:pb-20"
+          className="bg-white text-[#13262D] pt-12 sm:pt-20 lg:pt-24 pb-12 sm:pb-20"
         >
-          <div className="max-w-[1320px] mx-auto px-6 sm:px-12 lg:px-16">
+          <div className="max-w-[1320px] mx-auto px-5 sm:px-12 lg:px-16">
             {/* --- OUR STORY --- */}
             <motion.div
               initial="hidden"
@@ -372,11 +450,11 @@ export default function NexteakHomePage() {
               <motion.div
                 variants={fadeUp}
                 custom={0}
-                className="flex items-center gap-5 mb-4 lg:mb-5"
+                className="flex items-center gap-4 sm:gap-5 mb-3 sm:mb-5"
               >
                 <span
                   style={{ letterSpacing: "0.12em" }}
-                  className="font-outfit-thin text-sm sm:text-[15px] lg:text-[16.5px] uppercase text-[#13262D]"
+                  className="font-outfit-thin text-xs sm:text-[15px] lg:text-[16.5px] uppercase text-[#13262D] shrink-0"
                 >
                   OUR STORY
                 </span>
@@ -385,7 +463,7 @@ export default function NexteakHomePage() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-                  className="w-36 sm:w-52 lg:w-64 h-[1px] bg-[#13262D]/70 origin-left"
+                  className="w-28 sm:w-52 lg:w-64 h-[1px] bg-[#13262D]/70 origin-left"
                 />
               </motion.div>
 
@@ -393,18 +471,18 @@ export default function NexteakHomePage() {
                 variants={fadeUp}
                 custom={0.12}
                 style={{ letterSpacing: "0.1em" }}
-                className="font-mistical font-normal text-3xl sm:text-5xl lg:text-[54px] leading-[1.14] uppercase text-[#13262D] mb-6 lg:mb-8"
+                className="font-mistical font-normal text-3xl sm:text-5xl lg:text-[54px] leading-[1.14] uppercase text-[#13262D] mb-5 sm:mb-8"
               >
                 A LEGACY
                 <br />
                 IN EVERY GRAIN
-              </motion.h2>
+              </h2>
 
               <motion.p
                 variants={fadeUp}
                 custom={0.24}
                 style={{ letterSpacing: "0.07em" }}
-                className="font-outfit-thin text-xs sm:text-[13.5px] lg:text-[14.5px] leading-[1.95] uppercase text-[#13262D] max-w-[1220px]"
+                className="font-outfit-thin text-[11.5px] sm:text-[13.5px] lg:text-[14.5px] leading-[1.9] sm:leading-[1.95] uppercase text-[#13262D] max-w-[1220px]"
               >
                 OUR JOURNEY BEGAN OVER 60 YEARS AGO. WHAT STARTED AS A FAMILY
                 BUSINESS CRAFTING TEAK AND TIMBER HAS GROWN INTO WOODDEN — A
@@ -416,24 +494,24 @@ export default function NexteakHomePage() {
             </motion.div>
 
             {/* --- WOODDEN GROUP --- */}
-            <div className="mt-14 sm:mt-16 lg:mt-20">
+            <div className="mt-12 sm:mt-16 lg:mt-20">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.7 }}
-                className="flex items-center justify-center gap-6 sm:gap-8 mb-8 sm:mb-10"
+                className="flex items-center justify-center gap-4 sm:gap-8 mb-7 sm:mb-10"
               >
                 <motion.span
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="w-20 sm:w-44 lg:w-52 h-[1px] bg-[#13262D]/70 origin-right"
+                  className="flex-1 max-w-[64px] sm:max-w-[176px] lg:max-w-[208px] h-[1px] bg-[#13262D]/70 origin-right"
                 />
                 <h3
                   style={{ letterSpacing: "0.1em" }}
-                  className="font-outfit-medium text-base sm:text-lg lg:text-[21px] uppercase text-[#13262D] whitespace-nowrap"
+                  className="font-outfit-medium text-sm sm:text-lg lg:text-[21px] uppercase text-[#13262D] whitespace-nowrap"
                 >
                   WOODDEN GROUP
                 </h3>
@@ -442,11 +520,11 @@ export default function NexteakHomePage() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="w-20 sm:w-44 lg:w-52 h-[1px] bg-[#13262D]/70 origin-left"
+                  className="flex-1 max-w-[64px] sm:max-w-[176px] lg:max-w-[208px] h-[1px] bg-[#13262D]/70 origin-left"
                 />
               </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-11">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-7 sm:gap-8 lg:gap-11">
                 {STORY_CARDS.map((card, idx) => (
                   <motion.div
                     key={card.title}
@@ -469,7 +547,7 @@ export default function NexteakHomePage() {
                     </div>
                     <p
                       style={{ letterSpacing: "0.08em" }}
-                      className="mt-4 sm:mt-5 font-outfit-medium text-xs sm:text-[13.5px] lg:text-[14.5px] uppercase text-[#13262D] text-center"
+                      className="mt-3.5 sm:mt-5 font-outfit-medium text-xs sm:text-[13.5px] lg:text-[14.5px] uppercase text-[#13262D] text-center"
                     >
                       {card.title}
                     </p>
@@ -483,23 +561,23 @@ export default function NexteakHomePage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="mt-16 sm:mt-20 lg:mt-24"
+              className="mt-14 sm:mt-20 lg:mt-24"
             >
               <motion.div
                 variants={fadeUp}
                 custom={0}
-                className="flex items-center justify-center gap-5 sm:gap-7 mb-4 sm:mb-5"
+                className="flex items-center justify-center gap-3 sm:gap-7 mb-4 sm:mb-5"
               >
                 <motion.span
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="w-16 sm:w-32 lg:w-36 h-[1px] bg-[#13262D]/60 origin-right"
+                  className="flex-1 max-w-[44px] sm:max-w-[128px] lg:max-w-[144px] h-[1px] bg-[#13262D]/60 origin-right"
                 />
                 <span
                   style={{ letterSpacing: "0.12em" }}
-                  className="font-outfit-thin text-xs sm:text-[14px] lg:text-[15px] uppercase text-[#13262D] whitespace-nowrap"
+                  className="font-outfit-thin text-[11px] sm:text-[14px] lg:text-[15px] uppercase text-[#13262D] whitespace-nowrap"
                 >
                   NATURAL RESEARCH CENTER
                 </span>
@@ -508,7 +586,7 @@ export default function NexteakHomePage() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="w-16 sm:w-32 lg:w-36 h-[1px] bg-[#13262D]/60 origin-left"
+                  className="flex-1 max-w-[44px] sm:max-w-[128px] lg:max-w-[144px] h-[1px] bg-[#13262D]/60 origin-left"
                 />
               </motion.div>
 
@@ -516,7 +594,7 @@ export default function NexteakHomePage() {
                 variants={fadeUp}
                 custom={0.1}
                 style={{ letterSpacing: "0.1em" }}
-                className="font-mistical font-normal text-xl sm:text-3xl lg:text-[35px] leading-[1.2] uppercase text-[#13262D] text-center mb-4 sm:mb-5"
+                className="font-mistical font-normal text-xl sm:text-3xl lg:text-[35px] leading-[1.25] sm:leading-[1.2] uppercase text-[#13262D] text-center mb-4 sm:mb-5"
               >
                 FROM MATERIAL KNOWLEDGE TO BETTER PERFORMANCE
               </motion.h2>
@@ -525,7 +603,7 @@ export default function NexteakHomePage() {
                 variants={fadeUp}
                 custom={0.2}
                 style={{ letterSpacing: "0.06em" }}
-                className="font-outfit-thin text-[10px] sm:text-[11.5px] lg:text-[12px] leading-[1.85] uppercase text-[#13262D] text-center max-w-[1140px] mx-auto"
+                className="font-outfit-thin text-[10.5px] sm:text-[11.5px] lg:text-[12px] leading-[1.85] uppercase text-[#13262D] text-center max-w-[1140px] mx-auto"
               >
                 OUR NATURAL RESEARCH CENTER BRINGS TOGETHER DECADES OF WOOD
                 EXPERTISE AND MODERN MATERIAL SCIENCE. THROUGH CONTINUOUS
@@ -536,12 +614,12 @@ export default function NexteakHomePage() {
               </motion.p>
 
               {/* 3 Metrics Row */}
-              <div className="mt-10 sm:mt-14 mb-10 sm:mb-14 grid grid-cols-1 md:grid-cols-3 items-center max-w-[1100px] mx-auto">
+              <div className="mt-8 sm:mt-14 mb-8 sm:mb-14 grid grid-cols-1 md:grid-cols-3 divide-y divide-[#13262D]/20 md:divide-y-0 items-center max-w-[1100px] mx-auto">
                 {/* Stat 1 */}
                 <motion.div
                   variants={fadeUp}
                   custom={0.25}
-                  className="flex flex-col items-center text-center py-4 md:py-2"
+                  className="flex flex-col items-center text-center py-5 md:py-2"
                 >
                   <span
                     style={{ letterSpacing: "0.06em" }}
@@ -561,7 +639,7 @@ export default function NexteakHomePage() {
                 <motion.div
                   variants={fadeUp}
                   custom={0.38}
-                  className="flex flex-col items-center text-center py-4 md:py-2 md:border-x-[1.5px] md:border-[#13262D]"
+                  className="flex flex-col items-center text-center py-5 md:py-2 md:border-x-[1.5px] md:border-[#13262D]"
                 >
                   <span
                     style={{ letterSpacing: "0.06em" }}
@@ -581,7 +659,7 @@ export default function NexteakHomePage() {
                 <motion.div
                   variants={fadeUp}
                   custom={0.5}
-                  className="flex flex-col items-center text-center py-4 md:py-2"
+                  className="flex flex-col items-center text-center py-5 md:py-2"
                 >
                   <span
                     style={{ letterSpacing: "0.06em" }}
@@ -599,17 +677,17 @@ export default function NexteakHomePage() {
               </div>
 
               {/* Bottom-left MTEC Note */}
-              <motion.div variants={fadeUp} custom={0.6} className="mt-6">
+              <motion.div variants={fadeUp} custom={0.6} className="mt-4 sm:mt-6">
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="w-40 sm:w-56 h-[1.5px] bg-[#13262D] mb-2.5 origin-left"
+                  className="w-36 sm:w-56 h-[1.5px] bg-[#13262D] mb-2.5 origin-left"
                 />
                 <p
                   style={{ letterSpacing: "0.08em" }}
-                  className="font-outfit-thin text-[10.5px] sm:text-xs uppercase text-[#13262D]"
+                  className="font-outfit-thin text-[10px] sm:text-xs uppercase text-[#13262D]"
                 >
                   DEVELOPED WITH RESEARCH SUPPORT FROM MTEC.
                 </p>
@@ -627,7 +705,7 @@ export default function NexteakHomePage() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full overflow-hidden"
+          className="relative w-full overflow-hidden bg-[#13262D]"
         >
           <img
             src="/images/sustainability/artboard-8.jpg"
@@ -637,11 +715,11 @@ export default function NexteakHomePage() {
           <a
             href="#innovation"
             style={{ letterSpacing: "0.14em" }}
-            className="group/sbtn absolute bottom-[8%] right-[4.2%] inline-flex items-center gap-2.5 sm:gap-3.5 border border-white/85 hover:bg-white hover:text-[#13262D] text-white font-outfit-thin text-[9px] sm:text-xs lg:text-[13px] uppercase px-3 sm:px-5 lg:px-6 py-1.5 sm:py-2.5 rounded-[5px] transition-all duration-300"
+            className="group/sbtn absolute bottom-[6%] sm:bottom-[8%] right-[3.5%] sm:right-[4.2%] inline-flex items-center gap-1.5 sm:gap-3.5 border border-white/85 hover:bg-white hover:text-[#13262D] text-white font-outfit-thin text-[8px] sm:text-xs lg:text-[13px] uppercase px-2.5 sm:px-5 lg:px-6 py-1 sm:py-2.5 rounded-[4px] sm:rounded-[5px] transition-all duration-300"
           >
             <span>LEARN MORE</span>
             <span className="transition-transform duration-300 group-hover/sbtn:translate-x-1">
-              <LongThinArrow className="w-5 sm:w-6 h-3" />
+              <LongThinArrow className="w-3.5 sm:w-6 h-2 sm:h-3" />
             </span>
           </a>
         </motion.section>
@@ -651,10 +729,10 @@ export default function NexteakHomePage() {
         ========================================================= */}
         <section
           id="innovation"
-          className="bg-white text-[#13262D] py-16 sm:py-20 lg:py-24"
+          className="bg-white text-[#13262D] py-12 sm:py-20 lg:py-24"
         >
-          <div className="max-w-[1360px] mx-auto px-6 sm:px-12 lg:px-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="max-w-[1360px] mx-auto px-5 sm:px-12 lg:px-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
               {/* Left Text & Button Column */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -663,7 +741,7 @@ export default function NexteakHomePage() {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="lg:col-span-3 flex flex-col items-start"
               >
-                <div className="w-full flex items-center gap-3 mb-4">
+                <div className="w-full flex items-center gap-3 mb-3 sm:mb-4">
                   <span
                     style={{ letterSpacing: "0.08em" }}
                     className="font-outfit-thin text-[10.5px] sm:text-[11.5px] uppercase text-[#13262D] whitespace-nowrap"
@@ -681,7 +759,7 @@ export default function NexteakHomePage() {
 
                 <h2
                   style={{ letterSpacing: "0.1em" }}
-                  className="font-mistical font-normal text-2xl sm:text-3xl xl:text-[32px] leading-[1.24] uppercase text-[#13262D] mb-6 sm:mb-7"
+                  className="font-mistical font-normal text-2xl sm:text-3xl xl:text-[32px] leading-[1.24] uppercase text-[#13262D] mb-5 sm:mb-7"
                 >
                   NATURE MEETS
                   <br />
@@ -726,7 +804,7 @@ export default function NexteakHomePage() {
                     </div>
                     <p
                       style={{ letterSpacing: "0.08em" }}
-                      className="mt-4 font-outfit-regular text-[11.5px] lg:text-[12.5px] uppercase text-[#13262D] text-center"
+                      className="mt-3.5 sm:mt-4 font-outfit-regular text-[11.5px] lg:text-[12.5px] uppercase text-[#13262D] text-center"
                     >
                       {item.title}
                     </p>
