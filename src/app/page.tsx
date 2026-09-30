@@ -476,7 +476,7 @@ export default function NexteakHomePage() {
                 A LEGACY
                 <br />
                 IN EVERY GRAIN
-              </h2>
+              </motion.h2>
 
               <motion.p
                 variants={fadeUp}
