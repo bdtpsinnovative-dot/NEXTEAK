@@ -299,7 +299,7 @@ export default function NexteakHomePage() {
                       isActive ? "scale-[1.05]" : "scale-100"
                     }`}
                   />
-                  {/* Gradient for text legibility on both mobile and desktop */}
+                  {/* Gradient for text legibility */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#08161C]/85 via-[#08161C]/50 sm:via-[#08161C]/35 to-[#08161C]/20 sm:to-transparent" />
                 </div>
               );
@@ -450,11 +450,11 @@ export default function NexteakHomePage() {
               <motion.div
                 variants={fadeUp}
                 custom={0}
-                className="flex items-center gap-4 sm:gap-5 mb-3 sm:mb-5"
+                className="flex items-center gap-4 sm:gap-6 mb-3 sm:mb-5"
               >
                 <span
-                  style={{ letterSpacing: "0.12em" }}
-                  className="font-outfit-thin text-xs sm:text-[15px] lg:text-[16.5px] uppercase text-[#13262D] shrink-0"
+                  style={{ letterSpacing: "0.1em" }}
+                  className="font-outfit-extralight text-sm sm:text-[16px] lg:text-[18px] uppercase text-[#13262D] shrink-0"
                 >
                   OUR STORY
                 </span>
@@ -463,15 +463,15 @@ export default function NexteakHomePage() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
-                  className="w-28 sm:w-52 lg:w-64 h-[1px] bg-[#13262D]/70 origin-left"
+                  className="w-28 sm:w-56 lg:w-72 h-[1px] bg-[#13262D] origin-left"
                 />
               </motion.div>
 
               <motion.h2
                 variants={fadeUp}
                 custom={0.12}
-                style={{ letterSpacing: "0.1em" }}
-                className="font-mistical font-normal text-3xl sm:text-5xl lg:text-[54px] leading-[1.14] uppercase text-[#13262D] mb-5 sm:mb-8"
+                style={{ letterSpacing: "0.11em" }}
+                className="font-mistical font-normal text-3xl sm:text-5xl lg:text-[58px] leading-[1.12] uppercase text-[#13262D] mb-5 sm:mb-7"
               >
                 A LEGACY
                 <br />
@@ -481,14 +481,18 @@ export default function NexteakHomePage() {
               <motion.p
                 variants={fadeUp}
                 custom={0.24}
-                style={{ letterSpacing: "0.07em" }}
-                className="font-outfit-thin text-[11.5px] sm:text-[13.5px] lg:text-[14.5px] leading-[1.9] sm:leading-[1.95] uppercase text-[#13262D] max-w-[1220px]"
+                style={{ letterSpacing: "0.06em" }}
+                className="font-outfit-extralight text-xs sm:text-[14px] lg:text-[15.5px] xl:text-[16px] leading-[1.85] sm:leading-[1.9] uppercase text-[#13262D]"
               >
                 OUR JOURNEY BEGAN OVER 60 YEARS AGO. WHAT STARTED AS A FAMILY
-                BUSINESS CRAFTING TEAK AND TIMBER HAS GROWN INTO WOODDEN — A
-                TRUSTED NAME IN WOOD SOLUTIONS, AND THE FOUNDATION OF REVOTEAK.
-                WITH DEEP EXPERTISE FROM SOURCE TO FINISH, WE BRING THE BEAUTY
-                OF TEAK TO THE WORLD WITH INTEGRITY, INNOVATION AND A COMMITMENT
+                BUSINESS CRAFTING TEAK AND TIMBER HAS GROWN{" "}
+                <br className="hidden xl:inline" />
+                INTO WOODDEN — A TRUSTED NAME IN WOOD SOLUTIONS, AND THE
+                FOUNDATION OF REVOTEAK. WITH DEEP EXPERTISE{" "}
+                <br className="hidden xl:inline" />
+                FROM SOURCE TO FINISH, WE BRING THE BEAUTY OF TEAK TO THE WORLD
+                WITH INTEGRITY, INNOVATION AND A COMMITMENT{" "}
+                <br className="hidden xl:inline" />
                 TO A BETTER TOMORROW.
               </motion.p>
             </motion.div>
@@ -507,11 +511,11 @@ export default function NexteakHomePage() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="flex-1 max-w-[64px] sm:max-w-[176px] lg:max-w-[208px] h-[1px] bg-[#13262D]/70 origin-right"
+                  className="flex-1 max-w-[64px] sm:max-w-[190px] lg:max-w-[230px] h-[1px] bg-[#13262D] origin-right"
                 />
                 <h3
-                  style={{ letterSpacing: "0.1em" }}
-                  className="font-outfit-medium text-sm sm:text-lg lg:text-[21px] uppercase text-[#13262D] whitespace-nowrap"
+                  style={{ letterSpacing: "0.08em" }}
+                  className="font-outfit-medium text-sm sm:text-xl lg:text-[23px] uppercase text-[#13262D] whitespace-nowrap"
                 >
                   WOODDEN GROUP
                 </h3>
@@ -520,7 +524,7 @@ export default function NexteakHomePage() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="flex-1 max-w-[64px] sm:max-w-[176px] lg:max-w-[208px] h-[1px] bg-[#13262D]/70 origin-left"
+                  className="flex-1 max-w-[64px] sm:max-w-[190px] lg:max-w-[230px] h-[1px] bg-[#13262D] origin-left"
                 />
               </motion.div>
 
@@ -546,8 +550,8 @@ export default function NexteakHomePage() {
                       />
                     </div>
                     <p
-                      style={{ letterSpacing: "0.08em" }}
-                      className="mt-3.5 sm:mt-5 font-outfit-medium text-xs sm:text-[13.5px] lg:text-[14.5px] uppercase text-[#13262D] text-center"
+                      style={{ letterSpacing: "0.06em" }}
+                      className="mt-4 sm:mt-5 font-outfit-medium text-xs sm:text-[14px] lg:text-[15.5px] uppercase text-[#13262D] text-center"
                     >
                       {card.title}
                     </p>
@@ -556,28 +560,29 @@ export default function NexteakHomePage() {
               </div>
             </div>
 
-            {/* --- NATURAL RESEARCH CENTER --- */}
+            {/* --- NATURAL RESEARCH CENTER (Exact Match to ตำแหน่งฟอนต์ 2.png) --- */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="mt-14 sm:mt-20 lg:mt-24"
+              className="mt-16 sm:mt-22 lg:mt-28"
             >
+              {/* Top Label with Horizontal Lines */}
               <motion.div
                 variants={fadeUp}
                 custom={0}
-                className="flex items-center justify-center gap-3 sm:gap-7 mb-4 sm:mb-5"
+                className="flex items-center justify-center gap-4 sm:gap-7 mb-4 sm:mb-6"
               >
                 <motion.span
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="flex-1 max-w-[44px] sm:max-w-[128px] lg:max-w-[144px] h-[1px] bg-[#13262D]/60 origin-right"
+                  className="flex-1 max-w-[50px] sm:max-w-[140px] lg:max-w-[160px] h-[1px] bg-[#13262D] origin-right"
                 />
                 <span
-                  style={{ letterSpacing: "0.12em" }}
-                  className="font-outfit-thin text-[11px] sm:text-[14px] lg:text-[15px] uppercase text-[#13262D] whitespace-nowrap"
+                  style={{ letterSpacing: "0.08em" }}
+                  className="font-outfit-extralight text-xs sm:text-[15px] lg:text-[17px] uppercase text-[#13262D] whitespace-nowrap"
                 >
                   NATURAL RESEARCH CENTER
                 </span>
@@ -586,90 +591,114 @@ export default function NexteakHomePage() {
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.15 }}
-                  className="flex-1 max-w-[44px] sm:max-w-[128px] lg:max-w-[144px] h-[1px] bg-[#13262D]/60 origin-left"
+                  className="flex-1 max-w-[50px] sm:max-w-[140px] lg:max-w-[160px] h-[1px] bg-[#13262D] origin-left"
                 />
               </motion.div>
 
+              {/* Main Heading */}
               <motion.h2
                 variants={fadeUp}
                 custom={0.1}
-                style={{ letterSpacing: "0.1em" }}
-                className="font-mistical font-normal text-xl sm:text-3xl lg:text-[35px] leading-[1.25] sm:leading-[1.2] uppercase text-[#13262D] text-center mb-4 sm:mb-5"
+                style={{ letterSpacing: "0.11em" }}
+                className="font-mistical font-normal text-xl sm:text-3xl lg:text-[36px] xl:text-[40px] leading-[1.2] uppercase text-[#13262D] text-center mb-4 sm:mb-5"
               >
                 FROM MATERIAL KNOWLEDGE TO BETTER PERFORMANCE
               </motion.h2>
 
+              {/* 3-Line Centered Description matching exact line breaks in ตำแหน่งฟอนต์ 2.png */}
               <motion.p
                 variants={fadeUp}
                 custom={0.2}
-                style={{ letterSpacing: "0.06em" }}
-                className="font-outfit-thin text-[10.5px] sm:text-[11.5px] lg:text-[12px] leading-[1.85] uppercase text-[#13262D] text-center max-w-[1140px] mx-auto"
+                style={{ letterSpacing: "0.055em" }}
+                className="font-outfit-extralight text-[11px] sm:text-[12.5px] lg:text-[13.5px] leading-[1.85] uppercase text-[#13262D] text-center max-w-[1220px] mx-auto"
               >
                 OUR NATURAL RESEARCH CENTER BRINGS TOGETHER DECADES OF WOOD
                 EXPERTISE AND MODERN MATERIAL SCIENCE. THROUGH CONTINUOUS
-                RESEARCH, TESTING, AND DEVELOPMENT, WE EXPLORE HOW NATURAL TEAK
-                CAN BE USED MORE EFFICIENTLY AND ENGINEERED TO PERFORM BEYOND
-                CONVENTIONAL LIMITATIONS — WHILE PRESERVING THE BEAUTY,
-                CHARACTER, AND AUTHENTICITY THAT MAKE TEAK UNIQUE.
+                RESEARCH, TESTING, AND{" "}
+                <br className="hidden lg:inline" />
+                DEVELOPMENT, WE EXPLORE HOW NATURAL TEAK CAN BE USED MORE
+                EFFICIENTLY AND ENGINEERED TO PERFORM BEYOND CONVENTIONAL
+                LIMITATIONS — WHILE{" "}
+                <br className="hidden lg:inline" />
+                PRESERVING THE BEAUTY, CHARACTER, AND AUTHENTICITY THAT MAKE
+                TEAK UNIQUE.
               </motion.p>
 
-              {/* 3 Metrics Row */}
-              <div className="mt-8 sm:mt-14 mb-8 sm:mb-14 grid grid-cols-1 md:grid-cols-3 divide-y divide-[#13262D]/20 md:divide-y-0 items-center max-w-[1100px] mx-auto">
+              {/* 3 Metrics Row with Balanced Spacing & Vertical Bars */}
+              <div className="mt-10 sm:mt-14 lg:mt-16 mb-10 sm:mb-14 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 lg:gap-16 xl:gap-22 divide-y divide-[#13262D]/20 md:divide-y-0">
                 {/* Stat 1 */}
                 <motion.div
                   variants={fadeUp}
                   custom={0.25}
-                  className="flex flex-col items-center text-center py-5 md:py-2"
+                  className="w-full md:w-auto flex flex-col items-center text-center pt-4 first:pt-0 md:pt-0"
                 >
                   <span
-                    style={{ letterSpacing: "0.06em" }}
-                    className="font-outfit-bold text-2xl sm:text-3xl lg:text-[33px] uppercase text-[#13262D]"
+                    style={{ letterSpacing: "0.04em" }}
+                    className="font-outfit-bold text-2xl sm:text-3xl lg:text-[36px] xl:text-[39px] leading-tight uppercase text-[#13262D]"
                   >
                     60+ YEARS
                   </span>
                   <span
-                    style={{ letterSpacing: "0.08em" }}
-                    className="mt-1 font-outfit-thin text-xs sm:text-[13.5px] lg:text-[14.5px] uppercase text-[#13262D]"
+                    style={{ letterSpacing: "0.06em" }}
+                    className="mt-1 font-outfit-extralight text-xs sm:text-[15px] lg:text-[16.5px] xl:text-[17.5px] uppercase text-[#13262D] whitespace-nowrap"
                   >
                     OF WOOD EXPERTISE
                   </span>
                 </motion.div>
 
+                {/* Vertical Divider 1 */}
+                <motion.div
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.35 }}
+                  className="hidden md:block w-[2px] h-[86px] bg-[#13262D] shrink-0 origin-center"
+                />
+
                 {/* Stat 2 */}
                 <motion.div
                   variants={fadeUp}
                   custom={0.38}
-                  className="flex flex-col items-center text-center py-5 md:py-2 md:border-x-[1.5px] md:border-[#13262D]"
+                  className="w-full md:w-auto flex flex-col items-center text-center pt-5 md:pt-0"
                 >
                   <span
-                    style={{ letterSpacing: "0.06em" }}
-                    className="font-outfit-bold text-2xl sm:text-3xl lg:text-[33px] uppercase text-[#13262D]"
+                    style={{ letterSpacing: "0.04em" }}
+                    className="font-outfit-bold text-2xl sm:text-3xl lg:text-[36px] xl:text-[39px] leading-tight uppercase text-[#13262D]"
                   >
                     5+ YEARS
                   </span>
                   <span
-                    style={{ letterSpacing: "0.08em" }}
-                    className="mt-1 font-outfit-thin text-xs sm:text-[13.5px] lg:text-[14.5px] uppercase text-[#13262D]"
+                    style={{ letterSpacing: "0.06em" }}
+                    className="mt-1 font-outfit-extralight text-xs sm:text-[15px] lg:text-[16.5px] xl:text-[17.5px] uppercase text-[#13262D] whitespace-nowrap"
                   >
                     OF PRODUCT DEVELOPMENT
                   </span>
                 </motion.div>
 
+                {/* Vertical Divider 2 */}
+                <motion.div
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.45 }}
+                  className="hidden md:block w-[2px] h-[86px] bg-[#13262D] shrink-0 origin-center"
+                />
+
                 {/* Stat 3 */}
                 <motion.div
                   variants={fadeUp}
                   custom={0.5}
-                  className="flex flex-col items-center text-center py-5 md:py-2"
+                  className="w-full md:w-auto flex flex-col items-center text-center pt-5 md:pt-0"
                 >
                   <span
-                    style={{ letterSpacing: "0.06em" }}
-                    className="font-outfit-bold text-2xl sm:text-3xl lg:text-[33px] uppercase text-[#13262D]"
+                    style={{ letterSpacing: "0.04em" }}
+                    className="font-outfit-bold text-2xl sm:text-3xl lg:text-[36px] xl:text-[39px] leading-tight uppercase text-[#13262D] whitespace-nowrap"
                   >
                     ONE CONTINUOUS
                   </span>
                   <span
-                    style={{ letterSpacing: "0.08em" }}
-                    className="mt-1 font-outfit-thin text-xs sm:text-[13.5px] lg:text-[14.5px] uppercase text-[#13262D]"
+                    style={{ letterSpacing: "0.06em" }}
+                    className="mt-1 font-outfit-extralight text-xs sm:text-[15px] lg:text-[16.5px] xl:text-[17.5px] uppercase text-[#13262D] whitespace-nowrap"
                   >
                     PURSUIT OF BETTER PERFORMANCE
                   </span>
@@ -677,17 +706,21 @@ export default function NexteakHomePage() {
               </div>
 
               {/* Bottom-left MTEC Note */}
-              <motion.div variants={fadeUp} custom={0.6} className="mt-4 sm:mt-6">
+              <motion.div
+                variants={fadeUp}
+                custom={0.6}
+                className="mt-6 sm:mt-8 lg:-ml-4"
+              >
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="w-36 sm:w-56 h-[1.5px] bg-[#13262D] mb-2.5 origin-left"
+                  className="w-44 sm:w-60 lg:w-64 h-[2px] bg-[#13262D] mb-3 origin-left"
                 />
                 <p
-                  style={{ letterSpacing: "0.08em" }}
-                  className="font-outfit-thin text-[10px] sm:text-xs uppercase text-[#13262D]"
+                  style={{ letterSpacing: "0.06em" }}
+                  className="font-outfit-extralight text-[11px] sm:text-[13px] lg:text-[14px] uppercase text-[#13262D]"
                 >
                   DEVELOPED WITH RESEARCH SUPPORT FROM MTEC.
                 </p>
@@ -744,7 +777,7 @@ export default function NexteakHomePage() {
                 <div className="w-full flex items-center gap-3 mb-3 sm:mb-4">
                   <span
                     style={{ letterSpacing: "0.08em" }}
-                    className="font-outfit-thin text-[10.5px] sm:text-[11.5px] uppercase text-[#13262D] whitespace-nowrap"
+                    className="font-outfit-extralight text-[11px] sm:text-[12px] uppercase text-[#13262D] whitespace-nowrap"
                   >
                     INNOVATION &amp; RESEARCH
                   </span>
@@ -753,7 +786,7 @@ export default function NexteakHomePage() {
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.25 }}
-                    className="flex-1 h-[1px] bg-[#13262D]/70 min-w-[32px] origin-left"
+                    className="flex-1 h-[1px] bg-[#13262D] min-w-[32px] origin-left"
                   />
                 </div>
 
@@ -771,7 +804,7 @@ export default function NexteakHomePage() {
                 <a
                   href="#contact"
                   style={{ letterSpacing: "0.14em" }}
-                  className="group/ibtn inline-flex items-center gap-3 border border-[#13262D] hover:bg-[#13262D] hover:text-white text-[#13262D] font-outfit-thin text-xs uppercase px-5 py-2.5 rounded-[6px] transition-all duration-300"
+                  className="group/ibtn inline-flex items-center gap-3 border border-[#13262D] hover:bg-[#13262D] hover:text-white text-[#13262D] font-outfit-extralight text-xs uppercase px-5 py-2.5 rounded-[6px] transition-all duration-300"
                 >
                   <span>LEARN MORE</span>
                   <span className="transition-transform duration-300 group-hover/ibtn:translate-x-1">
@@ -804,7 +837,7 @@ export default function NexteakHomePage() {
                     </div>
                     <p
                       style={{ letterSpacing: "0.08em" }}
-                      className="mt-3.5 sm:mt-4 font-outfit-regular text-[11.5px] lg:text-[12.5px] uppercase text-[#13262D] text-center"
+                      className="mt-3.5 sm:mt-4 font-outfit-regular text-xs lg:text-[13.5px] uppercase text-[#13262D] text-center"
                     >
                       {item.title}
                     </p>

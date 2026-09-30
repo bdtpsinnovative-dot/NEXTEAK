@@ -40,22 +40,24 @@ body {
   font-family: "Outfit", sans-serif;
 }
 
+/* For white text on dark background (Hero & Navbar) */
 .font-outfit-thin {
   font-family: "Outfit", sans-serif;
-  font-weight: 160;
-  font-variation-settings: "wght" 160;
+  font-weight: 170;
+  font-variation-settings: "wght" 170;
 }
 
+/* For dark text on white background (Our Story, Natural Research Center, Innovation) */
 .font-outfit-extralight {
   font-family: "Outfit", sans-serif;
-  font-weight: 200;
-  font-variation-settings: "wght" 200;
+  font-weight: 250;
+  font-variation-settings: "wght" 250;
 }
 
 .font-outfit-regular {
   font-family: "Outfit", sans-serif;
-  font-weight: 380;
-  font-variation-settings: "wght" 380;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
 }
 
 .font-outfit-medium {
