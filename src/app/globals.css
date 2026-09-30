@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Mistical Spring";
+  src: url("/fonts/MisticalSpring.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/OutfitVariableFont_wght1.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-navy: #13262D;
+  --color-cream: #E7E2DA;
+  --font-mistical: "Mistical Spring", Georgia, serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #13262D;
+  font-family: "Outfit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mistical {
+  font-family: "Mistical Spring", Georgia, serif;
+  font-synthesis: none;
+}
+
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+}
+
+.font-outfit-thin {
+  font-family: "Outfit", sans-serif;
+  font-weight: 160;
+  font-variation-settings: "wght" 160;
+}
+
+.font-outfit-extralight {
+  font-family: "Outfit", sans-serif;
+  font-weight: 200;
+  font-variation-settings: "wght" 200;
+}
+
+.font-outfit-regular {
+  font-family: "Outfit", sans-serif;
+  font-weight: 380;
+  font-variation-settings: "wght" 380;
+}
+
+.font-outfit-medium {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+}
+
+.font-outfit-bold {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+}
