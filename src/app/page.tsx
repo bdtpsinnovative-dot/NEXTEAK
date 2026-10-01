@@ -286,28 +286,6 @@ export default function NexteakHomePage() {
               </svg>
             </button>
 
-            <span className="h-5 sm:h-6 w-[1px] bg-white/60" />
-
-            <button
-              type="button"
-              style={{ letterSpacing: "0.12em" }}
-              className="inline-flex items-center gap-1.5 font-outfit-thin text-xs lg:text-[14px] uppercase hover:text-white transition-colors"
-            >
-              <span>EN</span>
-              <svg
-                viewBox="0 0 12 8"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.1"
-                className="w-2.5 h-2.5"
-              >
-                <path
-                  d="M1 1.5L6 6.5L11 1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
 
             {/* Mobile Hamburger Button (Visible on < md) */}
             <button
