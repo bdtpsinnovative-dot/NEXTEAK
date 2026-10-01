@@ -72,7 +72,7 @@ const NAV_ITEMS = [
   { label: "PRODUCTS", href: "#innovation" },
   { label: "SUSTAINABILITY", href: "#sustainability" },
   { label: "GALLERY", href: "/gallery" },
-  { label: "CONTACT US", href: "#contact" },
+  { label: "CONTACT US", href: "/contact" },
 ];
 
 const STORY_CARDS = [

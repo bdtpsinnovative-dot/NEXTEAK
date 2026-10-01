@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { label: "PRODUCTS", href: "/#innovation" },
   { label: "SUSTAINABILITY", href: "/#sustainability" },
   { label: "GALLERY", href: "/gallery" },
-  { label: "CONTACT US", href: "/#contact" },
+  { label: "CONTACT US", href: "/contact" },
 ];
 
 function LongThinArrow({ className = "w-9 h-4" }: { className?: string }) {
