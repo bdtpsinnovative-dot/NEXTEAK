@@ -5,16 +5,21 @@ import { motion, useInView } from "framer-motion";
 
 export default function StructureExplosion() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+  
+  // Track viewport entry/exit with amount: 0.35 (without once: true so it triggers on scroll down and up)
+  const isInView = useInView(containerRef, { amount: 0.35 });
 
-  // State: true = Open (Exploded with lines & text like Image 2)
-  //        false = Closed (Assembled, film flat on wood, no lines, no text)
-  const [isOpen, setIsOpen] = useState(true);
+  // Start Closed (film flat on wood) so when scrolling down into view,
+  // the user clearly watches it smoothly open!
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Automatically open when user scrolls to this section
+  // When scrolling down into the section: Open!
+  // When scrolling back up out of the section: Close!
   useEffect(() => {
     if (isInView) {
       setIsOpen(true);
+    } else {
+      setIsOpen(false);
     }
   }, [isInView]);
 
@@ -25,7 +30,7 @@ export default function StructureExplosion() {
       className="relative w-full bg-white text-[#13262D] overflow-hidden select-none border-t border-black/5"
     >
       <div className="w-full grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[500px] lg:min-h-[620px] xl:min-h-[720px]">
-        {/* Left Side (approx 42% on desktop): Superyacht Deck Photo matching Image 1 */}
+        {/* Left Side: Superyacht Deck Photo matching Image 1 */}
         <div className="lg:col-span-5 relative w-full h-[360px] sm:h-[460px] lg:h-auto overflow-hidden bg-[#13262D]">
           <img
             src="/images/sustainability/structure-yacht.jpg"
@@ -34,14 +39,22 @@ export default function StructureExplosion() {
           />
         </div>
 
-        {/* Right Side (approx 58% on desktop): Interactive STRUCTURE Diagram */}
+        {/* Right Side: Interactive STRUCTURE Diagram with scroll-triggered Open/Close */}
         <div className="lg:col-span-7 relative flex flex-col justify-center items-center p-4 sm:p-6 lg:p-8 xl:p-12 bg-white">
           {/* Interactive Diagram Stage */}
           <div
             onClick={() => setIsOpen((prev) => !prev)}
             className="relative w-full aspect-[3307/1857] cursor-pointer group"
-            title="Click to toggle Open / Close"
+            title={isOpen ? "คลิกเพื่อปิดแผ่นไม้ (Click to Close)" : "คลิกเพื่อเปิดแยกแผ่นไม้ (Click to Open)"}
           >
+            {/* Interactive Click Hint Badge (Top-Right) */}
+            <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-30 pointer-events-none">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/5 group-hover:bg-[#13262D] text-[#13262D] group-hover:text-white text-[10px] sm:text-xs font-outfit-medium tracking-wider uppercase transition-colors duration-200 shadow-sm backdrop-blur-sm">
+                <span className={`w-1.5 h-1.5 rounded-full ${isOpen ? "bg-[#2DD4BF] animate-ping" : "bg-[#D97706]"}`} />
+                <span>{isOpen ? "Click to Close" : "Click to Open"}</span>
+              </span>
+            </div>
+
             {/* Base Layer: Title STRUCTURE + Wood Plank Base */}
             <div className="absolute inset-0 pointer-events-none">
               {/* Title STRUCTURE at top-left matching Image 2 */}
@@ -70,9 +83,10 @@ export default function StructureExplosion() {
               }}
               transition={{
                 type: "spring",
-                stiffness: 85,
-                damping: 18,
-                mass: 0.85,
+                stiffness: 75,
+                damping: 16,
+                mass: 0.9,
+                delay: isOpen ? 0.15 : 0,
               }}
               className="absolute inset-0 pointer-events-none"
             >
@@ -84,14 +98,15 @@ export default function StructureExplosion() {
             </motion.div>
 
             {/* Annotations Layer (Pins 1, 2, 3, Leader Lines, and Text Labels) */}
-            {/* Completely hidden when closed; fades in when open */}
+            {/* Fades out when closed; fades in smoothly when open */}
             <motion.div
               animate={{
                 opacity: isOpen ? 1 : 0,
+                scale: isOpen ? 1 : 0.98,
               }}
               transition={{
                 duration: 0.35,
-                delay: isOpen ? 0.18 : 0,
+                delay: isOpen ? 0.3 : 0,
               }}
               className="absolute inset-0 pointer-events-none"
             >
@@ -119,7 +134,7 @@ export default function StructureExplosion() {
             </button>
 
             <span className="font-outfit-extralight text-[11px] sm:text-xs tracking-wider text-[#13262D]/55 uppercase">
-              Click diagram to toggle
+              Scroll down to open • Scroll up to close • Click to toggle
             </span>
           </div>
         </div>
