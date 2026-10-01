@@ -24,51 +24,6 @@ function LongThinArrow({ className = "w-6 h-3" }: { className?: string }) {
   );
 }
 
-const SHOWROOMS = [
-  {
-    id: 1,
-    title: "WOODDEN FLAGSHIP SHOWROOM",
-    addressLines: [
-      "DESIGN VILLAGE KASET-NAWAMIN",
-      "UNIT A201, A202, BUILDING A, 2ND FLOOR",
-      "PRASERT-MANUKITCH ROAD, BUENG KUM",
-      "BANGKOK 10240, THAILAND",
-    ],
-    mobile: "062-086-4334",
-    phoneUrl: "tel:0620864334",
-    image: "/images/contact/showroom-1.jpg",
-    mapUrl:
-      "https://maps.google.com/?q=Design+Village+Kaset-Nawamin+Woodden+Bangkok",
-  },
-  {
-    id: 2,
-    title: "WOODDEN PHUKET BRANCH",
-    addressLines: [
-      "PREMIUM OUTLET PHUKET",
-      "888,888/1 MOO 2",
-      "KO KAEW, MUEANG PHUKET, PHUKET 83000, THAILAND",
-    ],
-    mobile: "098-018-0190",
-    phoneUrl: "tel:0980180190",
-    image: "/images/contact/showroom-2.jpg",
-    mapUrl: "https://maps.google.com/?q=Premium+Outlet+Phuket+Woodden",
-  },
-  {
-    id: 3,
-    title: "WOODDEN GALLERY",
-    addressLines: [
-      "332 PRADIT MANUTHAM ROAD",
-      "WANG THONGLANG, WANG THONGLANG",
-      "BANGKOK 10310, THAILAND",
-    ],
-    mobile: "094-888-1072",
-    phoneUrl: "tel:0948881072",
-    image: "/images/contact/showroom-3.jpg",
-    mapUrl:
-      "https://maps.google.com/?q=332+Pradit+Manutham+Road+Woodden+Gallery+Bangkok",
-  },
-];
-
 export default function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -116,97 +71,78 @@ export default function ContactPage() {
               </h1>
             </motion.div>
 
-            {/* 3 Showroom Columns with Vertical Dividing Lines */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-0">
-              {SHOWROOMS.map((room, idx) => {
-                const isFirst = idx === 0;
-                const isSecond = idx === 1;
+            {/* Single Showroom Detail: WOODDEN GALLERY */}
+            <div className="max-w-2xl">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.75,
+                  delay: 0.15,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                {/* Title */}
+                <h2
+                  style={{ letterSpacing: "0.05em" }}
+                  className="font-mistical font-normal text-2xl sm:text-3xl lg:text-4xl text-[#13262D] uppercase tracking-wide leading-snug"
+                >
+                  WOODDEN GALLERY
+                </h2>
 
-                return (
-                  <motion.div
-                    key={room.id}
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.75,
-                      delay: 0.15 + idx * 0.15,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className={`flex flex-col justify-between ${
-                      isFirst
-                        ? "lg:pr-8 xl:pr-12 lg:border-r lg:border-[#13262D]/20"
-                        : isSecond
-                        ? "lg:px-8 xl:px-12 lg:border-r lg:border-[#13262D]/20"
-                        : "lg:pl-8 xl:pl-12"
-                    }`}
+                {/* Underline beneath title */}
+                <span className="block w-28 sm:w-40 h-[1.5px] bg-[#13262D]/60 mt-3 mb-6 sm:mb-8" />
+
+                {/* Address Lines */}
+                <div className="space-y-2 mb-6 sm:mb-8">
+                  <p
+                    style={{ letterSpacing: "0.06em" }}
+                    className="font-outfit-extralight text-sm sm:text-base text-[#13262D]/90 uppercase leading-relaxed"
                   >
-                    {/* Top Text Details */}
-                    <div>
-                      <h2
-                        style={{ letterSpacing: "0.05em" }}
-                        className="font-mistical font-normal text-xl sm:text-2xl text-[#13262D] uppercase tracking-wide leading-snug"
-                      >
-                        {room.title}
-                      </h2>
+                    332 PRADIT MANUTHAM ROAD
+                  </p>
+                  <p
+                    style={{ letterSpacing: "0.06em" }}
+                    className="font-outfit-extralight text-sm sm:text-base text-[#13262D]/90 uppercase leading-relaxed"
+                  >
+                    WANG THONGLANG, WANG THONGLANG
+                  </p>
+                  <p
+                    style={{ letterSpacing: "0.06em" }}
+                    className="font-outfit-extralight text-sm sm:text-base text-[#13262D]/90 uppercase leading-relaxed"
+                  >
+                    BANGKOK 10310, THAILAND
+                  </p>
+                </div>
 
-                      {/* Underline beneath title */}
-                      <span className="block w-28 sm:w-36 h-[1px] bg-[#13262D]/60 mt-2 sm:mt-2.5 mb-5 sm:mb-6" />
+                {/* Phone Number */}
+                <p
+                  style={{ letterSpacing: "0.08em" }}
+                  className="font-outfit-medium text-sm sm:text-base uppercase text-[#13262D] mb-8 sm:mb-10"
+                >
+                  MOBILE:{" "}
+                  <a
+                    href="tel:0948881072"
+                    className="hover:underline transition-all text-[#13262D]"
+                  >
+                    094-888-1072
+                  </a>
+                </p>
 
-                      {/* Address Lines */}
-                      <div className="space-y-1 mb-5 sm:mb-6">
-                        {room.addressLines.map((line, i) => (
-                          <p
-                            key={i}
-                            style={{ letterSpacing: "0.06em" }}
-                            className="font-outfit-extralight text-xs sm:text-[13px] text-[#13262D]/90 uppercase leading-relaxed"
-                          >
-                            {line}
-                          </p>
-                        ))}
-                      </div>
-
-                      {/* Phone Number */}
-                      <p
-                        style={{ letterSpacing: "0.08em" }}
-                        className="font-outfit-medium text-xs sm:text-[13px] uppercase text-[#13262D] mb-6 sm:mb-8"
-                      >
-                        MOBILE:{" "}
-                        <a
-                          href={room.phoneUrl}
-                          className="hover:underline transition-all"
-                        >
-                          {room.mobile}
-                        </a>
-                      </p>
-                    </div>
-
-                    {/* Showroom Photo & Centered Location Button */}
-                    <div className="flex flex-col items-center">
-                      <div className="w-full aspect-[16/10] overflow-hidden rounded-[2px] shadow-sm bg-[#13262D] group">
-                        <img
-                          src={room.image}
-                          alt={room.title}
-                          className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                        />
-                      </div>
-
-                      {/* Location Button */}
-                      <a
-                        href={room.mapUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ letterSpacing: "0.14em" }}
-                        className="group/btn mt-6 sm:mt-8 inline-flex items-center gap-3 border border-[#13262D] hover:bg-[#13262D] hover:text-white text-[#13262D] font-outfit-extralight text-xs uppercase px-6 py-2.5 rounded-[4px] transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer"
-                      >
-                        <span>LOCATION</span>
-                        <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
-                          <LongThinArrow className="w-5 h-2.5" />
-                        </span>
-                      </a>
-                    </div>
-                  </motion.div>
-                );
-              })}
+                {/* Location Button */}
+                <a
+                  href="https://maps.google.com/?q=332+Pradit+Manutham+Road+Woodden+Gallery+Bangkok"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ letterSpacing: "0.14em" }}
+                  className="group/btn inline-flex items-center gap-3.5 border border-[#13262D] hover:bg-[#13262D] hover:text-white text-[#13262D] font-outfit-extralight text-xs sm:text-sm uppercase px-7 py-3 rounded-[4px] transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer"
+                >
+                  <span>LOCATION</span>
+                  <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
+                    <LongThinArrow className="w-5 h-2.5" />
+                  </span>
+                </a>
+              </motion.div>
             </div>
 
             {/* Bottom Right Floating Contact Bar matching ภาพรวม.png */}
