@@ -46,21 +46,22 @@ export default function ContactPage() {
       <main className="flex-1 w-full relative">
         <section className="pt-10 sm:pt-14 lg:pt-16 pb-24 sm:pb-32">
           <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
-            {/* Header: NEXTEAK ─── + CONTACT US */}
+            {/* Header: NEXTEAK ─── + CONTACT US (Centered) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="mb-12 sm:mb-16 lg:mb-20"
+              className="mb-12 sm:mb-16 lg:mb-20 text-center flex flex-col items-center"
             >
-              <div className="flex items-center gap-5 sm:gap-6 mb-2 sm:mb-3">
+              <div className="flex items-center justify-center gap-4 sm:gap-6 mb-2 sm:mb-3">
+                <span className="w-12 sm:w-20 lg:w-28 h-[1px] bg-[#13262D]" />
                 <span
                   style={{ letterSpacing: "0.18em" }}
                   className="font-outfit-regular text-xs sm:text-[13px] uppercase text-[#13262D]"
                 >
                   NEXTEAK
                 </span>
-                <span className="w-24 sm:w-36 lg:w-44 h-[1px] bg-[#13262D]" />
+                <span className="w-12 sm:w-20 lg:w-28 h-[1px] bg-[#13262D]" />
               </div>
 
               <h1
@@ -71,8 +72,8 @@ export default function ContactPage() {
               </h1>
             </motion.div>
 
-            {/* Single Showroom Detail: WOODDEN GALLERY */}
-            <div className="max-w-2xl">
+            {/* Single Showroom Detail: WOODDEN GALLERY (Centered) */}
+            <div className="max-w-2xl mx-auto flex flex-col items-center text-center">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -81,6 +82,7 @@ export default function ContactPage() {
                   delay: 0.15,
                   ease: [0.22, 1, 0.36, 1],
                 }}
+                className="flex flex-col items-center"
               >
                 {/* Title */}
                 <h2
@@ -91,10 +93,10 @@ export default function ContactPage() {
                 </h2>
 
                 {/* Underline beneath title */}
-                <span className="block w-28 sm:w-40 h-[1.5px] bg-[#13262D]/60 mt-3 mb-6 sm:mb-8" />
+                <span className="block w-28 sm:w-40 h-[1.5px] bg-[#13262D]/60 mt-3 mb-6 sm:mb-8 mx-auto" />
 
                 {/* Address Lines */}
-                <div className="space-y-2 mb-6 sm:mb-8">
+                <div className="space-y-2 mb-6 sm:mb-8 text-center">
                   <p
                     style={{ letterSpacing: "0.06em" }}
                     className="font-outfit-extralight text-sm sm:text-base text-[#13262D]/90 uppercase leading-relaxed"
@@ -118,7 +120,7 @@ export default function ContactPage() {
                 {/* Phone Number */}
                 <p
                   style={{ letterSpacing: "0.08em" }}
-                  className="font-outfit-medium text-sm sm:text-base uppercase text-[#13262D] mb-8 sm:mb-10"
+                  className="font-outfit-medium text-sm sm:text-base uppercase text-[#13262D] mb-8 sm:mb-10 text-center"
                 >
                   MOBILE:{" "}
                   <a
@@ -135,7 +137,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ letterSpacing: "0.14em" }}
-                  className="group/btn inline-flex items-center gap-3.5 border border-[#13262D] hover:bg-[#13262D] hover:text-white text-[#13262D] font-outfit-extralight text-xs sm:text-sm uppercase px-7 py-3 rounded-[4px] transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer"
+                  className="group/btn inline-flex items-center gap-3.5 border border-[#13262D] hover:bg-[#13262D] hover:text-white text-[#13262D] font-outfit-extralight text-xs sm:text-sm uppercase px-8 py-3.5 rounded-[4px] transition-all duration-300 shadow-2xs hover:shadow-md cursor-pointer"
                 >
                   <span>LOCATION</span>
                   <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
