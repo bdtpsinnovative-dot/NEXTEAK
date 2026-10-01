@@ -57,7 +57,7 @@ const HERO_SLIDES = [
       </>
     ),
     cta: "SUSTAINABILITY JOURNEY",
-    href: "#sustainability",
+    href: "/sustainability",
   },
 ];
 
@@ -69,8 +69,8 @@ const EXTENDED_SLIDES = [
 ];
 
 const NAV_ITEMS = [
-  { label: "PRODUCTS", href: "#innovation" },
-  { label: "SUSTAINABILITY", href: "#sustainability" },
+  { label: "PRODUCTS", href: "/products" },
+  { label: "SUSTAINABILITY", href: "/sustainability" },
   { label: "GALLERY", href: "/gallery" },
   { label: "CONTACT US", href: "/contact" },
 ];
