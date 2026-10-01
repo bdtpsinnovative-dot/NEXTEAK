@@ -412,7 +412,7 @@ export default function NexteakHomePage() {
           </button>
 
           {/* Hero Text Content */}
-          <div className="relative z-20 w-full px-5 sm:px-8 lg:px-12 xl:px-16 py-14 sm:py-20 lg:py-0 flex flex-col justify-center pointer-events-none">
+          <div className="relative z-20 w-full px-7 sm:px-12 lg:px-20 xl:px-28 2xl:px-36 py-14 sm:py-20 lg:py-0 flex flex-col justify-center pointer-events-none">
             <div className="max-w-[680px] pointer-events-auto">
               {/* 1. THE FUTURE OF TEAK */}
               <motion.p
