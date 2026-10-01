@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getAllProjects, getProjectBySlug } from "@/data/projects";
@@ -39,8 +39,6 @@ export default function ProjectDetailPage() {
   const project = getProjectBySlug(slug);
   const allProjects = getAllProjects();
 
-  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
-
   if (!project) {
     return (
       <div className="min-h-screen flex flex-col bg-white text-[#13262D]">
@@ -68,7 +66,6 @@ export default function ProjectDetailPage() {
     );
   }
 
-  // Calculate previous and next project for bottom pagination
   const currentIndex = allProjects.findIndex((p) => p.slug === project.slug);
   const prevProject =
     currentIndex > 0
@@ -88,7 +85,7 @@ export default function ProjectDetailPage() {
       <main className="flex-1 w-full">
         {/* Top Breadcrumb & Return to Gallery */}
         <div className="border-b border-[#13262D]/10 bg-[#FAFAFA]">
-          <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-4 flex items-center justify-between text-xs font-outfit-thin tracking-wider">
+          <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 py-4 flex items-center justify-between text-xs font-outfit-thin tracking-wider">
             <Link
               href="/gallery"
               className="group inline-flex items-center gap-2.5 text-[#13262D]/80 hover:text-[#13262D] transition-colors uppercase"
@@ -105,12 +102,12 @@ export default function ProjectDetailPage() {
           </div>
         </div>
 
-        {/* Project Header Hero Section */}
-        <section className="pt-10 sm:pt-14 lg:pt-16 pb-12 sm:pb-16 max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16">
+        {/* Project Header Section */}
+        <section className="pt-10 sm:pt-14 lg:pt-16 pb-10 sm:pb-14 max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="flex items-center gap-4 sm:gap-6 mb-3 sm:mb-4">
               <span
@@ -130,20 +127,20 @@ export default function ProjectDetailPage() {
 
             <h1
               style={{ letterSpacing: "0.05em" }}
-              className="font-mistical font-normal text-3xl sm:text-5xl lg:text-[62px] xl:text-[68px] uppercase text-[#13262D] leading-[1.08] mb-4"
+              className="font-mistical font-normal text-3xl sm:text-5xl lg:text-[56px] xl:text-[64px] uppercase text-[#13262D] leading-[1.08] mb-3"
             >
               {project.title}
             </h1>
 
             <p
               style={{ letterSpacing: "0.12em" }}
-              className="font-outfit-thin text-sm sm:text-base lg:text-lg uppercase text-[#13262D]/80 max-w-3xl mb-8"
+              className="font-outfit-thin text-sm sm:text-base lg:text-lg uppercase text-[#13262D]/75 max-w-3xl mb-8"
             >
               {project.subtitle}
             </p>
 
-            {/* Quick Metadata Pill Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-6 bg-[#13262D] text-white rounded-lg shadow-sm">
+            {/* Quick Metadata Box */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 sm:p-6 bg-[#13262D] text-white rounded-[2px] shadow-sm mb-12">
               <div>
                 <p className="font-outfit-thin text-[11px] uppercase text-white/60 tracking-widest mb-1">
                   VESSEL
@@ -177,37 +174,30 @@ export default function ProjectDetailPage() {
                 </p>
               </div>
             </div>
-          </motion.div>
-        </section>
 
-        {/* Hero Full Banner Image */}
-        <section className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 mb-16 sm:mb-24">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="w-full aspect-[16/9] sm:aspect-[21/9] rounded-sm overflow-hidden bg-[#13262D] shadow-xl relative"
-          >
-            <img
-              src={project.heroImage}
-              alt={project.title}
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            {/* Project Hero Solid Block matching Wireframe Theme */}
+            <div className="w-full aspect-[21/9] sm:aspect-[24/9] bg-[#14252C] rounded-[2px] mb-14 sm:mb-20 flex items-center justify-center p-8">
+              <span
+                style={{ letterSpacing: "0.2em" }}
+                className="font-outfit-thin text-xs sm:text-sm uppercase text-white/30"
+              >
+                PROJECT SHOWCASE {project.id}
+              </span>
+            </div>
           </motion.div>
         </section>
 
         {/* Narrative & Engineering Overview */}
-        <section className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 mb-16 sm:mb-24">
+        <section className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 mb-16 sm:mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            {/* Left Column: Architectural Narrative */}
+            {/* Left Column: Narrative */}
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-3">
                 <span
                   style={{ letterSpacing: "0.14em" }}
                   className="font-outfit-regular text-xs uppercase text-[#13262D]"
                 >
-                  PROJECT NARRATIVE
+                  PROJECT OVERVIEW
                 </span>
                 <span className="w-16 h-[1px] bg-[#13262D]" />
               </div>
@@ -225,14 +215,14 @@ export default function ProjectDetailPage() {
               </p>
             </div>
 
-            {/* Right Column: Key Engineering Highlights */}
-            <div className="lg:col-span-5 bg-[#F6F5F2] p-6 sm:p-8 rounded-lg border border-[#13262D]/10">
+            {/* Right Column: Highlights */}
+            <div className="lg:col-span-5 bg-[#F6F5F2] p-6 sm:p-8 rounded-[2px] border border-[#13262D]/10">
               <div className="flex items-center gap-3 mb-4">
                 <span
                   style={{ letterSpacing: "0.14em" }}
                   className="font-outfit-regular text-xs uppercase text-[#13262D]"
                 >
-                  ENGINEERING HIGHLIGHTS
+                  KEY SPECIFICATIONS
                 </span>
                 <span className="w-12 h-[1px] bg-[#13262D]" />
               </div>
@@ -252,65 +242,9 @@ export default function ProjectDetailPage() {
           </div>
         </section>
 
-        {/* High-Resolution Gallery Photo Grid */}
-        <section className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 mb-16 sm:mb-24">
-          <div className="flex items-center justify-between mb-8 sm:mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <span
-                  style={{ letterSpacing: "0.14em" }}
-                  className="font-outfit-regular text-xs uppercase text-[#13262D]"
-                >
-                  IMAGE SHOWCASE
-                </span>
-                <span className="w-16 h-[1px] bg-[#13262D]" />
-              </div>
-              <h2
-                style={{ letterSpacing: "0.06em" }}
-                className="font-mistical text-2xl sm:text-4xl uppercase text-[#13262D]"
-              >
-                CRAFTSMANSHIP PERSPECTIVES
-              </h2>
-            </div>
-            <span className="font-outfit-thin text-xs text-[#13262D]/60 hidden sm:inline-block tracking-wider uppercase">
-              CLICK IMAGE TO EXPAND
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-            {project.galleryImages.map((img, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: idx * 0.1 }}
-                onClick={() => setActiveImageIndex(idx)}
-                className="group relative cursor-pointer overflow-hidden rounded-sm bg-[#13262D] shadow-sm hover:shadow-xl transition-all duration-300"
-              >
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={img.src}
-                    alt={img.caption}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-4 sm:p-5 bg-white border-t border-[#13262D]/10 flex items-center justify-between">
-                  <p className="font-outfit-thin text-xs sm:text-sm text-[#13262D]/90 line-clamp-1">
-                    {img.caption}
-                  </p>
-                  <span className="shrink-0 ml-3 text-[#13262D]/50 group-hover:text-[#13262D] transition-colors">
-                    🔍
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
         {/* Technical Specifications Table */}
         <section className="bg-[#13262D] text-white py-14 sm:py-20 mb-16 sm:mb-24">
-          <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16">
+          <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
             <div className="max-w-3xl mb-10">
               <div className="flex items-center gap-3 mb-2">
                 <span
@@ -365,11 +299,11 @@ export default function ProjectDetailPage() {
         </section>
 
         {/* Project Navigation Footer (Prev & Next Project) */}
-        <section className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 pb-16 sm:pb-24">
+        <section className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 pb-16 sm:pb-24">
           <div className="pt-8 border-t border-[#13262D]/15 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link
               href={`/gallery/${prevProject.slug}`}
-              className="group p-6 rounded-lg border border-[#13262D]/15 hover:border-[#13262D] transition-colors flex items-center justify-between"
+              className="group p-6 rounded-[2px] border border-[#13262D]/15 hover:border-[#13262D] transition-colors flex items-center justify-between"
             >
               <div className="flex items-center gap-4">
                 <span className="transition-transform duration-300 group-hover:-translate-x-2">
@@ -388,7 +322,7 @@ export default function ProjectDetailPage() {
 
             <Link
               href={`/gallery/${nextProject.slug}`}
-              className="group p-6 rounded-lg border border-[#13262D]/15 hover:border-[#13262D] transition-colors flex items-center justify-between text-right"
+              className="group p-6 rounded-[2px] border border-[#13262D]/15 hover:border-[#13262D] transition-colors flex items-center justify-between text-right"
             >
               <div>
                 <p className="font-outfit-thin text-[11px] uppercase text-[#13262D]/60 tracking-wider">
@@ -405,77 +339,6 @@ export default function ProjectDetailPage() {
           </div>
         </section>
       </main>
-
-      {/* Lightbox Modal for Fullscreen Image Viewing */}
-      <AnimatePresence>
-        {activeImageIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setActiveImageIndex(null)}
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center"
-            >
-              <button
-                type="button"
-                onClick={() => setActiveImageIndex(null)}
-                aria-label="Close Lightbox"
-                className="absolute -top-12 right-0 text-white/80 hover:text-white text-3xl font-light focus:outline-none cursor-pointer"
-              >
-                ✕
-              </button>
-
-              <img
-                src={project.galleryImages[activeImageIndex].src}
-                alt={project.galleryImages[activeImageIndex].caption}
-                className="max-h-[75vh] w-auto max-w-full object-contain rounded shadow-2xl"
-              />
-
-              <p className="mt-4 font-outfit-thin text-sm sm:text-base text-white/90 text-center max-w-2xl">
-                {project.galleryImages[activeImageIndex].caption}
-              </p>
-
-              {/* Prev / Next buttons inside lightbox */}
-              <div className="flex items-center gap-6 mt-4">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setActiveImageIndex((prev) =>
-                      prev !== null
-                        ? (prev - 1 + project.galleryImages.length) %
-                          project.galleryImages.length
-                        : null
-                    )
-                  }
-                  className="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-outfit-thin text-xs uppercase tracking-wider cursor-pointer"
-                >
-                  PREVIOUS
-                </button>
-                <span className="font-outfit-thin text-xs text-white/60">
-                  {activeImageIndex + 1} / {project.galleryImages.length}
-                </span>
-                <button
-                  type="button"
-                  onClick={() =>
-                    setActiveImageIndex((prev) =>
-                      prev !== null
-                        ? (prev + 1) % project.galleryImages.length
-                        : null
-                    )
-                  }
-                  className="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-outfit-thin text-xs uppercase tracking-wider cursor-pointer"
-                >
-                  NEXT
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* 3. Footer */}
       <Footer />

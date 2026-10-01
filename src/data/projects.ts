@@ -11,12 +11,6 @@ export interface Project {
   deckArea: string;
   teakSpec: string;
   coating: string;
-  cardImage: string;
-  heroImage: string;
-  galleryImages: {
-    src: string;
-    caption: string;
-  }[];
   shortDescription: string;
   overview: string;
   craftsmanshipNotes: string;
@@ -30,8 +24,8 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     id: "01",
-    slug: "superyacht-foredeck",
-    title: "AURA SUPERYACHT FOREDECK",
+    slug: "project-1",
+    title: "PROJECT 01 — SUPERYACHT FOREDECK",
     subtitle: "PRECISION-ENGINEERED MARINE TEAK",
     category: "Superyacht Marine Decking",
     vessel: "68M Custom Displacement Motor Yacht",
@@ -41,26 +35,6 @@ export const PROJECTS: Project[] = [
     deckArea: "380 sq.m",
     teakSpec: "Quarter-Sawn First-European Quality Myanmar Teak (12mm)",
     coating: "Carbon Quantum Dot (CQD) Hydrophobic Protection",
-    cardImage: "/images/hero/2.jpg",
-    heroImage: "/images/hero/2.jpg",
-    galleryImages: [
-      {
-        src: "/images/hero/2.jpg",
-        caption: "Bespoke foredeck layout following continuous curved hull margin lines",
-      },
-      {
-        src: "/images/hero/1.jpg",
-        caption: "Seamless aerial perspective demonstrating grain uniformity and seam balance",
-      },
-      {
-        src: "/images/story/artboard-6.jpg",
-        caption: "Hand-finished edge margin joints crafted to zero-tolerance marine standards",
-      },
-      {
-        src: "/images/innovation/carbon-quantum-dot-coating.jpg",
-        caption: "Nano-scale Carbon Quantum Dot molecular sealant repelling saltwater & UV radiation",
-      },
-    ],
     shortDescription:
       "Precision-crafted foredeck teak installation engineered to withstand extreme maritime environments while preserving the golden radiance of natural teak wood.",
     overview:
@@ -87,8 +61,8 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "02",
-    slug: "luxury-yacht-terrace",
-    title: "OCEANIC HORIZONS EXPEDITION",
+    slug: "project-2",
+    title: "PROJECT 02 — EXPEDITION AFT TERRACE",
     subtitle: "EXPEDITION AFT TERRACE & FLYBRIDGE",
     category: "Expedition Marine Decking",
     vessel: "52M Long-Range Explorer Yacht",
@@ -98,26 +72,6 @@ export const PROJECTS: Project[] = [
     deckArea: "420 sq.m",
     teakSpec: "Thin-Veneer Engineered Teak on Composite Core (10mm)",
     coating: "Deep Sea Marine Resin & CQD Anti-Wear Armor",
-    cardImage: "/images/hero/1.jpg",
-    heroImage: "/images/hero/1.jpg",
-    galleryImages: [
-      {
-        src: "/images/hero/1.jpg",
-        caption: "Expansive aft terrace showcasing unified plank alignment from salon to swim platform",
-      },
-      {
-        src: "/images/hero/3.jpg",
-        caption: "Sunset lounge terrace with integrated ambient deck lighting channels",
-      },
-      {
-        src: "/images/innovation/engineered-for-the-sea.jpg",
-        caption: "Precision CNC pre-fabricated panels prior to vacuum installation",
-      },
-      {
-        src: "/images/story/artboard-5.jpg",
-        caption: "Sustainable timber selection ensuring consistent color tone and grain density",
-      },
-    ],
     shortDescription:
       "Expansive aft terrace decking delivering flawless seamless flow between open-air salon lounges and descending sea platforms.",
     overview:
@@ -144,8 +98,8 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "03",
-    slug: "sunset-yacht-terrace",
-    title: "SUNSET BREEZE LOUNGE DECK",
+    slug: "project-3",
+    title: "PROJECT 03 — CATAMARAN SUNDECK",
     subtitle: "CUSTOM CATAMARAN SUNDECK & SALON",
     category: "Custom Marine Solutions",
     vessel: "45M High-Performance Sailing Catamaran",
@@ -155,26 +109,6 @@ export const PROJECTS: Project[] = [
     deckArea: "310 sq.m",
     teakSpec: "Heritage Natural Teak Veneer with Eco-Polymer Core (8mm)",
     coating: "Thermal Dissipation CQD Matte Clear Coat",
-    cardImage: "/images/hero/3.jpg",
-    heroImage: "/images/hero/3.jpg",
-    galleryImages: [
-      {
-        src: "/images/hero/3.jpg",
-        caption: "Sunset observation platform glowing warmly under golden hour lighting",
-      },
-      {
-        src: "/images/hero/2.jpg",
-        caption: "Precision transition between teak deck and carbon fiber cockpit structure",
-      },
-      {
-        src: "/images/innovation/thin-veneer-engineering.jpg",
-        caption: "Ultra-lightweight composite cross-section providing high structural rigidity",
-      },
-      {
-        src: "/images/story/artboard-7.jpg",
-        caption: "Hand-sanded satin finish bringing out natural teak golden luster",
-      },
-    ],
     shortDescription:
       "Sunset observation platform combining ultra-lightweight marine composites with the rich, textured warmth of genuine natural teak.",
     overview:
@@ -206,5 +140,8 @@ export function getAllProjects(): Project[] {
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {
+  if (slug === "project-1" || slug === "1" || slug === "superyacht-foredeck") return PROJECTS[0];
+  if (slug === "project-2" || slug === "2" || slug === "luxury-yacht-terrace") return PROJECTS[1];
+  if (slug === "project-3" || slug === "3" || slug === "sunset-yacht-terrace") return PROJECTS[2];
   return PROJECTS.find((p) => p.slug === slug);
 }
