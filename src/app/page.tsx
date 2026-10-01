@@ -18,6 +18,13 @@ const HERO_SLIDES = [
   },
 ];
 
+// Infinite loop: [Slide 3 (clone), Slide 1, Slide 2, Slide 3, Slide 1 (clone)]
+const EXTENDED_SLIDES = [
+  HERO_SLIDES[HERO_SLIDES.length - 1],
+  ...HERO_SLIDES,
+  HERO_SLIDES[0],
+];
+
 const NAV_ITEMS = [
   { label: "PRODUCTS", href: "#innovation" },
   { label: "SUSTAINABILITY", href: "#sustainability" },
@@ -90,26 +97,69 @@ const fadeUp = {
 };
 
 export default function NexteakHomePage() {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  // Infinite loop slider: starts at index 1 (the real first slide)
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
+  useEffect(() => {
+    // Small delay so the browser paints scale-100 first,
+    // then transitions to scale-[1.05] on the initial slide
+    const t = setTimeout(() => setMounted(true), 80);
+    return () => clearTimeout(t);
+  }, []);
+
+  // When reaching the cloned edges, after the slide finishes animating,
+  // instantaneously jump back to the original index without animation.
+  const handleTransitionEnd = () => {
+    if (currentIndex === EXTENDED_SLIDES.length - 1) {
+      // At cloned Slide 1 -> Jump back to real Slide 1 (index 1)
+      setIsTransitioning(false);
+      setCurrentIndex(1);
+    } else if (currentIndex === 0) {
+      // At cloned Slide 3 -> Jump back to real Slide 3 (index HERO_SLIDES.length)
+      setIsTransitioning(false);
+      setCurrentIndex(HERO_SLIDES.length);
+    }
+  };
+
+  // Re-enable transition smoothly after the instant jump has taken place
+  useEffect(() => {
+    if (!isTransitioning) {
+      const raf = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+        });
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [isTransitioning]);
+
   const nextSlide = useCallback(() => {
-    setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    setCurrentIndex((prev) => {
+      if (prev >= EXTENDED_SLIDES.length - 1) return prev;
+      setIsTransitioning(true);
+      return prev + 1;
+    });
   }, []);
 
   const prevSlide = useCallback(() => {
-    setActiveSlide(
-      (prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length
-    );
+    setCurrentIndex((prev) => {
+      if (prev <= 0) return prev;
+      setIsTransitioning(true);
+      return prev - 1;
+    });
   }, []);
 
+  // Continuously slide forward every 4 seconds without stopping or rewinding
   useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(nextSlide, SLIDE_DURATION_MS);
+    const timer = setInterval(() => {
+      nextSlide();
+    }, SLIDE_DURATION_MS);
     return () => clearInterval(timer);
-  }, [isPaused, nextSlide]);
+  }, [nextSlide, currentIndex]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -124,6 +174,14 @@ export default function NexteakHomePage() {
     }
     touchStartX.current = null;
   };
+
+  // Real active dot index (0, 1, 2)
+  const activeDot =
+    currentIndex === 0
+      ? HERO_SLIDES.length - 1
+      : currentIndex === EXTENDED_SLIDES.length - 1
+      ? 0
+      : currentIndex - 1;
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#13262D] font-outfit selection:bg-[#13262D] selection:text-white overflow-x-hidden">
@@ -273,31 +331,35 @@ export default function NexteakHomePage() {
         ========================================================= */}
         <section
           className="relative w-full min-h-[520px] sm:min-h-[580px] lg:min-h-0 lg:aspect-[5196/2568] overflow-hidden bg-[#0A181E] group flex items-center"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
-          {/* Horizontal Sliding Track */}
+          {/* Horizontal Sliding Track (Seamless Infinite Loop) */}
           <div
-            className="absolute inset-0 flex w-full h-full transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
+            onTransitionEnd={handleTransitionEnd}
+            className="absolute inset-0 flex w-full h-full will-change-transform"
             style={{
-              transform: `translate3d(-${activeSlide * 100}%, 0, 0)`,
+              transform: `translate3d(-${currentIndex * 100}%, 0, 0)`,
+              transition: isTransitioning
+                ? "transform 1000ms cubic-bezier(0.22, 1, 0.36, 1)"
+                : "none",
             }}
           >
-            {HERO_SLIDES.map((slide, idx) => {
-              const isActive = activeSlide === idx;
+            {EXTENDED_SLIDES.map((slide, idx) => {
+              const isActive = currentIndex === idx;
               return (
                 <div
-                  key={slide.src}
+                  key={`${slide.src}-${idx}`}
                   className="relative w-full h-full shrink-0 overflow-hidden"
                 >
                   <img
                     src={`${slide.src}?v=2`}
                     alt={slide.alt}
-                    className={`w-full h-full object-cover object-[65%_center] sm:object-center transition-transform duration-[4500ms] ease-out ${
-                      isActive ? "scale-[1.05]" : "scale-100"
-                    }`}
+                    className="w-full h-full object-cover object-[65%_center] sm:object-center"
+                    style={{
+                      transform: isActive && mounted ? "scale(1.05)" : "scale(1)",
+                      transition: "transform 4500ms ease-out",
+                    }}
                   />
                   {/* Gradient for text legibility */}
                   <div className="absolute inset-0 bg-gradient-to-r from-[#08161C]/85 via-[#08161C]/50 sm:via-[#08161C]/35 to-[#08161C]/20 sm:to-transparent" />
@@ -421,10 +483,13 @@ export default function NexteakHomePage() {
               <button
                 key={idx}
                 type="button"
-                onClick={() => setActiveSlide(idx)}
+                onClick={() => {
+                  setIsTransitioning(true);
+                  setCurrentIndex(idx + 1);
+                }}
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`rounded-full transition-all duration-500 ${
-                  activeSlide === idx
+                  activeDot === idx
                     ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white scale-110 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
                     : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white/50 hover:bg-white/80"
                 }`}
