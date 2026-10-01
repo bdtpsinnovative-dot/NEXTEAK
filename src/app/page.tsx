@@ -28,7 +28,7 @@ const EXTENDED_SLIDES = [
 const NAV_ITEMS = [
   { label: "PRODUCTS", href: "#innovation" },
   { label: "SUSTAINABILITY", href: "#sustainability" },
-  { label: "GALLERY", href: "#our-story" },
+  { label: "GALLERY", href: "/gallery" },
   { label: "CONTACT US", href: "#contact" },
 ];
 
