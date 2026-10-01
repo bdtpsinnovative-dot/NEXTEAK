@@ -20,7 +20,7 @@ export default function SustainabilityPage() {
           <img
             src="/images/sustainability/feature-banner.jpg"
             alt="Features — What is NEXTEAK? Responsibly Sourced Plantation Teak"
-            className="w-full h-auto block select-none"
+            className="w-full h-auto min-h-[220px] sm:min-h-0 object-cover object-left sm:object-center block select-none"
           />
         </div>
       </section>
