@@ -7,14 +7,57 @@ const HERO_SLIDES = [
   {
     src: "/images/hero/1.jpg",
     alt: "NEXTEAK Luxury Superyacht Decking Aerial View",
+    tagline: "THE FUTURE OF TEAK",
+    titleLines: ["REFINED", "FOR MARINE", "DECKING."],
+    desc: (
+      <>
+        NEXTEAK COMBINES THE BEAUTY OF NATURAL TEAK WITH
+        <br className="hidden sm:inline" /> ADVANCED TECHNOLOGY AND A
+        COMMITMENT TO A MORE
+        <br className="hidden sm:inline" /> SUSTAINABLE FUTURE, DELIVERING
+        HIGH-PERFORMANCE
+        <br className="hidden sm:inline" /> MARINE DECKING FOR A BETTER
+        TOMORROW.
+      </>
+    ),
+    cta: "EXPLORE NEXTEAK",
+    href: "#our-story",
   },
   {
     src: "/images/hero/2.jpg",
     alt: "NEXTEAK Precision Marine Teak Foredeck",
+    tagline: "ENGINEERED PRECISION",
+    titleLines: ["CRAFTED", "FOR THE", "OPEN OCEAN."],
+    desc: (
+      <>
+        ADVANCED THIN-VENEER TIMBER INTEGRATION ENGINEERED TO
+        <br className="hidden sm:inline" /> WITHSTAND SALTWATER, INTENSE UV
+        RADIATION, AND
+        <br className="hidden sm:inline" /> EXTREME MARITIME CONDITIONS WITH
+        ZERO
+        <br className="hidden sm:inline" /> STRUCTURAL COMPROMISE.
+      </>
+    ),
+    cta: "DISCOVER INNOVATION",
+    href: "#innovation",
   },
   {
     src: "/images/hero/3.jpg",
     alt: "NEXTEAK Sunset Yacht Terrace Decking",
+    tagline: "SUSTAINABLE HARMONY",
+    titleLines: ["NATURE MEETS", "ADVANCED", "TECHNOLOGY."],
+    desc: (
+      <>
+        REVOLUTIONIZING SUPERYACHT DECKING WITH OUR PROPRIETARY
+        <br className="hidden sm:inline" /> CARBON QUANTUM DOT COATING FOR
+        UNMATCHED
+        <br className="hidden sm:inline" /> THERMAL COMFORT AND TIMELESS
+        ELEGANCE
+        <br className="hidden sm:inline" /> ACROSS DECADES OF NAVIGATION.
+      </>
+    ),
+    cta: "SUSTAINABILITY JOURNEY",
+    href: "#sustainability",
   },
 ];
 
@@ -182,6 +225,8 @@ export default function NexteakHomePage() {
       : currentIndex === EXTENDED_SLIDES.length - 1
       ? 0
       : currentIndex - 1;
+
+  const currentHero = HERO_SLIDES[activeDot];
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#13262D] font-outfit selection:bg-[#13262D] selection:text-white overflow-x-hidden">
@@ -411,90 +456,138 @@ export default function NexteakHomePage() {
             </svg>
           </button>
 
-          {/* Hero Text Content */}
-          <div className="relative z-20 w-full px-7 sm:px-12 lg:px-20 xl:px-28 2xl:px-36 py-14 sm:py-20 lg:py-0 flex flex-col justify-center pointer-events-none">
-            <div className="max-w-[680px] pointer-events-auto">
-              {/* 1. THE FUTURE OF TEAK */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                style={{ letterSpacing: "0.26em" }}
-                className="font-outfit-thin text-white text-sm sm:text-xl lg:text-[24px] xl:text-[26px] uppercase mb-2 lg:mb-2.5"
-              >
-                THE FUTURE OF TEAK
-              </motion.p>
-
-              {/* 2. REFINED / FORMARINE / DECKING. */}
-              <motion.h1
-                initial={{ opacity: 0, y: 28 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.85, delay: 0.25 }}
-                style={{ letterSpacing: "0.11em" }}
-                className="font-mistical font-normal text-white text-[34px] sm:text-5xl lg:text-[62px] xl:text-[68px] leading-[1.1] uppercase mb-6 sm:mb-8 lg:mb-11"
-              >
-                REFINED
-                <br />
-                FORMARINE
-                <br />
-                DECKING.
-              </motion.h1>
-
-              {/* 3. Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.85, delay: 0.4 }}
-                style={{ letterSpacing: "0.16em" }}
-                className="font-outfit-thin text-white/95 text-[10.5px] sm:text-[12px] lg:text-[13px] xl:text-[14px] leading-[1.95] sm:leading-[2.05] uppercase mb-7 sm:mb-9 lg:mb-12 max-w-[540px] sm:max-w-none"
-              >
-                NEXTEAK COMBINES THE BEAUTY OF NATURAL TEAK WITH
-                <br className="hidden sm:inline" /> ADVANCED TECHNOLOGY AND A
-                COMMITMENT TO A MORE
-                <br className="hidden sm:inline" /> SUSTAINABLE FUTURE,
-                DELIVERING HIGH-PERFORMANCE
-                <br className="hidden sm:inline" /> MARINE DECKING FOR A BETTER
-                TOMORROW.
-              </motion.p>
-
-              {/* 4. Button: EXPLORE NEXTEAK -> */}
+          {/* Hero Text Content with Dynamic AnimatePresence on Slide Change */}
+          <div className="relative z-20 w-full px-7 sm:px-12 lg:px-20 xl:px-28 2xl:px-36 py-14 sm:py-20 lg:py-0 flex flex-col justify-center pointer-events-none min-h-[380px] sm:min-h-[460px] lg:min-h-[500px]">
+            <AnimatePresence mode="wait">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                key={activeDot}
+                initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.55 }}
+                exit={{ opacity: 0, y: -16, transition: { duration: 0.35 } }}
+                transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                className="max-w-[680px] pointer-events-auto"
               >
-                <a
-                  href="#our-story"
-                  style={{ letterSpacing: "0.16em" }}
-                  className="group/btn inline-flex items-center gap-4 sm:gap-6 bg-[#E7E2DA] hover:bg-white text-[#1B1A17] font-outfit-thin text-xs sm:text-[15px] lg:text-[17px] uppercase px-6 sm:px-9 py-3 sm:py-4 rounded-[8px] sm:rounded-[10px] transition-all duration-300 shadow-sm hover:shadow-md"
+                {/* 1. Dynamic Tagline */}
+                <motion.p
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.08 }}
+                  style={{ letterSpacing: "0.26em" }}
+                  className="font-outfit-thin text-white text-sm sm:text-xl lg:text-[24px] xl:text-[26px] uppercase mb-2 lg:mb-2.5"
                 >
-                  <span>EXPLORE NEXTEAK</span>
-                  <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
-                    <LongThinArrow className="w-7 sm:w-9 h-3.5 sm:h-4" />
-                  </span>
-                </a>
+                  {currentHero.tagline}
+                </motion.p>
+
+                {/* 2. Dynamic Headline */}
+                <motion.h1
+                  initial={{ opacity: 0, y: 22 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.16 }}
+                  style={{ letterSpacing: "0.11em" }}
+                  className="font-mistical font-normal text-white text-[34px] sm:text-5xl lg:text-[62px] xl:text-[68px] leading-[1.1] uppercase mb-6 sm:mb-8 lg:mb-11"
+                >
+                  {currentHero.titleLines.map((line, lIdx) => (
+                    <React.Fragment key={lIdx}>
+                      {line}
+                      {lIdx < currentHero.titleLines.length - 1 && <br />}
+                    </React.Fragment>
+                  ))}
+                </motion.h1>
+
+                {/* 3. Dynamic Description */}
+                <motion.p
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.24 }}
+                  style={{ letterSpacing: "0.16em" }}
+                  className="font-outfit-thin text-white/95 text-[10.5px] sm:text-[12px] lg:text-[13px] xl:text-[14px] leading-[1.95] sm:leading-[2.05] uppercase mb-7 sm:mb-9 lg:mb-12 max-w-[540px] sm:max-w-none"
+                >
+                  {currentHero.desc}
+                </motion.p>
+
+                {/* 4. Dynamic Button: EXPLORE NEXTEAK -> */}
+                <motion.div
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.32 }}
+                >
+                  <a
+                    href={currentHero.href}
+                    style={{ letterSpacing: "0.16em" }}
+                    className="group/btn inline-flex items-center gap-4 sm:gap-6 bg-[#E7E2DA] hover:bg-white text-[#1B1A17] font-outfit-thin text-xs sm:text-[15px] lg:text-[17px] uppercase px-6 sm:px-9 py-3 sm:py-4 rounded-[8px] sm:rounded-[10px] transition-all duration-300 shadow-sm hover:shadow-xl hover:scale-[1.02]"
+                  >
+                    <span>{currentHero.cta}</span>
+                    <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
+                      <LongThinArrow className="w-7 sm:w-9 h-3.5 sm:h-4" />
+                    </span>
+                  </a>
+                </motion.div>
               </motion.div>
-            </div>
+            </AnimatePresence>
           </div>
 
-          {/* Carousel Dots */}
-          <div className="absolute bottom-5 sm:bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3.5 sm:gap-4">
-            {HERO_SLIDES.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => {
-                  setIsTransitioning(true);
-                  setCurrentIndex(idx + 1);
-                }}
-                aria-label={`Go to slide ${idx + 1}`}
-                className={`rounded-full transition-all duration-500 ${
-                  activeDot === idx
-                    ? "w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white scale-110 shadow-[0_0_10px_rgba(255,255,255,0.8)]"
-                    : "w-2 h-2 sm:w-2.5 sm:h-2.5 bg-white/50 hover:bg-white/80"
-                }`}
+          {/* Carousel Progress Bar & Slide Numbers (Luxury Yacht Style) */}
+          <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-7 sm:left-12 lg:px-20 lg:left-0 xl:px-28 2xl:px-36 z-30 flex items-center gap-4 sm:gap-6">
+            {HERO_SLIDES.map((_, idx) => {
+              const isActive = activeDot === idx;
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => {
+                    setIsTransitioning(true);
+                    setCurrentIndex(idx + 1);
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className="group/dot flex items-center gap-2 cursor-pointer focus:outline-none"
+                >
+                  <span
+                    className={`font-outfit-thin text-xs transition-colors duration-300 ${
+                      isActive
+                        ? "text-white font-medium"
+                        : "text-white/45 group-hover/dot:text-white/80"
+                    }`}
+                  >
+                    0{idx + 1}
+                  </span>
+                  <span className="relative w-8 sm:w-12 h-[2px] bg-white/20 rounded-full overflow-hidden block">
+                    {isActive && (
+                      <motion.span
+                        key={`progress-${activeDot}`}
+                        initial={{ width: "0%" }}
+                        animate={{ width: "100%" }}
+                        transition={{
+                          duration: SLIDE_DURATION_MS / 1000,
+                          ease: "linear",
+                        }}
+                        className="absolute inset-y-0 left-0 bg-white rounded-full block"
+                      />
+                    )}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Floating Luxury Scroll to Explore Indicator */}
+          <div className="absolute bottom-6 sm:bottom-8 right-7 sm:right-12 lg:right-20 xl:right-28 z-30 hidden md:flex items-center gap-3 select-none pointer-events-none">
+            <span
+              style={{ letterSpacing: "0.22em" }}
+              className="font-outfit-thin text-[11px] uppercase text-white/60"
+            >
+              DISCOVER NEXTEAK
+            </span>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-4 h-7 rounded-full border border-white/35 flex justify-center pt-1"
+            >
+              <motion.span
+                animate={{ opacity: [0.3, 1, 0.3], y: [0, 6, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1 h-1 bg-white rounded-full block"
               />
-            ))}
+            </motion.div>
           </div>
         </section>
 
