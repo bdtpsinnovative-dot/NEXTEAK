@@ -59,7 +59,7 @@ export default function GalleryPage() {
               </h1>
             </motion.div>
 
-            {/* 3 Showcase Solid Blocks matching ภาพรวม.png exactly (no images) */}
+            {/* 3 Showcase Solid Blocks matching ภาพรวม.png exactly (NO TEXT, NO IMAGES) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
               {projects.map((project, idx) => (
                 <motion.div
@@ -72,22 +72,9 @@ export default function GalleryPage() {
                 >
                   <Link
                     href={`/gallery/${project.slug}`}
-                    className="group block relative w-full aspect-[14/19] bg-[#14252C] rounded-[2px] transition-all duration-300 hover:opacity-95 hover:shadow-2xl cursor-pointer"
+                    className="block w-full aspect-[14/19] bg-[#14252C] rounded-[2px] transition-all duration-300 hover:opacity-90 hover:shadow-2xl cursor-pointer"
                     aria-label={`Project ${idx + 1}`}
-                  >
-                    {/* Minimal subtle luxury hover indicator */}
-                    <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <div className="flex justify-between items-center text-white/70 font-outfit-thin text-xs uppercase tracking-widest">
-                        <span>PROJECT 0{idx + 1}</span>
-                        <span className="text-white/80">VIEW →</span>
-                      </div>
-                      <div>
-                        <p className="font-mistical text-xl sm:text-2xl text-white uppercase tracking-wider">
-                          {project.title}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
+                  />
                 </motion.div>
               ))}
             </div>

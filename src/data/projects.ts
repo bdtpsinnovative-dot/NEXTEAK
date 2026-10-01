@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
   {
     id: "01",
     slug: "project-1",
-    title: "PROJECT 01 — SUPERYACHT FOREDECK",
+    title: "SUPERYACHT FOREDECK",
     subtitle: "PRECISION-ENGINEERED MARINE TEAK",
     category: "Superyacht Marine Decking",
     vessel: "68M Custom Displacement Motor Yacht",
@@ -62,7 +62,7 @@ export const PROJECTS: Project[] = [
   {
     id: "02",
     slug: "project-2",
-    title: "PROJECT 02 — EXPEDITION AFT TERRACE",
+    title: "EXPEDITION AFT TERRACE",
     subtitle: "EXPEDITION AFT TERRACE & FLYBRIDGE",
     category: "Expedition Marine Decking",
     vessel: "52M Long-Range Explorer Yacht",
@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
   {
     id: "03",
     slug: "project-3",
-    title: "PROJECT 03 — CATAMARAN SUNDECK",
+    title: "CATAMARAN SUNDECK",
     subtitle: "CUSTOM CATAMARAN SUNDECK & SALON",
     category: "Custom Marine Solutions",
     vessel: "45M High-Performance Sailing Catamaran",
