@@ -44,7 +44,7 @@ export default function Navbar({ activeItem }: NavbarProps) {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className="sticky top-0 z-50 w-full bg-[#13262D] text-white shadow-md select-none"
     >
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 h-16 sm:h-20 lg:h-[92px] flex items-center justify-between">
+      <div className="w-full px-5 sm:px-8 lg:px-12 xl:px-16 h-16 sm:h-20 lg:h-[92px] flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center shrink-0 group">
           <img
