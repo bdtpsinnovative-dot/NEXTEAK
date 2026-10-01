@@ -412,15 +412,15 @@ export default function NexteakHomePage() {
           </button>
 
           {/* Hero Text Content */}
-          <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-[9.2%] py-14 sm:py-20 lg:py-0 flex flex-col justify-center pointer-events-none">
-            <div className="max-w-[680px] pointer-events-auto">
+          <div className="relative z-20 w-full max-w-[1440px] mx-auto px-5 sm:px-10 lg:px-16 py-14 sm:py-20 lg:py-0 flex flex-col justify-center pointer-events-none">
+            <div className="max-w-[620px] pointer-events-auto">
               {/* 1. THE FUTURE OF TEAK */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
                 style={{ letterSpacing: "0.26em" }}
-                className="font-outfit-thin text-white text-sm sm:text-xl lg:text-[24px] xl:text-[26px] uppercase mb-2 lg:mb-2.5 pl-0.5"
+                className="font-outfit-thin text-white text-xs sm:text-base lg:text-[19px] xl:text-[21px] uppercase mb-1.5 lg:mb-2"
               >
                 THE FUTURE OF TEAK
               </motion.p>
@@ -431,7 +431,7 @@ export default function NexteakHomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.85, delay: 0.25 }}
                 style={{ letterSpacing: "0.11em" }}
-                className="font-mistical font-normal text-white text-[34px] sm:text-5xl lg:text-[62px] xl:text-[68px] leading-[1.1] uppercase mb-6 sm:mb-8 lg:mb-11"
+                className="font-mistical font-normal text-white text-[27px] sm:text-[38px] lg:text-[50px] xl:text-[54px] leading-[1.1] uppercase mb-5 sm:mb-6 lg:mb-8"
               >
                 REFINED
                 <br />
@@ -446,7 +446,7 @@ export default function NexteakHomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.85, delay: 0.4 }}
                 style={{ letterSpacing: "0.16em" }}
-                className="font-outfit-thin text-white/95 text-[10.5px] sm:text-[12px] lg:text-[13px] xl:text-[14px] leading-[1.95] sm:leading-[2.05] uppercase mb-7 sm:mb-9 lg:mb-12 max-w-[540px] sm:max-w-none"
+                className="font-outfit-thin text-white/95 text-[9.5px] sm:text-[10.5px] lg:text-[11.5px] xl:text-[12px] leading-[1.8] sm:leading-[1.9] uppercase mb-6 sm:mb-7 lg:mb-8 max-w-[480px] sm:max-w-none"
               >
                 NEXTEAK COMBINES THE BEAUTY OF NATURAL TEAK WITH
                 <br className="hidden sm:inline" /> ADVANCED TECHNOLOGY AND A
@@ -466,11 +466,11 @@ export default function NexteakHomePage() {
                 <a
                   href="#our-story"
                   style={{ letterSpacing: "0.16em" }}
-                  className="group/btn inline-flex items-center gap-4 sm:gap-6 bg-[#E7E2DA] hover:bg-white text-[#1B1A17] font-outfit-thin text-xs sm:text-[15px] lg:text-[17px] uppercase px-6 sm:px-9 py-3 sm:py-4 rounded-[8px] sm:rounded-[10px] transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="group/btn inline-flex items-center gap-3.5 sm:gap-5 bg-[#E7E2DA] hover:bg-white text-[#1B1A17] font-outfit-thin text-[10px] sm:text-[12px] lg:text-[13.5px] uppercase px-5 sm:px-7 py-2.5 sm:py-3 rounded-[6px] sm:rounded-[8px] transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <span>EXPLORE NEXTEAK</span>
                   <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
-                    <LongThinArrow className="w-7 sm:w-9 h-3.5 sm:h-4" />
+                    <LongThinArrow className="w-5 sm:w-7 h-2.5 sm:h-3" />
                   </span>
                 </a>
               </motion.div>
