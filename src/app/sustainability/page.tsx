@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import StructureExplosion from "@/components/sustainability/StructureExplosion";
 import KeyBenefitsGrid from "@/components/sustainability/KeyBenefitsGrid";
 import InnovationResearch from "@/components/sustainability/InnovationResearch";
+import BottomBanner from "@/components/sustainability/BottomBanner";
 
 export default function SustainabilityPage() {
   return (
@@ -42,13 +43,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* SECTION 6: BOTTOM OCEAN TEASER BANNER (5.แถบล่างสุด) */}
-      <section className="relative w-full overflow-hidden bg-[#0A181E]">
-        <img
-          src="/images/sustainability/bottom-banner.jpg"
-          alt="NEXTEAK — Redefined Marine Decking"
-          className="w-full h-auto block select-none"
-        />
-      </section>
+      <BottomBanner />
     </main>
   );
 }
