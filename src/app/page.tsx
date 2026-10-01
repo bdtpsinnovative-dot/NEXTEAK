@@ -245,7 +245,7 @@ export default function NexteakHomePage() {
             <img
               src="/images/brand/logo-nexteak.png"
               alt="NEXTEAK"
-              className="h-6 sm:h-8 lg:h-[40px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+              className="h-[19px] sm:h-[26px] lg:h-[32px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
             />
           </a>
 
