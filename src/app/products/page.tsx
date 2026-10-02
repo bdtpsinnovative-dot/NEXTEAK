@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import React from "react";
 import Navbar from "@/components/Navbar";
 import FeatureBanner from "@/components/sustainability/FeatureBanner";
@@ -7,6 +6,25 @@ import StructureExplosion from "@/components/sustainability/StructureExplosion";
 import KeyBenefitsGrid from "@/components/sustainability/KeyBenefitsGrid";
 import InnovationResearch from "@/components/sustainability/InnovationResearch";
 import BottomBanner from "@/components/sustainability/BottomBanner";
+
+export const metadata: Metadata = {
+  title: "Products & Innovation",
+  description:
+    "Discover NEXTEAK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+  openGraph: {
+    title: "NEXTEAK Products & Marine Decking Innovation",
+    description:
+      "Discover NEXTEAK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+    images: [
+      {
+        url: "/images/sustainability/feature-banner-bg.webp",
+        width: 2560,
+        height: 909,
+        alt: "NEXTEAK Luxury Marine Teak Deck",
+      },
+    ],
+  },
+};
 
 export default function ProductsPage() {
   return (

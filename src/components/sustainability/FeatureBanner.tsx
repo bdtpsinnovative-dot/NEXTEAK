@@ -45,6 +45,8 @@ export default function FeatureBanner() {
         <img
           src="/images/sustainability/feature-banner-bg.webp"
           alt="NEXTEAK Luxury Marine Teak Deck"
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
         />
 
@@ -169,6 +171,8 @@ export default function FeatureBanner() {
           <img
             src="/images/sustainability/feature-banner-bg.webp"
             alt="NEXTEAK Luxury Marine Teak Deck"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover object-[70%_center] filter brightness-[0.92]"
           />
           {/* Subtle natural dark gradient for perfect readability without boxes */}
