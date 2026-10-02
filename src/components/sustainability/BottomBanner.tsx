@@ -30,9 +30,10 @@ export default function BottomBanner() {
           className="relative w-full"
         >
           <img
-            src="/images/sustainability/bottom-banner.jpg"
+            src="/images/sustainability/bottom-banner.webp"
             alt="NEXTEAK — Redefined Marine Decking"
             className="w-full h-auto block select-none transition-transform duration-700 hover:scale-[1.015]"
+            loading="lazy"
           />
         </motion.div>
 

@@ -48,7 +48,7 @@ export default function Navbar({ activeItem }: NavbarProps) {
         {/* Brand Logo */}
         <Link href="/" className="flex items-center shrink-0 group">
           <img
-            src="/images/brand/logo-nexteak.png"
+            src="/images/brand/logo-nexteak.webp"
             alt="NEXTEAK"
             className="h-[19px] sm:h-[26px] lg:h-[32px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
           />
@@ -77,37 +77,14 @@ export default function Navbar({ activeItem }: NavbarProps) {
           })}
         </nav>
 
-        {/* Right User, Language & Mobile Hamburger Button */}
-        <div className="flex items-center gap-3.5 sm:gap-4 lg:gap-5 text-white/95">
-          <button
-            type="button"
-            aria-label="User Account"
-            className="hover:text-white hover:scale-110 transition-all duration-200 cursor-pointer"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.3"
-              className="w-5 h-5 lg:w-[23px] lg:h-[23px]"
-            >
-              <circle cx="12" cy="7.5" r="3.5" />
-              <path
-                d="M5.5 19.5C5.5 16.4624 7.96243 14 11 14H13C16.0376 14 18.5 16.4624 18.5 19.5C18.5 20.0523 18.0523 20.5 17.5 20.5H6.5C5.94772 20.5 5.5 20.0523 5.5 19.5Z"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-
-
-          {/* Mobile Hamburger Button */}
+        {/* Mobile Hamburger Button */}
+        <div className="flex md:hidden items-center text-white/95">
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label="Toggle Menu"
             aria-expanded={mobileMenuOpen}
-            className="md:hidden ml-1 p-2 -mr-1 rounded-lg text-white hover:bg-white/10 transition-colors focus:outline-none cursor-pointer"
+            className="p-2 -mr-1 rounded-lg text-white hover:bg-white/10 transition-colors focus:outline-none cursor-pointer"
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <span

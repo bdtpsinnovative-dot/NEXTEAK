@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 
 const HERO_SLIDES = [
   {
-    src: "/images/hero/1.jpg",
+    src: "/images/hero/1.webp",
     alt: "NEXTEAK Luxury Superyacht Decking Aerial View",
     tagline: "THE FUTURE OF TEAK",
     titleLines: ["REFINED", "FOR MARINE", "DECKING."],
@@ -25,7 +25,7 @@ const HERO_SLIDES = [
     href: "#our-story",
   },
   {
-    src: "/images/hero/2.jpg",
+    src: "/images/hero/2.webp",
     alt: "NEXTEAK Precision Marine Teak Foredeck",
     tagline: "ENGINEERED PRECISION",
     titleLines: ["CRAFTED", "FOR THE", "OPEN OCEAN."],
@@ -43,7 +43,7 @@ const HERO_SLIDES = [
     href: "#innovation",
   },
   {
-    src: "/images/hero/3.jpg",
+    src: "/images/hero/3.webp",
     alt: "NEXTEAK Sunset Yacht Terrace Decking",
     tagline: "SUSTAINABLE HARMONY",
     titleLines: ["NATURE MEETS", "ADVANCED", "TECHNOLOGY."],
@@ -72,30 +72,30 @@ const EXTENDED_SLIDES = [
 
 const STORY_CARDS = [
   {
-    image: "/images/story/artboard-5.jpg",
+    image: "/images/story/artboard-5.webp",
     title: "A FAMILY HERITAGE",
   },
   {
-    image: "/images/story/artboard-6.jpg",
+    image: "/images/story/artboard-6.webp",
     title: "CRAFTED WITH EXPERTISE",
   },
   {
-    image: "/images/story/artboard-7.jpg",
+    image: "/images/story/artboard-7.webp",
     title: "FROM SOURCE TO SOLUTION",
   },
 ];
 
 const INNOVATION_CARDS = [
   {
-    image: "/images/innovation/thin-veneer-engineering.jpg",
+    image: "/images/innovation/thin-veneer-engineering.webp",
     title: "THIN VENEER ENGINEERING",
   },
   {
-    image: "/images/innovation/carbon-quantum-dot-coating.jpg",
+    image: "/images/innovation/carbon-quantum-dot-coating.webp",
     title: "CARBON QUANTUM DOT COATING",
   },
   {
-    image: "/images/innovation/engineered-for-the-sea.jpg",
+    image: "/images/innovation/engineered-for-the-sea.webp",
     title: "ENGINEERED FOR THE SEA",
   },
 ];
@@ -756,9 +756,10 @@ export default function NexteakHomePage() {
           className="relative w-full overflow-hidden bg-[#13262D]"
         >
           <img
-            src="/images/sustainability/artboard-8.jpg"
+            src="/images/sustainability/artboard-8.webp"
             alt="Sustainability — Grown for a Brighter Tomorrow"
             className="w-full h-auto block"
+            loading="lazy"
           />
           <a
             href="#innovation"
@@ -848,6 +849,7 @@ export default function NexteakHomePage() {
                         src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                        loading="lazy"
                       />
                     </div>
                     <p
@@ -876,9 +878,10 @@ export default function NexteakHomePage() {
         className="w-full overflow-hidden bg-[#0A181E]"
       >
         <img
-          src="/images/brand/footer-bg.jpg"
+          src="/images/brand/footer-bg.webp"
           alt="More Than a Deck, A Brighter Tomorrow."
           className="w-full h-auto block"
+          loading="lazy"
         />
       </motion.footer>
     </div>

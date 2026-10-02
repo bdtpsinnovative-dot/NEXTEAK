@@ -6,21 +6,21 @@ import { motion } from "framer-motion";
 const INNOVATION_CARDS = [
   {
     id: 1,
-    image: "/images/sustainability/inno-1.jpg",
+    image: "/images/sustainability/inno-1.webp",
     alt: "Thin Veneer Engineering Teak Sheet",
     title: "THIN VENEER ENGINEERING",
     desc: "TEAK IS SLICED INTO THIN VENEERS (ABOUT 2 MM) AND LAMINATED WITH PRECISION, CREATING A STRAIGHT-GRAIN APPEARANCE WITH ENHANCED STABILITY AND EFFICIENT USE OF NATURAL RESOURCES.",
   },
   {
     id: 2,
-    image: "/images/sustainability/inno-2.jpg",
+    image: "/images/sustainability/inno-2.webp",
     alt: "Carbon Quantum Dot Coating Hydrophobic Droplets",
     title: "CARBON QUANTUM DOT COATING",
     desc: "IMPROVES SURFACE HARDNESS, UV RESISTANCE AND EASY-CLEAN PERFORMANCE, WHILE PRESERVING THE NATURAL LOOK AND FEEL OF REAL TEAK.",
   },
   {
     id: 3,
-    image: "/images/sustainability/inno-3.jpg",
+    image: "/images/sustainability/inno-3.webp",
     alt: "Engineered For The Sea Luxury Marine Deck Cleat",
     title: "ENGINEERED FOR THE SEA",
     desc: "A HIGH-PERFORMANCE STRUCTURE DESIGNED FOR MARINE ENVIRONMENTS BEAUTIFUL, STABLE AND BUILT TO LAST.",

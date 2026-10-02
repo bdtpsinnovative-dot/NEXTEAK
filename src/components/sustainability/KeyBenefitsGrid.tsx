@@ -4,14 +4,14 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const BENEFIT_CARDS = [
-  { id: "01", src: "/images/sustainability/benefits/benefit-01.png", alt: "01 Regal Teak Appearance", delay: 0 },
-  { id: "02", src: "/images/sustainability/benefits/benefit-02.png", alt: "02 2 mm Veneer Engineering", delay: 0.06 },
-  { id: "03", src: "/images/sustainability/benefits/benefit-03.png", alt: "03 High Durability", delay: 0.12 },
-  { id: "04", src: "/images/sustainability/benefits/benefit-04.png", alt: "04 Minimal Maintenance", delay: 0.18 },
-  { id: "05", src: "/images/sustainability/benefits/benefit-05.png", alt: "05 Plantation-Grown & Traceable", delay: 0.08 },
-  { id: "06", src: "/images/sustainability/benefits/benefit-06.png", alt: "06 60 Years of Expertise", delay: 0.14 },
-  { id: "07", src: "/images/sustainability/benefits/benefit-07.png", alt: "07 Precision Manufacturing", delay: 0.20 },
-  { id: "08", src: "/images/sustainability/benefits/benefit-08.png", alt: "08 Research Center Know-How and Material Development", delay: 0.26 },
+  { id: "01", src: "/images/sustainability/benefits/benefit-01.webp", alt: "01 Regal Teak Appearance", delay: 0 },
+  { id: "02", src: "/images/sustainability/benefits/benefit-02.webp", alt: "02 2 mm Veneer Engineering", delay: 0.06 },
+  { id: "03", src: "/images/sustainability/benefits/benefit-03.webp", alt: "03 High Durability", delay: 0.12 },
+  { id: "04", src: "/images/sustainability/benefits/benefit-04.webp", alt: "04 Minimal Maintenance", delay: 0.18 },
+  { id: "05", src: "/images/sustainability/benefits/benefit-05.webp", alt: "05 Plantation-Grown & Traceable", delay: 0.08 },
+  { id: "06", src: "/images/sustainability/benefits/benefit-06.webp", alt: "06 60 Years of Expertise", delay: 0.14 },
+  { id: "07", src: "/images/sustainability/benefits/benefit-07.webp", alt: "07 Precision Manufacturing", delay: 0.20 },
+  { id: "08", src: "/images/sustainability/benefits/benefit-08.webp", alt: "08 Research Center Know-How and Material Development", delay: 0.26 },
 ];
 
 export default function KeyBenefitsGrid() {
@@ -24,7 +24,7 @@ export default function KeyBenefitsGrid() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-85 pointer-events-none transition-transform duration-1000"
         style={{
-          backgroundImage: "url('/images/sustainability/keybenefits-ocean-bg.jpg')",
+          backgroundImage: "url('/images/sustainability/keybenefits-ocean-bg.webp')",
         }}
       />
       {/* Dark luxury ocean overlay with gradient */}

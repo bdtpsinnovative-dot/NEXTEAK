@@ -2,6 +2,7 @@
 
 import React from "react";
 import Navbar from "@/components/Navbar";
+import FeatureBanner from "@/components/sustainability/FeatureBanner";
 import StructureExplosion from "@/components/sustainability/StructureExplosion";
 import KeyBenefitsGrid from "@/components/sustainability/KeyBenefitsGrid";
 import InnovationResearch from "@/components/sustainability/InnovationResearch";
@@ -13,16 +14,8 @@ export default function ProductsPage() {
       {/* Top Navigation */}
       <Navbar activeItem="PRODUCTS" />
 
-      {/* SECTION 1: HERO / WHAT IS NEXTEAK? */}
-      <section className="relative w-full overflow-hidden bg-[#13262D]">
-        <div className="w-full">
-          <img
-            src="/images/sustainability/feature-banner.jpg"
-            alt="Features — What is NEXTEAK? Responsibly Sourced Plantation Teak"
-            className="w-full h-auto min-h-[220px] sm:min-h-0 object-cover object-left sm:object-center block select-none"
-          />
-        </div>
-      </section>
+      {/* SECTION 1: HERO / WHAT IS NEXTEAK? (LAYER-SEPARATED & ANIMATED) */}
+      <FeatureBanner />
 
       {/* SECTION 2: INTERACTIVE STRUCTURE (EXPLODED WOOD & FILM SEPARATION) */}
       <StructureExplosion />
@@ -36,9 +29,10 @@ export default function ProductsPage() {
       {/* SECTION 5: HERITAGE SUPERYACHT CIRCULAR DECK BANNER */}
       <section className="relative w-full overflow-hidden bg-[#0A181E]">
         <img
-          src="/images/sustainability/heritage-banner.jpg"
+          src="/images/sustainability/heritage-banner.webp"
           alt="Inspired By Heritage. Built For Generations. Over 60 Years of Timber Expertise."
           className="w-full h-auto block select-none"
+          loading="lazy"
         />
       </section>
 
