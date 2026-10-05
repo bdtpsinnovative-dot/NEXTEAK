@@ -18,21 +18,21 @@ const CYCLE_STEPS: CycleStep[] = [
     icon: "/images/sustainability/page3/cycle-icon-1.webp",
     title: "GREEN PRODUCTS",
     subtitle: "TOXIN-FREE, LONG-LIFE, RECYCLABLE",
-    desktopPos: "top-[12%] left-[10%] text-center",
+    desktopPos: "top-[5%] left-[5%] text-center",
   },
   {
     id: 2,
     icon: "/images/sustainability/page3/cycle-icon-2.webp",
     title: "CLEANER PRODUCTION",
     subtitle: "USING FEWER RESOURCES",
-    desktopPos: "top-[12%] right-[10%] text-center",
+    desktopPos: "top-[5%] right-[5%] text-center",
   },
   {
     id: 3,
     icon: "/images/sustainability/page3/cycle-icon-3.webp",
     title: "BETTER SERVICE",
     subtitle: "TO EXTEND LIFESPAN",
-    desktopPos: "bottom-[22%] right-[12%] text-center",
+    desktopPos: "bottom-[18%] right-[4%] text-center",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const CYCLE_STEPS: CycleStep[] = [
     icon: "/images/sustainability/page3/cycle-icon-4.webp",
     title: "SEPARATE WASTE",
     subtitle: "RE-USE RESOURCES",
-    desktopPos: "bottom-[22%] left-[12%] text-center",
+    desktopPos: "bottom-[18%] left-[4%] text-center",
   },
 ];
 
@@ -110,7 +110,7 @@ export default function VertexCycle() {
         {/* ============================================================== */}
         {/* DESKTOP INFOGRAPHIC: CIRCULAR RADIAL DIAGRAM                    */}
         {/* ============================================================== */}
-        <div className="hidden lg:block relative w-full max-w-[1050px] mx-auto aspect-[1050/850] my-8">
+        <div className="hidden lg:block relative w-full max-w-[1180px] mx-auto aspect-[1180/880] my-8">
           {/* Center: The Earth Globe with Cycle Arrows */}
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
@@ -146,7 +146,7 @@ export default function VertexCycle() {
               >
                 {/* Node Icon */}
                 <div
-                  className={`w-16 h-16 sm:w-20 sm:h-20 mb-3 flex items-center justify-center transition-all duration-300 ${
+                  className={`w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-4 flex items-center justify-center transition-all duration-300 ${
                     isHovered ? "drop-shadow-md scale-105" : ""
                   }`}
                 >
@@ -159,12 +159,12 @@ export default function VertexCycle() {
                 </div>
 
                 {/* Title */}
-                <h4 className="font-outfit-regular text-xs sm:text-sm tracking-[0.16em] text-[#13262D] uppercase mb-1">
+                <h4 className="font-outfit-medium text-base sm:text-lg lg:text-xl tracking-[0.16em] text-[#13262D] uppercase mb-1.5 font-bold">
                   {step.title}
                 </h4>
 
                 {/* Subtitle */}
-                <p className="font-outfit-extralight text-[11px] tracking-[0.06em] text-[#13262D]/75 uppercase max-w-[210px]">
+                <p className="font-outfit-light text-xs sm:text-sm lg:text-[13px] tracking-[0.08em] text-[#13262D]/80 uppercase max-w-[280px] leading-relaxed">
                   {step.subtitle}
                 </p>
               </motion.div>
@@ -177,7 +177,7 @@ export default function VertexCycle() {
         {/* ============================================================== */}
         <div className="lg:hidden flex flex-col items-center">
           {/* Central graphic */}
-          <div className="relative w-48 h-48 sm:w-60 sm:h-60 mb-12 flex items-center justify-center">
+          <div className="relative w-52 h-52 sm:w-64 sm:h-64 mb-12 flex items-center justify-center">
             <div className="absolute inset-0 rounded-full bg-[#2DD4BF]/5 blur-xl animate-pulse" />
             <img
               src="/images/sustainability/page3/cycle-center.webp"
@@ -198,7 +198,7 @@ export default function VertexCycle() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="flex items-start gap-4 p-5 rounded-xl bg-[#F8F9FA] border border-black/5 hover:border-black/15 transition-all"
               >
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 flex items-center justify-center">
                   <img
                     src={step.icon}
                     alt={step.title}
@@ -210,10 +210,10 @@ export default function VertexCycle() {
                   <span className="font-outfit-regular text-xs text-[#2DD4BF] font-semibold tracking-wider mb-0.5">
                     STEP 0{idx + 1}
                   </span>
-                  <h4 className="font-outfit-regular text-xs sm:text-sm tracking-[0.12em] text-[#13262D] uppercase mb-1">
+                  <h4 className="font-outfit-medium text-sm sm:text-base tracking-[0.12em] text-[#13262D] uppercase mb-1 font-bold">
                     {step.title}
                   </h4>
-                  <p className="font-outfit-extralight text-[11px] leading-relaxed tracking-[0.05em] text-[#13262D]/75 uppercase">
+                  <p className="font-outfit-light text-xs sm:text-sm leading-relaxed tracking-[0.05em] text-[#13262D]/80 uppercase">
                     {step.subtitle}
                   </p>
                 </div>
