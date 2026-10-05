@@ -1,14 +1,25 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function StructureExplosion() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const diagramRef = useRef<HTMLDivElement>(null);
 
-  // Trigger on scroll entry/exit
-  const isInView = useInView(containerRef, { amount: 0.25 });
+  // Trigger strictly when at least 50% of the actual DIAGRAM is right in front of user's eyes
+  const isInView = useInView(diagramRef, {
+    amount: 0.5,
+  });
+
   const [userToggled, setUserToggled] = useState<boolean | null>(null);
+
+  // Whenever the diagram leaves view, reset manual toggle so scrolling back in replays the opening!
+  useEffect(() => {
+    if (!isInView) {
+      setUserToggled(null);
+    }
+  }, [isInView]);
+
   const isOpen = userToggled !== null ? userToggled : isInView;
 
   const handleToggle = () => {
@@ -17,7 +28,6 @@ export default function StructureExplosion() {
 
   return (
     <section
-      ref={containerRef}
       id="structure"
       className="relative w-full bg-white text-[#13262D] overflow-hidden select-none border-t border-black/5"
     >
@@ -40,6 +50,7 @@ export default function StructureExplosion() {
           <div className="w-full max-w-[800px] flex flex-col items-center">
             {/* Interactive Diagram Stage */}
             <div
+              ref={diagramRef}
               onClick={handleToggle}
               className="relative w-full aspect-[3307/1857] cursor-pointer group"
               title="Click or tap to toggle Open / Close"
@@ -72,29 +83,46 @@ export default function StructureExplosion() {
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 80,
-                  damping: 17,
-                  mass: 0.9,
-                  delay: isOpen ? 0.15 : 0,
+                  stiffness: 60,
+                  damping: 14,
+                  mass: 1.0,
+                  delay: isOpen ? 0.25 : 0,
                 }}
                 className="absolute inset-0 pointer-events-none"
               >
-                <img
-                  src="/images/sustainability/film-layer.webp"
-                  alt="Carbon Quantum Dot Protective Film"
-                  className="w-full h-full object-contain select-none"
-                />
+                {/* Subtle continuous floating swing when exploded */}
+                <motion.div
+                  animate={
+                    isOpen
+                      ? {
+                          y: [0, -7, 0],
+                        }
+                      : { y: 0 }
+                  }
+                  transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="w-full h-full"
+                >
+                  <img
+                    src="/images/sustainability/film-layer.webp"
+                    alt="Carbon Quantum Dot Protective Film"
+                    className="w-full h-full object-contain select-none"
+                  />
+                </motion.div>
               </motion.div>
 
               {/* Annotations Layer (Pins 1, 2, 3, Leader Lines, and Text Labels) */}
               <motion.div
                 animate={{
                   opacity: isOpen ? 1 : 0,
-                  scale: isOpen ? 1 : 0.98,
+                  scale: isOpen ? 1 : 0.97,
                 }}
                 transition={{
-                  duration: 0.35,
-                  delay: isOpen ? 0.3 : 0,
+                  duration: 0.5,
+                  delay: isOpen ? 0.45 : 0,
                 }}
                 className="absolute inset-0 pointer-events-none"
               >
@@ -107,22 +135,23 @@ export default function StructureExplosion() {
             </div>
 
             {/* Minimalist Action Controls */}
-            <div className="flex items-center justify-center gap-3 sm:gap-5 mt-4 sm:mt-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-5 sm:mt-6">
               <button
                 type="button"
                 onClick={handleToggle}
-                className="inline-flex items-center gap-2 sm:gap-2.5 px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full bg-[#13262D] text-white text-[10px] sm:text-xs font-outfit-medium tracking-wider uppercase transition-all duration-300 hover:bg-[#1E3B46] shadow-sm cursor-pointer hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2.5 px-5 py-2 sm:px-6 sm:py-2.5 rounded-full bg-[#13262D] text-white text-[11px] sm:text-xs font-outfit-medium tracking-wider uppercase transition-all duration-300 hover:bg-[#1E3B46] shadow-sm cursor-pointer hover:scale-105 active:scale-95"
               >
                 <span
-                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                    isOpen ? "bg-[#2DD4BF] animate-pulse" : "bg-white/40"
+                  className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
+                    isOpen ? "bg-[#2DD4BF] animate-pulse shadow-[0_0_8px_#2DD4BF]" : "bg-white/40"
                   }`}
                 />
                 <span>{isOpen ? "Close (Assembled View)" : "Open (Exploded View)"}</span>
               </button>
 
-              <span className="font-outfit-extralight text-[10px] sm:text-xs tracking-wider text-[#13262D]/60 uppercase">
-                Tap to toggle
+              <span className="font-outfit-extralight text-[11px] sm:text-xs tracking-wider text-[#13262D]/60 uppercase flex items-center gap-1.5">
+                <span className="text-[#2DD4BF]">✦</span>
+                <span>Scroll or tap wood to toggle</span>
               </span>
             </div>
           </div>
