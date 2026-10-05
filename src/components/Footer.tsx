@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <img
         src="/images/brand/footer-bg.webp"
-        alt="More Than a Deck, A Brighter Tomorrow. NEXTEAK"
+        alt="More Than a Deck, A Brighter Tomorrow. VERTEX"
         className="w-full h-auto block"
         loading="lazy"
       />

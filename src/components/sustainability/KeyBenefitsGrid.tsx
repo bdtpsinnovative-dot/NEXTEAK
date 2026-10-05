@@ -70,7 +70,7 @@ export default function KeyBenefitsGrid() {
 
           {/* Main Title */}
           <h2 className="font-mistical text-2xl sm:text-4xl lg:text-5xl xl:text-[56px] tracking-wide text-white uppercase leading-tight">
-            KEY BENEFITS OF REVOTEAK
+            KEY BENEFITS OF VERTEX
           </h2>
         </motion.div>
 

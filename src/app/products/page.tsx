@@ -10,17 +10,17 @@ import BottomBanner from "@/components/sustainability/BottomBanner";
 export const metadata: Metadata = {
   title: "Products & Innovation",
   description:
-    "Discover NEXTEAK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+    "Discover VERTEX luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
   openGraph: {
-    title: "NEXTEAK Products & Marine Decking Innovation",
+    title: "VERTEX Products & Marine Decking Innovation",
     description:
-      "Discover NEXTEAK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+      "Discover VERTEX luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
     images: [
       {
         url: "/images/sustainability/feature-banner-bg.webp",
         width: 2560,
         height: 909,
-        alt: "NEXTEAK Luxury Marine Teak Deck",
+        alt: "VERTEX Luxury Marine Teak Deck",
       },
     ],
   },
@@ -32,13 +32,13 @@ export default function ProductsPage() {
       {/* Top Navigation */}
       <Navbar activeItem="PRODUCTS" />
 
-      {/* SECTION 1: HERO / WHAT IS NEXTEAK? (LAYER-SEPARATED & ANIMATED) */}
+      {/* SECTION 1: HERO / WHAT IS VERTEX? (LAYER-SEPARATED & ANIMATED) */}
       <FeatureBanner />
 
       {/* SECTION 2: INTERACTIVE STRUCTURE (EXPLODED WOOD & FILM SEPARATION) */}
       <StructureExplosion />
 
-      {/* SECTION 3: KEY BENEFITS OF REVOTEAK (8 INTERACTIVE CARDS ON OCEAN) */}
+      {/* SECTION 3: KEY BENEFITS OF VERTEX (8 INTERACTIVE CARDS ON OCEAN) */}
       <KeyBenefitsGrid />
 
       {/* SECTION 4: INNOVATION & RESEARCH (MTEC SUPPORT) */}

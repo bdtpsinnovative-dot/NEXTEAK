@@ -44,7 +44,7 @@ export default function FeatureBanner() {
         {/* Layer 1: 100% Original High-Res Yacht Photo (Cleaned of text) */}
         <img
           src="/images/sustainability/feature-banner-bg.webp"
-          alt="NEXTEAK Luxury Marine Teak Deck"
+          alt="VERTEX Luxury Marine Teak Deck"
           fetchPriority="high"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
@@ -90,7 +90,7 @@ export default function FeatureBanner() {
             />
           </motion.div>
 
-          {/* Luxury Serif Title: WHAT IS NEXTEAK? */}
+          {/* Luxury Serif Title: WHAT IS VERTEX? */}
           <motion.h1
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function FeatureBanner() {
           >
             WHAT IS
             <br />
-            NEXTEAK?
+            VERTEX?
           </motion.h1>
 
           {/* Master Description Paragraph */}
@@ -111,9 +111,9 @@ export default function FeatureBanner() {
             transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="font-outfit-light text-[11px] lg:text-[12.5px] xl:text-[14.5px] 2xl:text-[16px] leading-[1.65] tracking-[0.14em] text-white/90 uppercase max-w-[95%]"
           >
-            NAXTEAK IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT
+            VERTEX IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT
             ON MORE THAN 60 YEARS OF WOODDEN EXPERTISE IN THE TIMBER INDUSTRY
-            COMBINED WITH RESEARCH-BASED KNOW-HOW FROM THE NATURAL RESEARCH
+            COMBINED WITH RESEARCH-BASED KNOW-HOW FROM THE NATIONAL RESEARCH
             CENTER.
           </motion.p>
         </div>
@@ -170,7 +170,7 @@ export default function FeatureBanner() {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/sustainability/feature-banner-bg.webp"
-            alt="NEXTEAK Luxury Marine Teak Deck"
+            alt="VERTEX Luxury Marine Teak Deck"
             fetchPriority="high"
             decoding="async"
             className="w-full h-full object-cover object-[70%_center] filter brightness-[0.92]"
@@ -211,7 +211,7 @@ export default function FeatureBanner() {
           >
             WHAT IS
             <br />
-            NEXTEAK?
+            VERTEX?
           </motion.h1>
 
           {/* Description */}
@@ -222,9 +222,9 @@ export default function FeatureBanner() {
             transition={{ duration: 0.65, delay: 0.2 }}
             className="font-outfit-light text-xs sm:text-sm leading-relaxed tracking-[0.12em] text-white/90 uppercase drop-shadow-sm"
           >
-            NAXTEAK IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT ON MORE
+            VERTEX IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT ON MORE
             THAN 60 YEARS OF WOODDEN EXPERTISE IN THE TIMBER INDUSTRY COMBINED
-            WITH RESEARCH-BASED KNOW-HOW FROM THE NATURAL RESEARCH CENTER.
+            WITH RESEARCH-BASED KNOW-HOW FROM THE NATIONAL RESEARCH CENTER.
           </motion.p>
         </div>
 

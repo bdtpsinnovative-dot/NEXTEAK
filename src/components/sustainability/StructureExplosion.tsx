@@ -37,7 +37,7 @@ export default function StructureExplosion() {
         <div className="lg:col-span-5 relative w-full h-[220px] sm:h-[320px] lg:h-auto overflow-hidden bg-[#13262D]">
           <img
             src="/images/sustainability/structure-yacht.webp"
-            alt="NEXTEAK Superyacht Teak Deck"
+            alt="VERTEX Superyacht Teak Deck"
             className="w-full h-full object-cover object-center select-none"
             loading="lazy"
           />
@@ -67,7 +67,7 @@ export default function StructureExplosion() {
                 {/* Wood Plank Base */}
                 <img
                   src="/images/sustainability/wood-base.webp"
-                  alt="NEXTEAK Teak Wood Core"
+                  alt="VERTEX Teak Wood Core"
                   className="w-full h-full object-contain select-none"
                   loading="lazy"
                 />

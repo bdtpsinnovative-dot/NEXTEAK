@@ -38,9 +38,9 @@ export const PROJECTS: Project[] = [
     shortDescription:
       "Precision-crafted foredeck teak installation engineered to withstand extreme maritime environments while preserving the golden radiance of natural teak wood.",
     overview:
-      "Commissioned for a 68-meter custom displacement megayacht, this foredeck installation represents the peak of NEXTEAK's marine joinery and high-performance composite integration. The deck layout honors traditional maritime aesthetics while utilizing our proprietary vacuum-infused adhesion method to eliminate penetrative mechanical fastenings, ensuring zero risk of water ingress across decades of offshore navigation.",
+      "Commissioned for a 68-meter custom displacement megayacht, this foredeck installation represents the peak of VERTEX's marine joinery and high-performance composite integration. The deck layout honors traditional maritime aesthetics while utilizing our proprietary vacuum-infused adhesion method to eliminate penetrative mechanical fastenings, ensuring zero risk of water ingress across decades of offshore navigation.",
     craftsmanshipNotes:
-      "Every single teak plank was quarter-sawn with vertical grain orientation exceeding 85%, sourced from sustainably managed heritage reserves. The decking is fortified with NEXTEAK's proprietary Carbon Quantum Dot coating, which reflects damaging UV wavelengths, suppresses thermal buildup under midday sun, and yields an unmatched velvet tactile grip for barefoot comfort.",
+      "Every single teak plank was quarter-sawn with vertical grain orientation exceeding 85%, sourced from sustainably managed heritage reserves. The decking is fortified with VERTEX's proprietary Carbon Quantum Dot coating, which reflects damaging UV wavelengths, suppresses thermal buildup under midday sun, and yields an unmatched velvet tactile grip for barefoot comfort.",
     keyFeatures: [
       "Proprietary Carbon Quantum Dot UV & Saltwater Molecular Barrier",
       "Vacuum-infusion zero-fastener marine bonding system",
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     shortDescription:
       "Expansive aft terrace decking delivering flawless seamless flow between open-air salon lounges and descending sea platforms.",
     overview:
-      "Designed for extreme open-ocean voyages ranging from the Mediterranean to sub-Arctic waters, Oceanic Horizons demanded teak decking capable of handling high temperature swings without cracking, expanding, or loosening caulking seams. NEXTEAK deployed our Thin-Veneer Engineered composite solution, pre-fabricated in modular CNC panels for millimeter accuracy.",
+      "Designed for extreme open-ocean voyages ranging from the Mediterranean to sub-Arctic waters, Oceanic Horizons demanded teak decking capable of handling high temperature swings without cracking, expanding, or loosening caulking seams. VERTEX deployed our Thin-Veneer Engineered composite solution, pre-fabricated in modular CNC panels for millimeter accuracy.",
     craftsmanshipNotes:
       "By stabilizing natural teak surface layers over high-density marine composite backing, we eliminated dimensional distortion caused by fluctuating humidity. The continuous planking geometry visually elongates the aft deck, creating an uninterrupted sightline extending directly into the horizon.",
     keyFeatures: [
@@ -112,7 +112,7 @@ export const PROJECTS: Project[] = [
     shortDescription:
       "Sunset observation platform combining ultra-lightweight marine composites with the rich, textured warmth of genuine natural teak.",
     overview:
-      "Weight optimization is the single most critical criterion for luxury sailing multihulls. For the Sunset Breeze catamaran, NEXTEAK custom-formulated an ultra-lightweight 8mm teak composite deck that reduced topside weight by over 1.2 metric tons compared to conventional solid teak, substantially increasing sailing velocity and stability without conceding an ounce of maritime opulence.",
+      "Weight optimization is the single most critical criterion for luxury sailing multihulls. For the Sunset Breeze catamaran, VERTEX custom-formulated an ultra-lightweight 8mm teak composite deck that reduced topside weight by over 1.2 metric tons compared to conventional solid teak, substantially increasing sailing velocity and stability without conceding an ounce of maritime opulence.",
     craftsmanshipNotes:
       "Our master naval carpenters hand-selected individual grain bundles to create gentle radial curvatures echoing the twin hulls of the vessel. The surface remains up to 8°C cooler under direct equatorial sun thanks to our thermal-dissipating coating, making the lounge deck comfortable to walk on even during peak tropical afternoons.",
     keyFeatures: [

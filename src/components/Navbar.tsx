@@ -48,8 +48,8 @@ export default function Navbar({ activeItem }: NavbarProps) {
         {/* Brand Logo */}
         <Link href="/" className="flex items-center shrink-0 group">
           <img
-            src="/images/brand/logo-nexteak.webp"
-            alt="NEXTEAK"
+            src="/images/brand/logo-vertex.webp"
+            alt="VERTEX"
             className="h-[19px] sm:h-[26px] lg:h-[32px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
           />
         </Link>

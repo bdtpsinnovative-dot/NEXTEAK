@@ -7,12 +7,12 @@ import Navbar from "@/components/Navbar";
 const HERO_SLIDES = [
   {
     src: "/images/hero/1.webp",
-    alt: "NEXTEAK Luxury Superyacht Decking Aerial View",
+    alt: "VERTEX Luxury Superyacht Decking Aerial View",
     tagline: "THE FUTURE OF TEAK",
     titleLines: ["REFINED", "FOR MARINE", "DECKING."],
     desc: (
       <>
-        NEXTEAK COMBINES THE BEAUTY OF NATURAL TEAK WITH
+        VERTEX COMBINES THE BEAUTY OF NATURAL TEAK WITH
         <br className="hidden sm:inline" /> ADVANCED TECHNOLOGY AND A
         COMMITMENT TO A MORE
         <br className="hidden sm:inline" /> SUSTAINABLE FUTURE, DELIVERING
@@ -21,12 +21,12 @@ const HERO_SLIDES = [
         TOMORROW.
       </>
     ),
-    cta: "EXPLORE NEXTEAK",
+    cta: "EXPLORE VERTEX",
     href: "#our-story",
   },
   {
     src: "/images/hero/2.webp",
-    alt: "NEXTEAK Precision Marine Teak Foredeck",
+    alt: "VERTEX Precision Marine Teak Foredeck",
     tagline: "ENGINEERED PRECISION",
     titleLines: ["CRAFTED", "FOR THE", "OPEN OCEAN."],
     desc: (
@@ -44,7 +44,7 @@ const HERO_SLIDES = [
   },
   {
     src: "/images/hero/3.webp",
-    alt: "NEXTEAK Sunset Yacht Terrace Decking",
+    alt: "VERTEX Sunset Yacht Terrace Decking",
     tagline: "SUSTAINABLE HARMONY",
     titleLines: ["NATURE MEETS", "ADVANCED", "TECHNOLOGY."],
     desc: (
@@ -100,7 +100,7 @@ const INNOVATION_CARDS = [
   },
 ];
 
-const SLIDE_DURATION_MS = 4000;
+const SLIDE_DURATION_MS = 8000;
 
 function LongThinArrow({ className = "w-9 h-4" }: { className?: string }) {
   return (
@@ -134,7 +134,7 @@ const fadeUp = {
   }),
 };
 
-export default function NexteakHomePage() {
+export default function VertexHomePage() {
   // Infinite loop slider: starts at index 1 (the real first slide)
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -190,7 +190,7 @@ export default function NexteakHomePage() {
     });
   }, []);
 
-  // Continuously slide forward every 4 seconds without stopping or rewinding
+  // Continuously slide forward every 8 seconds without stopping or rewinding
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
@@ -362,7 +362,7 @@ export default function NexteakHomePage() {
                   {currentHero.desc}
                 </motion.p>
 
-                {/* 4. Dynamic Button: EXPLORE NEXTEAK -> */}
+                {/* 4. Dynamic Button: EXPLORE VERTEX -> */}
                 <motion.div
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -432,7 +432,7 @@ export default function NexteakHomePage() {
               style={{ letterSpacing: "0.22em" }}
               className="font-outfit-thin text-[11px] uppercase text-white/60"
             >
-              DISCOVER NEXTEAK
+              DISCOVER VERTEX
             </span>
             <motion.div
               animate={{ y: [0, 5, 0] }}
@@ -449,7 +449,7 @@ export default function NexteakHomePage() {
         </section>
 
         {/* =========================================================
-            3. OUR STORY & WOODDEN GROUP & NATURAL RESEARCH CENTER
+            3. OUR STORY & WOODDEN GROUP & NATIONAL RESEARCH CENTER
         ========================================================= */}
         <section
           id="our-story"
@@ -503,7 +503,7 @@ export default function NexteakHomePage() {
                 BUSINESS CRAFTING TEAK AND TIMBER HAS GROWN{" "}
                 <br className="hidden xl:inline" />
                 INTO WOODDEN — A TRUSTED NAME IN WOOD SOLUTIONS, AND THE
-                FOUNDATION OF REVOTEAK. WITH DEEP EXPERTISE{" "}
+                FOUNDATION OF VERTEX. WITH DEEP EXPERTISE{" "}
                 <br className="hidden xl:inline" />
                 FROM SOURCE TO FINISH, WE BRING THE BEAUTY OF TEAK TO THE WORLD
                 WITH INTEGRITY, INNOVATION AND A COMMITMENT{" "}
@@ -575,7 +575,7 @@ export default function NexteakHomePage() {
               </div>
             </div>
 
-            {/* --- NATURAL RESEARCH CENTER (Exact Match to ตำแหน่งฟอนต์ 2.png) --- */}
+            {/* --- NATIONAL RESEARCH CENTER (Exact Match to ตำแหน่งฟอนต์ 2.png) --- */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -599,7 +599,7 @@ export default function NexteakHomePage() {
                   style={{ letterSpacing: "0.08em" }}
                   className="font-outfit-extralight text-xs sm:text-[15px] lg:text-[17px] uppercase text-[#13262D] whitespace-nowrap"
                 >
-                  NATURAL RESEARCH CENTER
+                  NATIONAL RESEARCH CENTER
                 </span>
                 <motion.span
                   initial={{ scaleX: 0 }}
@@ -627,7 +627,7 @@ export default function NexteakHomePage() {
                 style={{ letterSpacing: "0.055em" }}
                 className="font-outfit-extralight text-[11px] sm:text-[12.5px] lg:text-[13.5px] leading-[1.85] uppercase text-[#13262D] text-center max-w-[1220px] mx-auto"
               >
-                OUR NATURAL RESEARCH CENTER BRINGS TOGETHER DECADES OF WOOD
+                OUR NATIONAL RESEARCH CENTER BRINGS TOGETHER DECADES OF WOOD
                 EXPERTISE AND MODERN MATERIAL SCIENCE. THROUGH CONTINUOUS
                 RESEARCH, TESTING, AND{" "}
                 <br className="hidden lg:inline" />

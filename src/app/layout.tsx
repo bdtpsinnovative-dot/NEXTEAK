@@ -2,37 +2,36 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexteak.com"),
+  metadataBase: new URL("https://vertex.com"),
   title: {
-    default: "NEXTEAK — The Future of Teak Refined for Marine Decking",
-    template: "%s | NEXTEAK",
+    default: "VERTEX — The Future of Teak Refined for Marine Decking",
+    template: "%s | VERTEX",
   },
   description:
-    "NEXTEAK combines the beauty of natural teak with advanced technology and a commitment to a more sustainable future, delivering high-performance marine decking for a better tomorrow.",
+    "VERTEX combines the beauty of natural teak with advanced technology and a commitment to a more sustainable future, delivering high-performance marine decking for a better tomorrow.",
   keywords: [
-    "NEXTEAK",
+    "VERTEX",
     "Marine Teak Decking",
     "Superyacht Teak Deck",
     "Sustainable Plantation Teak",
-    "Revoteak",
     "Thin-Veneer Timber Integration",
     "Luxury Marine Yacht Flooring",
   ],
-  authors: [{ name: "NEXTEAK" }],
-  creator: "NEXTEAK",
-  publisher: "NEXTEAK",
+  authors: [{ name: "VERTEX" }],
+  creator: "VERTEX",
+  publisher: "VERTEX",
   openGraph: {
-    title: "NEXTEAK — The Future of Teak Refined for Marine Decking",
+    title: "VERTEX — The Future of Teak Refined for Marine Decking",
     description:
-      "NEXTEAK combines the beauty of natural teak with advanced technology, delivering high-performance marine decking for superyachts.",
-    url: "https://nexteak.com",
-    siteName: "NEXTEAK",
+      "VERTEX combines the beauty of natural teak with advanced technology, delivering high-performance marine decking for superyachts.",
+    url: "https://vertex.com",
+    siteName: "VERTEX",
     images: [
       {
         url: "/images/hero/1.webp",
         width: 2560,
         height: 1265,
-        alt: "NEXTEAK Marine Teak Decking",
+        alt: "VERTEX Marine Teak Decking",
       },
     ],
     locale: "en_US",
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NEXTEAK — The Future of Teak Refined for Marine Decking",
+    title: "VERTEX — The Future of Teak Refined for Marine Decking",
     description:
       "High-performance marine decking engineered with thin-veneer technology and research-based know-how.",
     images: ["/images/hero/1.webp"],

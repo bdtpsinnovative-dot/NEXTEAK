@@ -3,121 +3,219 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const COMPARISON_ROWS = [
+interface ComparisonRow {
+  feature: string;
+  traditional: string;
+  vertex: string;
+  isHeroRow?: boolean;
+}
+
+const COMPARISON_ROWS: ComparisonRow[] = [
   {
     feature: "TREE AGE",
     traditional: "80 YEARS +",
-    revoteak: "30 YEARS +",
-    highlight: true,
+    vertex: "30 YEARS +",
+    isHeroRow: true,
   },
   {
     feature: "TREE QUALITY",
-    traditional: "High quality is required, but it is very scarce in natural forests.",
-    revoteak: "It is possible to use readily available, medium-quality plantation timber.",
+    traditional:
+      "High quality is required, but it is very scarce in natural forests.",
+    vertex:
+      "It is possible to use readily available, medium-quality plantation timber.",
   },
   {
     feature: "SKILL LABOUR",
     traditional: "It requires highly experienced sawyers.",
-    revoteak:
+    vertex:
       "It uses a manufacturing process designed to produce high-standard products without the limitations of raw materials and human expertise.",
   },
   {
     feature: "STABILITY AND DURABILITY",
     traditional: "Structural stability due to a straight-grain wood structure.",
-    revoteak:
+    vertex:
       "It offers superior stability due to a specially designed product structure where the wood fibers are precisely oriented in a cross-grain configuration, resulting in significantly lower expansion/contraction and greater strength.",
   },
   {
     feature: "UV RESISTANCE",
-    traditional: "It is not UV-resistant; the color will fade very quickly, often within one month.",
-    revoteak:
+    traditional:
+      "It is not UV-resistant; the color will fade very quickly, often within one month.",
+    vertex:
       "Surface coating with Carbon Quantum Dots Technology helps reduce the wood's UV light absorption, significantly slowing down color fading.",
   },
   {
     feature: "SCRATCH RESISTANCE",
     traditional: "The wood surface has low durability.",
-    revoteak:
+    vertex:
       "The surface durability is increased by more than 30%, resulting from the product's structure and the scratch-resistant properties provided by the Carbon Quantum Dots Technology coating.",
   },
   {
     feature: "MOLD & FUNGI RESISTANCE",
     traditional: "It is possible.",
-    revoteak: "The coating helps reduce the risk of mold and fungi formation.",
+    vertex: "The coating helps reduce the risk of mold and fungi formation.",
   },
   {
     feature: "EASY CLEANING SURFACE",
     traditional:
       "The wood surface has a grain structure that collects dirt, requiring time and specialized equipment for cleaning.",
-    revoteak:
+    vertex:
       "The surface coating seals the wood grain grooves, which reduces the embedding of dirt and makes cleaning easier.",
   },
   {
     feature: "GREEN & SUSTAINABILITY",
     traditional: "Green material but not from the sustainable source.",
-    revoteak:
+    vertex:
       "Green material and from sustainable source with less than 0.1% of chemical component which is Poly Urethane glue.",
   },
 ];
 
 export default function ComparisonTable() {
-  const [mobileTab, setMobileTab] = useState<"revoteak" | "traditional">("revoteak");
+  const [mobileTab, setMobileTab] = useState<"vertex" | "traditional">(
+    "vertex"
+  );
 
   return (
-    <section id="comparison" className="relative w-full overflow-hidden select-none">
+    <section
+      id="comparison"
+      className="relative w-full overflow-hidden select-none bg-[#0A1820]"
+    >
       {/* ============================================================== */}
-      {/* PART A: VS COMPARISON TABLE                                    */}
+      {/* PART A: VS COMPARISON TABLE (100% SEPARATED LIVE TYPOGRAPHY)   */}
       {/* ============================================================== */}
-      <div className="relative w-full bg-[#0A1820]">
-        {/* Desktop View (>= 1024px): 1:1 High-Res Master WebP */}
-        <div className="hidden lg:block relative w-full aspect-[2560/1499]">
-          <img
-            src="/images/sustainability/page3/vs-table.webp"
-            alt="Traditional Decking VS REVOTEAK Redefined Marine Decking Comparison Table"
-            className="w-full h-full object-cover select-none pointer-events-none"
-            loading="lazy"
-          />
-        </div>
+      <div className="relative w-full py-16 sm:py-24 lg:py-32">
+        {/* Background Teak Tree Trunk Image */}
+        <img
+          src="/images/sustainability/page3/vs-table-clean.webp"
+          alt="Plantation Teak Forest"
+          className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none select-none"
+          loading="lazy"
+        />
+        {/* Ambient Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1820]/40 via-transparent to-[#0A1820]/60 pointer-events-none" />
 
-        {/* Mobile & Tablet View (< 1024px): Interactive Glassmorphism Table */}
-        <div className="lg:hidden relative px-4 sm:px-8 py-14 sm:py-20 text-white">
-          {/* Background Forest Image */}
-          <img
-            src="/images/sustainability/page3/vs-table.webp"
-            alt="Forest Background"
-            className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none"
-          />
-          <div className="absolute inset-0 bg-[#0A1820]/90 pointer-events-none" />
+        <div className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-8 lg:px-12">
+          {/* ========================================================== */}
+          {/* DESKTOP TABLE VIEW (>= 1024px)                             */}
+          {/* ========================================================== */}
+          <div className="hidden lg:block">
+            {/* Header Columns above table */}
+            <div className="grid grid-cols-12 items-end mb-6 text-white px-6">
+              {/* Left Column: Traditional Decking */}
+              <div className="col-span-5 text-center flex flex-col items-center">
+                <span className="font-outfit-light text-xl tracking-[0.2em] text-white/90 uppercase">
+                  TRADITIONAL
+                </span>
+                <span className="font-outfit font-bold text-3xl tracking-[0.16em] text-white uppercase">
+                  DECKING
+                </span>
+              </div>
 
-          <div className="relative z-10 max-w-2xl mx-auto">
+              {/* Center Column: VS */}
+              <div className="col-span-2 text-center">
+                <span className="font-mistical text-6xl text-white tracking-widest">
+                  VS
+                </span>
+              </div>
+
+              {/* Right Column: VERTEX */}
+              <div className="col-span-5 text-center flex flex-col items-center">
+                <span className="font-mistical text-3xl tracking-[0.1em] text-white uppercase">
+                  VERTEX
+                </span>
+                <span className="font-outfit-light text-xs tracking-[0.25em] text-white/80 uppercase mt-1">
+                  REDEFINED MARINE DECKING
+                </span>
+              </div>
+            </div>
+
+            {/* Glassmorphism Table Container */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="rounded-2xl border border-white/20 bg-black/35 backdrop-blur-md overflow-hidden shadow-2xl"
+            >
+              {COMPARISON_ROWS.map((row, idx) => (
+                <div
+                  key={row.feature}
+                  className={`grid grid-cols-12 items-stretch text-white text-center transition-colors duration-200 hover:bg-white/[0.03] ${
+                    idx < COMPARISON_ROWS.length - 1
+                      ? "border-b border-white/20"
+                      : ""
+                  }`}
+                >
+                  {/* Left Cell: Traditional Decking */}
+                  <div className="col-span-5 flex items-center justify-center p-4 sm:p-5 border-r border-white/20 text-white/90">
+                    {row.isHeroRow ? (
+                      <span className="font-mistical text-2xl lg:text-3xl text-white tracking-wider">
+                        {row.traditional}
+                      </span>
+                    ) : (
+                      <p className="font-outfit text-xs lg:text-[13px] leading-relaxed max-w-sm">
+                        {row.traditional}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Center Cell: Feature Badge */}
+                  <div className="col-span-2 flex items-center justify-center p-3 sm:p-4 bg-white/[0.04] border-r border-white/20">
+                    <span className="font-outfit font-semibold text-[11px] lg:text-xs tracking-[0.16em] text-white uppercase">
+                      {row.feature}
+                    </span>
+                  </div>
+
+                  {/* Right Cell: VERTEX */}
+                  <div className="col-span-5 flex items-center justify-center p-4 sm:p-5 text-white">
+                    {row.isHeroRow ? (
+                      <span className="font-mistical text-2xl lg:text-3xl text-white tracking-wider">
+                        {row.vertex}
+                      </span>
+                    ) : (
+                      <p className="font-outfit text-xs lg:text-[13px] leading-relaxed max-w-sm text-white/95">
+                        {row.vertex}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* ========================================================== */}
+          {/* MOBILE & TABLET VIEW (< 1024px)                            */}
+          {/* Interactive touch card view with switcher                  */}
+          {/* ========================================================== */}
+          <div className="lg:hidden max-w-2xl mx-auto text-white">
             {/* Header */}
-            <div className="text-center mb-10">
-              <span className="font-mistical text-3xl sm:text-4xl tracking-wider text-white">
+            <div className="text-center mb-8">
+              <span className="font-mistical text-4xl tracking-wider text-white">
                 VS
               </span>
-              <h2 className="font-outfit-regular text-sm sm:text-base tracking-[0.2em] text-white/90 uppercase mt-2">
-                TRADITIONAL DECKING vs REVOTEAK
+              <h2 className="font-outfit-regular text-xs sm:text-sm tracking-[0.2em] text-white/90 uppercase mt-2">
+                TRADITIONAL DECKING vs VERTEX
               </h2>
             </div>
 
             {/* Mobile Tab Switcher */}
-            <div className="flex rounded-full bg-white/10 p-1 mb-8 border border-white/15 backdrop-blur-md">
+            <div className="flex rounded-full bg-white/10 p-1 mb-8 border border-white/20 backdrop-blur-md">
               <button
                 type="button"
-                onClick={() => setMobileTab("revoteak")}
+                onClick={() => setMobileTab("vertex")}
                 className={`flex-1 py-2.5 rounded-full text-xs font-outfit-regular tracking-wider uppercase transition-all duration-300 ${
-                  mobileTab === "revoteak"
+                  mobileTab === "vertex"
                     ? "bg-[#2DD4BF] text-[#0A1820] font-semibold shadow-md"
                     : "text-white/70 hover:text-white"
                 }`}
               >
-                REVOTEAK
+                VERTEX
               </button>
               <button
                 type="button"
                 onClick={() => setMobileTab("traditional")}
                 className={`flex-1 py-2.5 rounded-full text-xs font-outfit-regular tracking-wider uppercase transition-all duration-300 ${
                   mobileTab === "traditional"
-                    ? "bg-white/20 text-white font-semibold shadow-md"
+                    ? "bg-white/25 text-white font-semibold shadow-md"
                     : "text-white/70 hover:text-white"
                 }`}
               >
@@ -134,10 +232,10 @@ export default function ComparisonTable() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.05 }}
-                  className="rounded-xl border border-white/15 bg-white/5 backdrop-blur-md p-4 sm:p-5"
+                  className="rounded-xl border border-white/20 bg-black/40 backdrop-blur-md p-4 sm:p-5"
                 >
                   <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
-                    <span className="text-[11px] sm:text-xs font-outfit-regular tracking-[0.15em] text-[#2DD4BF] uppercase">
+                    <span className="text-[11px] sm:text-xs font-outfit-semibold tracking-[0.15em] text-[#2DD4BF] uppercase">
                       {row.feature}
                     </span>
                     <span className="text-[10px] text-white/50 tracking-wider">
@@ -145,13 +243,29 @@ export default function ComparisonTable() {
                     </span>
                   </div>
 
-                  <p className="font-outfit text-xs sm:text-sm leading-relaxed text-white/90">
-                    {mobileTab === "revoteak" ? (
-                      <span className="font-medium text-white">{row.revoteak}</span>
+                  <div className="font-outfit text-xs sm:text-sm leading-relaxed text-white/90">
+                    {mobileTab === "vertex" ? (
+                      <span
+                        className={
+                          row.isHeroRow
+                            ? "font-mistical text-xl text-white"
+                            : "font-normal text-white"
+                        }
+                      >
+                        {row.vertex}
+                      </span>
                     ) : (
-                      <span className="text-white/75">{row.traditional}</span>
+                      <span
+                        className={
+                          row.isHeroRow
+                            ? "font-mistical text-xl text-white/80"
+                            : "text-white/75"
+                        }
+                      >
+                        {row.traditional}
+                      </span>
                     )}
-                  </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -162,73 +276,78 @@ export default function ComparisonTable() {
       {/* ============================================================== */}
       {/* PART B: MARINE PERFORMANCE & RESPONSIBLE TEAK                  */}
       {/* ============================================================== */}
-      <div className="relative w-full bg-[#F6F5F2] text-[#13262D]">
-        {/* Desktop View (>= 1024px): 1:1 High-Res Master WebP */}
-        <div className="hidden lg:block relative w-full aspect-[2560/739]">
-          <img
-            src="/images/sustainability/page3/marine-performance.webp"
-            alt="Marine Performance and Responsible Teak"
-            className="w-full h-full object-cover select-none pointer-events-none"
-            loading="lazy"
-          />
-        </div>
-
-        {/* Mobile & Tablet View (< 1024px) */}
-        <div className="lg:hidden max-w-2xl mx-auto px-6 sm:px-10 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
+      <div className="relative w-full bg-[#F6F5F2] text-[#13262D] py-16 sm:py-20 lg:py-24">
+        <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Marine Performance */}
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
+              className="flex flex-col items-center text-center px-4 md:border-r md:border-[#13262D]/15"
+            >
+              {/* Boat with Shield Icon */}
+              <div className="w-20 h-20 mb-6 flex items-center justify-center">
                 <svg
-                  className="w-12 h-12 text-[#13262D]"
+                  className="w-16 h-16 text-[#13262D]"
                   viewBox="0 0 64 64"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2.5"
+                  strokeWidth="2.2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
                   <path d="M12 40L6 48h52l-6-8H12z" />
                   <path d="M22 40V24h20v16" />
                   <path d="M32 14v10" />
+                  <path d="M32 14c4-4 12-4 12 4v4H20v-4c0-8 8-8 12-4z" />
                   <path d="M4 56c4 0 6-2 10-2s6 2 10 2 6-2 10-2 6 2 10 2 6-2 10-2 6 2 6 2" />
                 </svg>
               </div>
-              <h3 className="font-mistical text-xl sm:text-2xl tracking-[0.1em] text-[#13262D] uppercase mb-3">
+              <h3 className="font-mistical text-2xl sm:text-3xl tracking-[0.1em] text-[#13262D] uppercase mb-4">
                 MARINE PERFORMANCE
               </h3>
-              <p className="font-outfit-extralight text-xs sm:text-sm leading-relaxed tracking-[0.06em] text-[#13262D]/80 uppercase">
-                EXCEPTIONAL DURABILITY. NATURAL RESISTANCE. TRUSTED IN THE WORLD&apos;S
-                MOST DEMANDING ENVIRONMENTS.
+              <p className="font-outfit-extralight text-xs sm:text-sm leading-relaxed tracking-[0.07em] text-[#13262D]/85 uppercase max-w-md">
+                EXCEPTIONAL DURABILITY. NATURAL RESISTANCE. TRUSTED IN THE
+                WORLD&apos;S MOST DEMANDING ENVIRONMENTS.
               </p>
-            </div>
+            </motion.div>
 
             {/* Responsible Teak */}
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col items-center text-center px-4"
+            >
+              {/* Earth with Leaves Icon */}
+              <div className="w-20 h-20 mb-6 flex items-center justify-center">
                 <svg
-                  className="w-12 h-12 text-[#13262D]"
+                  className="w-16 h-16 text-[#13262D]"
                   viewBox="0 0 64 64"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2.5"
+                  strokeWidth="2.2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <circle cx="32" cy="32" r="22" />
-                  <path d="M32 10c6 8 8 16 0 22s-6 14 0 22" />
-                  <path d="M14 24c8 4 16 2 20-4" />
-                  <path d="M48 38c-6 4-14 2-18-2" />
+                  <circle cx="32" cy="34" r="20" />
+                  <path d="M32 14c6 8 8 16 0 22s-6 14 0 22" />
+                  <path d="M14 26c8 4 16 2 20-4" />
+                  <path d="M48 40c-6 4-14 2-18-2" />
+                  <path d="M38 12c4-6 10-6 14-2s2 10-4 14c-4 2-10 0-10-12z" />
                 </svg>
               </div>
-              <h3 className="font-mistical text-xl sm:text-2xl tracking-[0.1em] text-[#13262D] uppercase mb-3">
+              <h3 className="font-mistical text-2xl sm:text-3xl tracking-[0.1em] text-[#13262D] uppercase mb-4">
                 RESPONSIBLE TEAK
               </h3>
-              <p className="font-outfit-extralight text-xs sm:text-sm leading-relaxed tracking-[0.06em] text-[#13262D]/80 uppercase">
-                SUSTAINABLY SOURCED. A BRIGHTER FUTURE. TEAK THAT RESPECTS PEOPLE AND
-                OUR PLANET.
+              <p className="font-outfit-extralight text-xs sm:text-sm leading-relaxed tracking-[0.07em] text-[#13262D]/85 uppercase max-w-md">
+                SUSTAINABLY SOURCED. A BRIGHTER FUTURE. TEAK THAT RESPECTS
+                PEOPLE AND OUR PLANET.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

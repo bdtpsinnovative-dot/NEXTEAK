@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://nexteak.com/sitemap.xml",
+    sitemap: "https://vertex.com/sitemap.xml",
   };
 }

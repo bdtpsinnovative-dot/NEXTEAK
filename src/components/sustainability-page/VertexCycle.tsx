@@ -50,12 +50,12 @@ const CYCLE_STEPS: CycleStep[] = [
   },
 ];
 
-export default function NexteakCycle() {
+export default function VertexCycle() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
     <section
-      id="nexteak-cycle"
+      id="vertex-cycle"
       className="relative w-full bg-white text-[#13262D] py-16 sm:py-24 lg:py-32 overflow-hidden select-none border-t border-[#13262D]/10"
     >
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
@@ -73,7 +73,7 @@ export default function NexteakCycle() {
           >
             <div className="flex items-center gap-4 mb-4">
               <span className="font-outfit-extralight text-xs sm:text-sm tracking-[0.25em] text-[#13262D]/80 uppercase">
-                THE NEXTEAK CYCLE
+                THE VERTEX CYCLE
               </span>
               <div className="h-[1px] w-16 sm:w-24 bg-[#13262D]/25" />
             </div>
@@ -124,7 +124,7 @@ export default function NexteakCycle() {
 
             <img
               src="/images/sustainability/page3/cycle-center.webp"
-              alt="Nexteak Circular Economy Cycle"
+              alt="Vertex Circular Economy Cycle"
               className="w-full h-full object-contain relative z-10 transition-transform duration-700 hover:rotate-12"
               loading="lazy"
             />
@@ -181,7 +181,7 @@ export default function NexteakCycle() {
             <div className="absolute inset-0 rounded-full bg-[#2DD4BF]/5 blur-xl animate-pulse" />
             <img
               src="/images/sustainability/page3/cycle-center.webp"
-              alt="Nexteak Cycle"
+              alt="Vertex Cycle"
               className="w-full h-full object-contain relative z-10"
               loading="lazy"
             />

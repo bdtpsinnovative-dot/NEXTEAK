@@ -46,7 +46,7 @@ export default function ContactPage() {
       <main className="flex-1 w-full relative">
         <section className="pt-10 sm:pt-14 lg:pt-16 pb-24 sm:pb-32">
           <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
-            {/* Header: NEXTEAK ─── + CONTACT US (Centered) */}
+            {/* Header: VERTEX ─── + CONTACT US (Centered) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function ContactPage() {
                   style={{ letterSpacing: "0.18em" }}
                   className="font-outfit-regular text-xs sm:text-[13px] uppercase text-[#13262D]"
                 >
-                  NEXTEAK
+                  VERTEX
                 </span>
                 <span className="w-12 sm:w-20 lg:w-28 h-[1px] bg-[#13262D]" />
               </div>
@@ -212,7 +212,7 @@ export default function ContactPage() {
                   style={{ letterSpacing: "0.14em" }}
                   className="font-outfit-regular text-xs uppercase text-[#13262D]"
                 >
-                  NEXTEAK INQUIRY
+                  VERTEX INQUIRY
                 </span>
                 <span className="w-12 h-[1px] bg-[#13262D]" />
               </div>

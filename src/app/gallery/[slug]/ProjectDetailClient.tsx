@@ -110,7 +110,7 @@ export default function ProjectDetailClient({ project }: { project?: Project }) 
                 style={{ letterSpacing: "0.18em" }}
                 className="font-outfit-regular text-xs sm:text-[13px] uppercase text-[#13262D]"
               >
-                NEXTEAK BESPOKE DECKING
+                VERTEX BESPOKE DECKING
               </span>
               <span className="w-16 sm:w-28 h-[1px] bg-[#13262D]" />
               <span
