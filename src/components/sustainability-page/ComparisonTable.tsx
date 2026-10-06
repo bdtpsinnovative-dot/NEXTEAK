@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 interface ComparisonRow {
   feature: string;
   traditional: string;
-  vertex: string;
+  nexteak: string;
   isHeroRow?: boolean;
 }
 
@@ -14,64 +14,64 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   {
     feature: "TREE AGE",
     traditional: "80 YEARS +",
-    vertex: "30 YEARS +",
+    nexteak: "30 YEARS +",
     isHeroRow: true,
   },
   {
     feature: "TREE QUALITY",
     traditional:
       "High quality is required, but it is very scarce in natural forests.",
-    vertex:
+    nexteak:
       "It is possible to use readily available, medium-quality plantation timber.",
   },
   {
     feature: "SKILL LABOUR",
     traditional: "It requires highly experienced sawyers.",
-    vertex:
+    nexteak:
       "It uses a manufacturing process designed to produce high-standard products without the limitations of raw materials and human expertise.",
   },
   {
     feature: "STABILITY AND DURABILITY",
     traditional: "Structural stability due to a straight-grain wood structure.",
-    vertex:
+    nexteak:
       "It offers superior stability due to a specially designed product structure where the wood fibers are precisely oriented in a cross-grain configuration, resulting in significantly lower expansion/contraction and greater strength.",
   },
   {
     feature: "UV RESISTANCE",
     traditional:
       "It is not UV-resistant; the color will fade very quickly, often within one month.",
-    vertex:
+    nexteak:
       "Surface coating with Carbon Quantum Dots Technology helps reduce the wood's UV light absorption, significantly slowing down color fading.",
   },
   {
     feature: "SCRATCH RESISTANCE",
     traditional: "The wood surface has low durability.",
-    vertex:
+    nexteak:
       "The surface durability is increased by more than 30%, resulting from the product's structure and the scratch-resistant properties provided by the Carbon Quantum Dots Technology coating.",
   },
   {
     feature: "MOLD & FUNGI RESISTANCE",
     traditional: "It is possible.",
-    vertex: "The coating helps reduce the risk of mold and fungi formation.",
+    nexteak: "The coating helps reduce the risk of mold and fungi formation.",
   },
   {
     feature: "EASY CLEANING SURFACE",
     traditional:
       "The wood surface has a grain structure that collects dirt, requiring time and specialized equipment for cleaning.",
-    vertex:
+    nexteak:
       "The surface coating seals the wood grain grooves, which reduces the embedding of dirt and makes cleaning easier.",
   },
   {
     feature: "GREEN & SUSTAINABILITY",
     traditional: "Green material but not from the sustainable source.",
-    vertex:
+    nexteak:
       "Green material and from sustainable source with less than 0.1% of chemical component which is Poly Urethane glue.",
   },
 ];
 
 export default function ComparisonTable() {
-  const [mobileTab, setMobileTab] = useState<"vertex" | "traditional">(
-    "vertex"
+  const [mobileTab, setMobileTab] = useState<"nexteak" | "traditional">(
+    "nexteak"
   );
 
   return (
@@ -80,26 +80,26 @@ export default function ComparisonTable() {
       className="relative w-full overflow-hidden select-none bg-[#0A1820]"
     >
       {/* ============================================================== */}
-      {/* PART A: VS COMPARISON TABLE (100% SEPARATED LIVE TYPOGRAPHY)   */}
+      {/* PART A: VS COMPARISON TABLE (LIVE HTML ON CLEAN BACKGROUND)    */}
       {/* ============================================================== */}
       <div className="relative w-full py-16 sm:py-24 lg:py-32">
-        {/* Background Teak Tree Trunk Image */}
+        {/* Background Teak Tree Trunk Image (100% Clean Image, No Lines) */}
         <img
           src="/images/sustainability/page3/vs-table-clean.webp"
           alt="Plantation Teak Forest"
-          className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none select-none"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
           loading="lazy"
         />
         {/* Ambient Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1820]/40 via-transparent to-[#0A1820]/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1820]/50 via-[#0A1820]/30 to-[#0A1820]/60 pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-8 lg:px-12">
           {/* ========================================================== */}
           {/* DESKTOP TABLE VIEW (>= 1024px)                             */}
           {/* ========================================================== */}
           <div className="hidden lg:block">
             {/* Header Columns above table */}
-            <div className="grid grid-cols-12 items-end mb-6 text-white px-6">
+            <div className="grid grid-cols-12 items-end mb-6 text-white px-8">
               {/* Left Column: Traditional Decking */}
               <div className="col-span-5 text-center flex flex-col items-center">
                 <span className="font-outfit-light text-xl tracking-[0.2em] text-white/90 uppercase">
@@ -117,13 +117,10 @@ export default function ComparisonTable() {
                 </span>
               </div>
 
-              {/* Right Column: VERTEX */}
-              <div className="col-span-5 text-center flex flex-col items-center">
-                <span className="font-mistical text-3xl tracking-[0.1em] text-white uppercase">
-                  VERTEX
-                </span>
-                <span className="font-outfit-light text-xs tracking-[0.25em] text-white/80 uppercase mt-1">
-                  REDEFINED MARINE DECKING
+              {/* Right Column: NEXTEAK */}
+              <div className="col-span-5 text-center flex flex-col items-center justify-end">
+                <span className="font-mistical text-4xl xl:text-5xl tracking-[0.08em] text-white uppercase">
+                  NEXTEAK
                 </span>
               </div>
             </div>
@@ -134,21 +131,21 @@ export default function ComparisonTable() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="rounded-2xl border border-white/20 bg-black/35 backdrop-blur-md overflow-hidden shadow-2xl"
+              className="rounded-2xl border border-white/40 bg-black/40 backdrop-blur-md overflow-hidden shadow-2xl"
             >
               {COMPARISON_ROWS.map((row, idx) => (
                 <div
                   key={row.feature}
-                  className={`grid grid-cols-12 items-stretch text-white text-center transition-colors duration-200 hover:bg-white/[0.03] ${
+                  className={`grid grid-cols-12 items-stretch text-white text-center transition-colors duration-200 hover:bg-white/[0.04] ${
                     idx < COMPARISON_ROWS.length - 1
-                      ? "border-b border-white/20"
+                      ? "border-b border-white/25"
                       : ""
                   }`}
                 >
                   {/* Left Cell: Traditional Decking */}
-                  <div className="col-span-5 flex items-center justify-center p-4 sm:p-5 border-r border-white/20 text-white/90">
+                  <div className="col-span-5 flex items-center justify-center p-4 sm:p-5 border-r border-white/25 text-white/90">
                     {row.isHeroRow ? (
-                      <span className="font-mistical text-2xl lg:text-3xl text-white tracking-wider">
+                      <span className="font-serif text-2xl lg:text-3xl text-white font-normal tracking-wider">
                         {row.traditional}
                       </span>
                     ) : (
@@ -159,21 +156,21 @@ export default function ComparisonTable() {
                   </div>
 
                   {/* Center Cell: Feature Badge */}
-                  <div className="col-span-2 flex items-center justify-center p-3 sm:p-4 bg-white/[0.04] border-r border-white/20">
+                  <div className="col-span-2 flex items-center justify-center p-3 sm:p-4 bg-white/[0.03] border-r border-white/25">
                     <span className="font-outfit font-semibold text-[11px] lg:text-xs tracking-[0.16em] text-white uppercase">
                       {row.feature}
                     </span>
                   </div>
 
-                  {/* Right Cell: VERTEX */}
+                  {/* Right Cell: NEXTEAK */}
                   <div className="col-span-5 flex items-center justify-center p-4 sm:p-5 text-white">
                     {row.isHeroRow ? (
-                      <span className="font-mistical text-2xl lg:text-3xl text-white tracking-wider">
-                        {row.vertex}
+                      <span className="font-serif text-2xl lg:text-3xl text-white font-normal tracking-wider">
+                        {row.nexteak}
                       </span>
                     ) : (
                       <p className="font-outfit text-xs lg:text-[13px] leading-relaxed max-w-sm text-white/95">
-                        {row.vertex}
+                        {row.nexteak}
                       </p>
                     )}
                   </div>
@@ -184,7 +181,6 @@ export default function ComparisonTable() {
 
           {/* ========================================================== */}
           {/* MOBILE & TABLET VIEW (< 1024px)                            */}
-          {/* Interactive touch card view with switcher                  */}
           {/* ========================================================== */}
           <div className="lg:hidden max-w-2xl mx-auto text-white">
             {/* Header */}
@@ -193,7 +189,7 @@ export default function ComparisonTable() {
                 VS
               </span>
               <h2 className="font-outfit-regular text-xs sm:text-sm tracking-[0.2em] text-white/90 uppercase mt-2">
-                TRADITIONAL DECKING vs VERTEX
+                TRADITIONAL DECKING vs NEXTEAK
               </h2>
             </div>
 
@@ -201,14 +197,14 @@ export default function ComparisonTable() {
             <div className="flex rounded-full bg-white/10 p-1 mb-8 border border-white/20 backdrop-blur-md">
               <button
                 type="button"
-                onClick={() => setMobileTab("vertex")}
+                onClick={() => setMobileTab("nexteak")}
                 className={`flex-1 py-2.5 rounded-full text-xs font-outfit-regular tracking-wider uppercase transition-all duration-300 ${
-                  mobileTab === "vertex"
+                  mobileTab === "nexteak"
                     ? "bg-[#2DD4BF] text-[#0A1820] font-semibold shadow-md"
                     : "text-white/70 hover:text-white"
                 }`}
               >
-                VERTEX
+                NEXTEAK
               </button>
               <button
                 type="button"
@@ -244,21 +240,21 @@ export default function ComparisonTable() {
                   </div>
 
                   <div className="font-outfit text-xs sm:text-sm leading-relaxed text-white/90">
-                    {mobileTab === "vertex" ? (
+                    {mobileTab === "nexteak" ? (
                       <span
                         className={
                           row.isHeroRow
-                            ? "font-mistical text-xl text-white"
+                            ? "font-serif text-xl font-bold text-white tracking-wider"
                             : "font-normal text-white"
                         }
                       >
-                        {row.vertex}
+                        {row.nexteak}
                       </span>
                     ) : (
                       <span
                         className={
                           row.isHeroRow
-                            ? "font-mistical text-xl text-white/80"
+                            ? "font-serif text-xl font-bold text-white/90 tracking-wider"
                             : "text-white/75"
                         }
                       >

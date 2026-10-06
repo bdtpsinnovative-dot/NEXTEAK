@@ -50,6 +50,59 @@ const CYCLE_STEPS: CycleStep[] = [
   },
 ];
 
+interface CycleArrowItem {
+  id: string;
+  pos: string;
+  angleDeg: number;
+}
+
+const CYCLE_ARROWS: CycleArrowItem[] = [
+  {
+    id: "arrow-1-to-2",
+    pos: "top-[11%] left-1/2 -translate-x-1/2",
+    angleDeg: 0,
+  },
+  {
+    id: "arrow-2-to-3",
+    pos: "top-[44%] right-[16%] -translate-y-1/2",
+    angleDeg: 90,
+  },
+  {
+    id: "arrow-3-to-4",
+    pos: "bottom-[20%] right-[30%]",
+    angleDeg: 150,
+  },
+  {
+    id: "arrow-4-to-5",
+    pos: "bottom-[20%] left-[30%]",
+    angleDeg: -150,
+  },
+  {
+    id: "arrow-5-to-1",
+    pos: "top-[44%] left-[16%] -translate-y-1/2",
+    angleDeg: -90,
+  },
+];
+
+function CycleArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 60 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`w-16 h-7 sm:w-20 sm:h-8 lg:w-24 lg:h-10 text-[#13262D]/75 pointer-events-none drop-shadow-sm ${className}`}
+    >
+      <path
+        d="M2 12H54M54 12L42 4M54 12L42 20"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function VertexCycle() {
   const [activeStep, setActiveStep] = useState<number | null>(null);
 
@@ -129,6 +182,22 @@ export default function VertexCycle() {
               loading="lazy"
             />
           </motion.div>
+
+          {/* 5 Directional Cycle Arrows (Clockwise) */}
+          {CYCLE_ARROWS.map((arrow, idx) => (
+            <motion.div
+              key={arrow.id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.15 + idx * 0.08 }}
+              className={`absolute ${arrow.pos} z-10 flex items-center justify-center pointer-events-none`}
+            >
+              <div style={{ transform: `rotate(${arrow.angleDeg}deg)` }}>
+                <CycleArrow />
+              </div>
+            </motion.div>
+          ))}
 
           {/* 5 Circular Nodes */}
           {CYCLE_STEPS.map((step) => {
