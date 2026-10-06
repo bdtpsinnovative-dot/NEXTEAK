@@ -23,7 +23,7 @@ const HERO_SLIDES = [
       </>
     ),
     cta: "EXPLORE VERTEX",
-    href: "#our-story",
+    href: "/products",
   },
   {
     src: "/images/hero/2.webp",
@@ -98,6 +98,39 @@ const INNOVATION_CARDS = [
   {
     image: "/images/innovation/engineered-for-the-sea.webp",
     title: "ENGINEERED FOR THE SEA",
+  },
+];
+
+const SUSTAINABILITY_PILLARS = [
+  {
+    id: 1,
+    icon: "/images/sustainability/page3/hero-icon-1.webp",
+    alt: "Plantation Teak",
+    lines: ["PLANTATION", "TEAK"],
+  },
+  {
+    id: 2,
+    icon: "/images/sustainability/page3/hero-icon-2.webp",
+    alt: "Carbon Absorption",
+    lines: ["CARBON", "ABSORPTION"],
+  },
+  {
+    id: 3,
+    icon: "/images/sustainability/page3/hero-icon-3.webp",
+    alt: "Traceable Sourcing",
+    lines: ["TRACEABLE", "SOURCING"],
+  },
+  {
+    id: 4,
+    icon: "/images/sustainability/page3/hero-icon-4.webp",
+    alt: "Community Support",
+    lines: ["COMMUNITY", "SUPPORT"],
+  },
+  {
+    id: 5,
+    icon: "/images/sustainability/page3/hero-icon-5.webp",
+    alt: "A Cycle of Lasting Value",
+    lines: ["A CYCLE OF", "LASTING VALUE"],
   },
 ];
 
@@ -369,7 +402,7 @@ export default function VertexHomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.32 }}
                 >
-                  <a
+                  <Link
                     href={currentHero.href}
                     style={{ letterSpacing: "0.16em" }}
                     className="group/btn inline-flex items-center gap-4 sm:gap-6 bg-[#E7E2DA] hover:bg-white text-[#1B1A17] font-outfit-thin text-xs sm:text-[15px] lg:text-[17px] uppercase px-6 sm:px-9 py-3 sm:py-4 rounded-[8px] sm:rounded-[10px] transition-all duration-300 shadow-sm hover:shadow-xl hover:scale-[1.02]"
@@ -378,7 +411,7 @@ export default function VertexHomePage() {
                     <span className="transition-transform duration-300 group-hover/btn:translate-x-1.5">
                       <LongThinArrow className="w-7 sm:w-9 h-3.5 sm:h-4" />
                     </span>
-                  </a>
+                  </Link>
                 </motion.div>
               </motion.div>
             </AnimatePresence>
@@ -748,31 +781,227 @@ export default function VertexHomePage() {
         {/* =========================================================
             4. SUSTAINABILITY SECTION
         ========================================================= */}
-        <motion.section
+        {/* =========================================================
+            4. SUSTAINABILITY SECTION (Live Typography + Flipped Forest + 5 Pillars)
+        ========================================================= */}
+        <section
           id="sustainability"
-          initial={{ opacity: 0, scale: 0.99 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full overflow-hidden bg-[#13262D]"
+          className="relative w-full overflow-hidden bg-[#0A1820] select-none text-white"
         >
-          <img
-            src="/images/sustainability/artboard-8.webp"
-            alt="Sustainability — Grown for a Brighter Tomorrow"
-            className="w-full h-auto block"
-            loading="lazy"
-          />
-          <Link
-            href="/sustainability"
-            style={{ letterSpacing: "0.14em" }}
-            className="group/sbtn absolute bottom-[6%] sm:bottom-[8%] right-[3.5%] sm:right-[4.2%] inline-flex items-center gap-1.5 sm:gap-3.5 border border-white/85 hover:bg-white hover:text-[#13262D] text-white font-outfit-thin text-[8px] sm:text-xs lg:text-[13px] uppercase px-2.5 sm:px-5 lg:px-6 py-1 sm:py-2.5 rounded-[4px] sm:rounded-[5px] transition-all duration-300"
-          >
-            <span>LEARN MORE</span>
-            <span className="transition-transform duration-300 group-hover/sbtn:translate-x-1">
-              <LongThinArrow className="w-3.5 sm:w-6 h-2 sm:h-3" />
-            </span>
-          </Link>
-        </motion.section>
+          {/* Background: Flipped Clean Forest Canopy */}
+          <div className="relative w-full aspect-[5222/1836] min-h-[560px] lg:min-h-0 overflow-hidden">
+            <img
+              src="/images/sustainability/page3/sustainability-forest-flipped.webp"
+              alt="Sustainability — Grown for a Brighter Tomorrow"
+              className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+              loading="lazy"
+            />
+            {/* Dark gradient for optimal contrast with live white text */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08161C]/85 via-[#08161C]/50 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1820]/70 via-transparent to-black/30 pointer-events-none" />
+
+            {/* Ambient Subtle Ocean & Forest Shimmer */}
+            <motion.div
+              animate={{
+                x: ["-100%", "200%"],
+                opacity: [0, 0.12, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                repeatDelay: 3,
+                ease: "easeInOut",
+              }}
+              className="pointer-events-none absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12 z-1"
+            />
+
+            {/* ============================================================== */}
+            {/* 1. DESKTOP VIEW (>= 1024px)                                     */}
+            {/* ============================================================== */}
+            <div className="hidden lg:flex absolute inset-0 z-10 flex-col justify-between p-[4.8vw] xl:p-[5.2vw]">
+              {/* Upper Section: Headline (Left) & 5 Icons Row (Right) */}
+              <div className="flex items-start justify-between w-full">
+                {/* Left: Category Tag + Headline */}
+                <div className="max-w-[42vw] flex flex-col">
+                  {/* Category Tag */}
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="inline-flex items-center gap-1.5 text-[0.85vw] font-outfit-thin tracking-[0.25em] text-white/90 uppercase mb-[1.4vw]"
+                  >
+                    <span>SUSTAINABILITY</span>
+                    <svg
+                      className="w-[0.85vw] h-[0.85vw] text-white/80"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </motion.div>
+
+                  {/* Headline */}
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.75, delay: 0.1 }}
+                    className="font-mistical text-[3.8vw] leading-[1.06] tracking-[0.06em] text-white uppercase"
+                  >
+                    GROWN
+                    <br />
+                    FOR A BRIGHTER
+                    <br />
+                    TOMORROW
+                  </motion.h2>
+                </div>
+
+                {/* Right: The 5 Pillars Icons with Vertical Divider Lines */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="flex items-center pt-[1.5vw] xl:pt-[1vw]"
+                >
+                  <div className="flex items-stretch divide-x divide-white/40">
+                    {SUSTAINABILITY_PILLARS.map((pillar) => (
+                      <div
+                        key={pillar.id}
+                        className="px-[1.4vw] xl:px-[1.8vw] 2xl:px-[2.2vw] first:pl-0 flex flex-col items-center text-center group cursor-default"
+                      >
+                        <div className="h-[3.8vw] w-[3.8vw] min-h-[44px] min-w-[44px] max-h-[72px] max-w-[72px] mb-[1vw] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                          <img
+                            src={pillar.icon}
+                            alt={pillar.alt}
+                            className="max-h-full max-w-full object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+                          />
+                        </div>
+                        <div className="space-y-[0.2vw]">
+                          {pillar.lines.map((line, lIdx) => (
+                            <p
+                              key={lIdx}
+                              className="font-outfit-light text-[0.82vw] xl:text-[0.88vw] 2xl:text-[0.95vw] tracking-[0.16em] text-white uppercase leading-snug whitespace-nowrap"
+                            >
+                              {line}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Lower Section: Description (Bottom-Left) & LEARN MORE Button (Bottom-Right) */}
+              <div className="flex items-end justify-between w-full pt-[2vw]">
+                {/* Bottom Left: Description Paragraph */}
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.75, delay: 0.25 }}
+                  className="font-outfit-thin text-[0.85vw] leading-[1.7] tracking-[0.08em] text-white/85 uppercase max-w-[34vw]"
+                >
+                  VERTEX IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
+                  SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
+                  PLANET.
+                </motion.p>
+
+                {/* Bottom Right: LEARN MORE Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  <Link
+                    href="/sustainability"
+                    style={{ letterSpacing: "0.16em" }}
+                    className="group/sbtn inline-flex items-center gap-2.5 xl:gap-3 border border-white/80 hover:bg-white hover:text-[#13262D] text-white font-outfit-thin text-[0.8vw] uppercase px-[1.8vw] py-[0.75vw] rounded-[4px] transition-all duration-300 backdrop-blur-xs cursor-pointer"
+                  >
+                    <span>LEARN MORE</span>
+                    <span className="transition-transform duration-300 group-hover/sbtn:translate-x-1">
+                      <LongThinArrow className="w-[1.4vw] h-[0.7vw]" />
+                    </span>
+                  </Link>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* ============================================================== */}
+            {/* 2. MOBILE & TABLET VIEW (< 1024px)                              */}
+            {/* ============================================================== */}
+            <div className="lg:hidden relative z-10 flex flex-col justify-between p-6 sm:p-10 min-h-[560px]">
+              <div>
+                {/* Category Tag */}
+                <div className="inline-flex items-center gap-1.5 text-xs font-outfit-thin tracking-[0.25em] text-white/90 uppercase mb-3">
+                  <span>SUSTAINABILITY</span>
+                  <svg className="w-3 h-3 text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </div>
+
+                {/* Headline */}
+                <h2 className="font-mistical text-3xl sm:text-4xl leading-[1.08] tracking-[0.06em] text-white uppercase mb-3">
+                  GROWN
+                  <br />
+                  FOR A BRIGHTER
+                  <br />
+                  TOMORROW
+                </h2>
+
+                {/* Subtitle */}
+                <p className="font-outfit-thin text-xs sm:text-sm leading-relaxed tracking-[0.08em] text-white/85 uppercase max-w-md mb-8">
+                  VERTEX IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
+                  SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
+                  PLANET.
+                </p>
+
+                {/* 5 Icons Row/Grid */}
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 py-4 border-t border-b border-white/20 mb-8">
+                  {SUSTAINABILITY_PILLARS.map((pillar) => (
+                    <div key={pillar.id} className="flex flex-col items-center text-center">
+                      <div className="h-10 w-10 sm:h-12 sm:w-12 mb-2 flex items-center justify-center">
+                        <img
+                          src={pillar.icon}
+                          alt={pillar.alt}
+                          className="max-h-full max-w-full object-contain filter drop-shadow-sm"
+                        />
+                      </div>
+                      <div className="space-y-0.5">
+                        {pillar.lines.map((line, lIdx) => (
+                          <p key={lIdx} className="font-outfit-light text-[10px] sm:text-[11px] tracking-wider text-white uppercase leading-tight">
+                            {line}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Button */}
+              <div className="flex justify-start sm:justify-end">
+                <Link
+                  href="/sustainability"
+                  style={{ letterSpacing: "0.14em" }}
+                  className="group/sbtn inline-flex items-center gap-3 border border-white/80 hover:bg-white hover:text-[#13262D] text-white font-outfit-thin text-xs uppercase px-5 py-2.5 rounded-[4px] transition-all duration-300"
+                >
+                  <span>LEARN MORE</span>
+                  <span className="transition-transform duration-300 group-hover/sbtn:translate-x-1">
+                    <LongThinArrow className="w-5 h-2.5" />
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* =========================================================
             5. INNOVATION & RESEARCH SECTION

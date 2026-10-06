@@ -284,22 +284,12 @@ export default function ComparisonTable() {
               className="flex flex-col items-center text-center px-4 md:border-r md:border-[#13262D]/15"
             >
               {/* Boat with Shield Icon */}
-              <div className="w-20 h-20 mb-6 flex items-center justify-center">
-                <svg
-                  className="w-16 h-16 text-[#13262D]"
-                  viewBox="0 0 64 64"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 40L6 48h52l-6-8H12z" />
-                  <path d="M22 40V24h20v16" />
-                  <path d="M32 14v10" />
-                  <path d="M32 14c4-4 12-4 12 4v4H20v-4c0-8 8-8 12-4z" />
-                  <path d="M4 56c4 0 6-2 10-2s6 2 10 2 6-2 10-2 6 2 10 2 6-2 10-2 6 2 6 2" />
-                </svg>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mb-5 sm:mb-6 flex items-center justify-center">
+                <img
+                  src="/images/sustainability/page3/icon-marine-performance.webp"
+                  alt="Marine Performance"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <h3 className="font-mistical text-2xl sm:text-3xl tracking-[0.1em] text-[#13262D] uppercase mb-4">
                 MARINE PERFORMANCE
@@ -319,22 +309,12 @@ export default function ComparisonTable() {
               className="flex flex-col items-center text-center px-4"
             >
               {/* Earth with Leaves Icon */}
-              <div className="w-20 h-20 mb-6 flex items-center justify-center">
-                <svg
-                  className="w-16 h-16 text-[#13262D]"
-                  viewBox="0 0 64 64"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="32" cy="34" r="20" />
-                  <path d="M32 14c6 8 8 16 0 22s-6 14 0 22" />
-                  <path d="M14 26c8 4 16 2 20-4" />
-                  <path d="M48 40c-6 4-14 2-18-2" />
-                  <path d="M38 12c4-6 10-6 14-2s2 10-4 14c-4 2-10 0-10-12z" />
-                </svg>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mb-5 sm:mb-6 flex items-center justify-center">
+                <img
+                  src="/images/sustainability/page3/icon-responsible-teak.webp"
+                  alt="Responsible Teak"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <h3 className="font-mistical text-2xl sm:text-3xl tracking-[0.1em] text-[#13262D] uppercase mb-4">
                 RESPONSIBLE TEAK

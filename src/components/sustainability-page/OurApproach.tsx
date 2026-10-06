@@ -55,21 +55,21 @@ export default function OurApproach() {
           >
             {/* Tagline with horizontal line */}
             <div className="flex items-center gap-4 mb-6 sm:mb-8">
-              <span className="font-outfit-extralight text-xs sm:text-sm tracking-[0.25em] text-[#13262D]/80 uppercase">
+              <span className="font-outfit-light text-sm sm:text-base lg:text-[16px] tracking-[0.28em] text-[#13262D]/85 uppercase">
                 OUR APPROACH
               </span>
-              <div className="h-[1px] w-20 sm:w-28 bg-[#13262D]/25" />
+              <div className="h-[1px] w-20 sm:w-28 bg-[#13262D]/30" />
             </div>
 
             {/* Headline */}
-            <h2 className="font-mistical text-3xl sm:text-5xl lg:text-[3.25rem] leading-[1.12] tracking-[0.08em] text-[#13262D] uppercase mb-6 sm:mb-8">
+            <h2 className="font-mistical text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.25rem] leading-[1.12] tracking-[0.08em] text-[#13262D] uppercase mb-6 sm:mb-8">
               RESPONSIBLE TODAY.
               <br />
               LASTING TOMORROW.
             </h2>
 
             {/* Description */}
-            <p className="font-outfit-extralight text-xs sm:text-sm lg:text-[13px] leading-[2.0] tracking-[0.08em] text-[#13262D]/85 uppercase max-w-xl">
+            <p className="font-outfit-light text-sm sm:text-base lg:text-[15px] xl:text-[16px] leading-[2.1] tracking-[0.08em] text-[#13262D]/90 uppercase max-w-xl">
               WE TAKE A HOLISTIC APPROACH TO SUSTAINABILITY, FROM RESPONSIBLY
               SOURCED TEAK AND EFFICIENT PRODUCTION, TO LONG PRODUCT LIFE AND
               RESOURCE RECOVERY — ENSURING TEAK REMAINS A VALUABLE NATURAL
