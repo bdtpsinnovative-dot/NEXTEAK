@@ -5,6 +5,7 @@ import FeatureBanner from "@/components/sustainability/FeatureBanner";
 import StructureExplosion from "@/components/sustainability/StructureExplosion";
 import KeyBenefitsGrid from "@/components/sustainability/KeyBenefitsGrid";
 import InnovationResearch from "@/components/sustainability/InnovationResearch";
+import HeritageBanner from "@/components/sustainability/HeritageBanner";
 import BottomBanner from "@/components/sustainability/BottomBanner";
 
 export const metadata: Metadata = {
@@ -44,15 +45,8 @@ export default function ProductsPage() {
       {/* SECTION 4: INNOVATION & RESEARCH (MTEC SUPPORT) */}
       <InnovationResearch />
 
-      {/* SECTION 5: HERITAGE SUPERYACHT CIRCULAR DECK BANNER */}
-      <section className="relative w-full overflow-hidden bg-[#0A181E]">
-        <img
-          src="/images/sustainability/heritage-banner.webp"
-          alt="Inspired By Heritage. Built For Generations. Over 60 Years of Timber Expertise."
-          className="w-full h-auto block select-none"
-          loading="lazy"
-        />
-      </section>
+      {/* SECTION 5: HERITAGE SUPERYACHT CIRCULAR DECK BANNER (LIVE TYPOGRAPHY) */}
+      <HeritageBanner />
 
       {/* SECTION 6: BOTTOM OCEAN TEASER BANNER (5.แถบล่างสุด) */}
       <BottomBanner />

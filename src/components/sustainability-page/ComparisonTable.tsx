@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 interface ComparisonRow {
   feature: string;
   traditional: string;
-  nexteak: string;
+  vertex: string;
   isHeroRow?: boolean;
 }
 
@@ -14,64 +14,64 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   {
     feature: "TREE AGE",
     traditional: "80 YEARS +",
-    nexteak: "30 YEARS +",
+    vertex: "30 YEARS +",
     isHeroRow: true,
   },
   {
     feature: "TREE QUALITY",
     traditional:
       "High quality is required, but it is very scarce in natural forests.",
-    nexteak:
+    vertex:
       "It is possible to use readily available, medium-quality plantation timber.",
   },
   {
     feature: "SKILL LABOUR",
     traditional: "It requires highly experienced sawyers.",
-    nexteak:
+    vertex:
       "It uses a manufacturing process designed to produce high-standard products without the limitations of raw materials and human expertise.",
   },
   {
     feature: "STABILITY AND DURABILITY",
     traditional: "Structural stability due to a straight-grain wood structure.",
-    nexteak:
+    vertex:
       "It offers superior stability due to a specially designed product structure where the wood fibers are precisely oriented in a cross-grain configuration, resulting in significantly lower expansion/contraction and greater strength.",
   },
   {
     feature: "UV RESISTANCE",
     traditional:
       "It is not UV-resistant; the color will fade very quickly, often within one month.",
-    nexteak:
+    vertex:
       "Surface coating with Carbon Quantum Dots Technology helps reduce the wood's UV light absorption, significantly slowing down color fading.",
   },
   {
     feature: "SCRATCH RESISTANCE",
     traditional: "The wood surface has low durability.",
-    nexteak:
+    vertex:
       "The surface durability is increased by more than 30%, resulting from the product's structure and the scratch-resistant properties provided by the Carbon Quantum Dots Technology coating.",
   },
   {
     feature: "MOLD & FUNGI RESISTANCE",
     traditional: "It is possible.",
-    nexteak: "The coating helps reduce the risk of mold and fungi formation.",
+    vertex: "The coating helps reduce the risk of mold and fungi formation.",
   },
   {
     feature: "EASY CLEANING SURFACE",
     traditional:
       "The wood surface has a grain structure that collects dirt, requiring time and specialized equipment for cleaning.",
-    nexteak:
+    vertex:
       "The surface coating seals the wood grain grooves, which reduces the embedding of dirt and makes cleaning easier.",
   },
   {
     feature: "GREEN & SUSTAINABILITY",
     traditional: "Green material but not from the sustainable source.",
-    nexteak:
+    vertex:
       "Green material and from sustainable source with less than 0.1% of chemical component which is Poly Urethane glue.",
   },
 ];
 
 export default function ComparisonTable() {
-  const [mobileTab, setMobileTab] = useState<"nexteak" | "traditional">(
-    "nexteak"
+  const [mobileTab, setMobileTab] = useState<"vertex" | "traditional">(
+    "vertex"
   );
 
   return (
@@ -99,10 +99,10 @@ export default function ComparisonTable() {
           {/* ========================================================== */}
           <div className="hidden lg:block">
             {/* Header Columns above table */}
-            <div className="grid grid-cols-12 items-end mb-6 text-white px-8">
+            <div className="grid grid-cols-[36%_26%_38%] items-end mb-6 text-white px-8">
               {/* Left Column: Traditional Decking */}
-              <div className="col-span-5 text-center flex flex-col items-center">
-                <span className="font-outfit-light text-xl tracking-[0.2em] text-white/90 uppercase">
+              <div className="text-center flex flex-col items-center">
+                <span className="font-outfit font-light text-xl tracking-[0.2em] text-white/90 uppercase">
                   TRADITIONAL
                 </span>
                 <span className="font-outfit font-bold text-3xl tracking-[0.16em] text-white uppercase">
@@ -111,16 +111,16 @@ export default function ComparisonTable() {
               </div>
 
               {/* Center Column: VS */}
-              <div className="col-span-2 text-center">
+              <div className="text-center">
                 <span className="font-mistical text-6xl text-white tracking-widest">
                   VS
                 </span>
               </div>
 
-              {/* Right Column: NEXTEAK */}
-              <div className="col-span-5 text-center flex flex-col items-center justify-end">
+              {/* Right Column: VERTEX */}
+              <div className="text-center flex flex-col items-center justify-end">
                 <span className="font-mistical text-4xl xl:text-5xl tracking-[0.08em] text-white uppercase">
-                  NEXTEAK
+                  VERTEX
                 </span>
               </div>
             </div>
@@ -131,46 +131,46 @@ export default function ComparisonTable() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="rounded-2xl border border-white/40 bg-black/40 backdrop-blur-md overflow-hidden shadow-2xl"
+              className="rounded-2xl border border-white/60 bg-black/30 backdrop-blur-sm overflow-hidden shadow-2xl"
             >
               {COMPARISON_ROWS.map((row, idx) => (
                 <div
                   key={row.feature}
-                  className={`grid grid-cols-12 items-stretch text-white text-center transition-colors duration-200 hover:bg-white/[0.04] ${
+                  className={`grid grid-cols-[36%_26%_38%] items-stretch text-white text-center transition-colors duration-200 hover:bg-white/[0.04] ${
                     idx < COMPARISON_ROWS.length - 1
-                      ? "border-b border-white/25"
+                      ? "border-b border-white/40"
                       : ""
                   }`}
                 >
                   {/* Left Cell: Traditional Decking */}
-                  <div className="col-span-5 flex items-center justify-center p-4 sm:p-5 border-r border-white/25 text-white/90">
+                  <div className="flex items-center justify-center p-4 sm:p-5 lg:py-6 lg:px-8 border-r border-white/40 text-white">
                     {row.isHeroRow ? (
-                      <span className="font-serif text-2xl lg:text-3xl text-white font-normal tracking-wider">
+                      <span className="font-bodoni text-3xl lg:text-4xl xl:text-5xl text-white font-bold tracking-[0.06em]">
                         {row.traditional}
                       </span>
                     ) : (
-                      <p className="font-outfit text-xs lg:text-[13px] leading-relaxed max-w-sm">
+                      <p className="font-outfit text-xs sm:text-[13px] lg:text-[14px] xl:text-[15px] leading-relaxed max-w-[420px] text-white font-normal">
                         {row.traditional}
                       </p>
                     )}
                   </div>
 
                   {/* Center Cell: Feature Badge */}
-                  <div className="col-span-2 flex items-center justify-center p-3 sm:p-4 bg-white/[0.03] border-r border-white/25">
-                    <span className="font-outfit font-semibold text-[11px] lg:text-xs tracking-[0.16em] text-white uppercase">
+                  <div className="flex items-center justify-center p-3 sm:p-4 lg:py-6 lg:px-6 bg-white/[0.04] border-r border-white/40">
+                    <span className="font-outfit font-semibold text-xs sm:text-[13px] lg:text-[14px] tracking-[0.06em] text-white uppercase leading-snug">
                       {row.feature}
                     </span>
                   </div>
 
-                  {/* Right Cell: NEXTEAK */}
-                  <div className="col-span-5 flex items-center justify-center p-4 sm:p-5 text-white">
+                  {/* Right Cell: VERTEX */}
+                  <div className="flex items-center justify-center p-4 sm:p-5 lg:py-6 lg:px-8 text-white">
                     {row.isHeroRow ? (
-                      <span className="font-serif text-2xl lg:text-3xl text-white font-normal tracking-wider">
-                        {row.nexteak}
+                      <span className="font-bodoni text-3xl lg:text-4xl xl:text-5xl text-white font-bold tracking-[0.06em]">
+                        {row.vertex}
                       </span>
                     ) : (
-                      <p className="font-outfit text-xs lg:text-[13px] leading-relaxed max-w-sm text-white/95">
-                        {row.nexteak}
+                      <p className="font-outfit text-xs sm:text-[13px] lg:text-[14px] xl:text-[15px] leading-relaxed max-w-[460px] text-white font-normal">
+                        {row.vertex}
                       </p>
                     )}
                   </div>
@@ -189,7 +189,7 @@ export default function ComparisonTable() {
                 VS
               </span>
               <h2 className="font-outfit-regular text-xs sm:text-sm tracking-[0.2em] text-white/90 uppercase mt-2">
-                TRADITIONAL DECKING vs NEXTEAK
+                TRADITIONAL DECKING vs VERTEX
               </h2>
             </div>
 
@@ -197,21 +197,21 @@ export default function ComparisonTable() {
             <div className="flex rounded-full bg-white/10 p-1 mb-8 border border-white/20 backdrop-blur-md">
               <button
                 type="button"
-                onClick={() => setMobileTab("nexteak")}
-                className={`flex-1 py-2.5 rounded-full text-xs font-outfit-regular tracking-wider uppercase transition-all duration-300 ${
-                  mobileTab === "nexteak"
-                    ? "bg-[#2DD4BF] text-[#0A1820] font-semibold shadow-md"
+                onClick={() => setMobileTab("vertex")}
+                className={`flex-1 py-2.5 rounded-full text-xs font-outfit font-semibold tracking-wider uppercase transition-all duration-300 ${
+                  mobileTab === "vertex"
+                    ? "bg-white text-[#13262D] shadow-md"
                     : "text-white/70 hover:text-white"
                 }`}
               >
-                NEXTEAK
+                VERTEX
               </button>
               <button
                 type="button"
                 onClick={() => setMobileTab("traditional")}
-                className={`flex-1 py-2.5 rounded-full text-xs font-outfit-regular tracking-wider uppercase transition-all duration-300 ${
+                className={`flex-1 py-2.5 rounded-full text-xs font-outfit font-semibold tracking-wider uppercase transition-all duration-300 ${
                   mobileTab === "traditional"
-                    ? "bg-white/25 text-white font-semibold shadow-md"
+                    ? "bg-white text-[#13262D] shadow-md"
                     : "text-white/70 hover:text-white"
                 }`}
               >
@@ -231,7 +231,7 @@ export default function ComparisonTable() {
                   className="rounded-xl border border-white/20 bg-black/40 backdrop-blur-md p-4 sm:p-5"
                 >
                   <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
-                    <span className="text-[11px] sm:text-xs font-outfit-semibold tracking-[0.15em] text-[#2DD4BF] uppercase">
+                    <span className="text-[11px] sm:text-xs font-outfit font-semibold tracking-[0.12em] text-white uppercase">
                       {row.feature}
                     </span>
                     <span className="text-[10px] text-white/50 tracking-wider">
@@ -240,21 +240,21 @@ export default function ComparisonTable() {
                   </div>
 
                   <div className="font-outfit text-xs sm:text-sm leading-relaxed text-white/90">
-                    {mobileTab === "nexteak" ? (
+                    {mobileTab === "vertex" ? (
                       <span
                         className={
                           row.isHeroRow
-                            ? "font-serif text-xl font-bold text-white tracking-wider"
+                            ? "font-bodoni text-2xl sm:text-3xl font-bold text-white tracking-[0.06em]"
                             : "font-normal text-white"
                         }
                       >
-                        {row.nexteak}
+                        {row.vertex}
                       </span>
                     ) : (
                       <span
                         className={
                           row.isHeroRow
-                            ? "font-serif text-xl font-bold text-white/90 tracking-wider"
+                            ? "font-bodoni text-2xl sm:text-3xl font-bold text-white tracking-[0.06em]"
                             : "text-white/75"
                         }
                       >

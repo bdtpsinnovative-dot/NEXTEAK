@@ -54,7 +54,7 @@ export default function InnovationResearch() {
 
               {/* Body Text */}
               <p className="font-outfit-extralight text-xs sm:text-sm leading-relaxed tracking-wider text-[#13262D]/80 uppercase mb-10 max-w-md">
-                WITH OVER 5 YEARS OF DEDICATED RESEARCH AND DEVELOPMENT, REVO TEAK IS
+                WITH OVER 5 YEARS OF DEDICATED RESEARCH AND DEVELOPMENT, VERTEX IS
                 ENGINEERED WITH ADVANCED TECHNOLOGY SUCH AS CARBON QUANTUM DOT SURFACE
                 TREATMENT, CREATING A DECKING MATERIAL THAT IS MORE DURABLE, STABLE AND
                 EASIER TO MAINTAIN — WHILE PRESERVING THE NATURAL BEAUTY OF TEAK.
