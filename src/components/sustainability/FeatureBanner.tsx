@@ -40,7 +40,7 @@ export default function FeatureBanner() {
       {/* 1. DESKTOP VIEW (>= 1024px)                                     */}
       {/* Matches the Graphic Team's 5196x1846 Master Design 100% EXACTLY */}
       {/* ============================================================== */}
-      <div className="hidden lg:block relative w-full aspect-[5196/1846]">
+      <div className="hidden lg:block relative w-full aspect-[5196/1846] min-h-[480px] lg:min-h-[500px] xl:min-h-0">
         {/* Layer 1: 100% Original High-Res Yacht Photo (Cleaned of text) */}
         <img
           src="/images/sustainability/feature-banner-bg.webp"
@@ -65,99 +65,96 @@ export default function FeatureBanner() {
           className="pointer-events-none absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
         />
 
-        {/* Layer 2: Master Text Overlay (Exact Percentages from Graphic Design) */}
-        <div
-          style={{ left: "6.0%", top: "13.9%" }}
-          className="absolute z-10 max-w-[48%]"
-        >
-          {/* FEATURES Tag + Horizontal Line */}
-          <motion.div
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center gap-3 xl:gap-4 mb-[2.2%]"
-          >
-            <span className="font-outfit-light text-xs lg:text-sm xl:text-[17px] tracking-[0.26em] text-white/95 uppercase">
-              FEATURES
-            </span>
-            <motion.span
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-              className="h-[1px] w-24 xl:w-36 bg-white/70 origin-left"
-            />
-          </motion.div>
-
-          {/* Luxury Serif Title: WHAT IS VERTEX? */}
-          <motion.h1
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-mistical text-4xl lg:text-[46px] xl:text-[62px] 2xl:text-[76px] leading-[1.04] text-white tracking-wide uppercase mb-[3.2%]"
-          >
-            WHAT IS
-            <br />
-            VERTEX?
-          </motion.h1>
-
-          {/* Master Description Paragraph */}
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="font-outfit-light text-[11px] lg:text-[12.5px] xl:text-[14.5px] 2xl:text-[16px] leading-[1.65] tracking-[0.14em] text-white/90 uppercase max-w-[95%]"
-          >
-            VERTEX IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT
-            ON MORE THAN 60 YEARS OF WOODDEN EXPERTISE IN THE TIMBER INDUSTRY
-            COMBINED WITH RESEARCH-BASED KNOW-HOW FROM THE NATIONAL RESEARCH
-            CENTER.
-          </motion.p>
-        </div>
-
-        {/* Layer 3: The 4 Original Icons & Labels (Exact Percentages on Deck) */}
-        <div
-          style={{ left: "6.0%", bottom: "8.5%" }}
-          className="absolute z-10 flex items-start gap-8 xl:gap-14 2xl:gap-20"
-        >
-          {ICONS_DATA.map((item, index) => (
+        {/* Layer 2: Unified Content Overlay (Flex Column with Auto Spacing - Zero Collision) */}
+        <div className="absolute inset-0 z-10 flex flex-col justify-between px-[6%] pt-[4%] pb-[3.5%] pointer-events-none">
+          {/* Top: Header, Title & Description */}
+          <div className="max-w-[56%] xl:max-w-[48%] pointer-events-auto">
+            {/* FEATURES Tag + Horizontal Line */}
             <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="flex items-center gap-3 xl:gap-4 mb-2 lg:mb-3 xl:mb-4"
+            >
+              <span className="font-outfit-light text-xs lg:text-sm xl:text-[17px] tracking-[0.26em] text-white/95 uppercase">
+                FEATURES
+              </span>
+              <motion.span
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+                className="h-[1px] w-20 lg:w-28 xl:w-36 bg-white/70 origin-left"
+              />
+            </motion.div>
+
+            {/* Luxury Serif Title: WHAT IS VERTEX? */}
+            <motion.h1
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
-                duration: 0.65,
-                delay: 0.35 + index * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="flex flex-col items-center text-center group cursor-default"
+              transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="font-mistical text-3xl sm:text-4xl lg:text-[40px] xl:text-[58px] 2xl:text-[74px] leading-[1.04] text-white tracking-wide uppercase mb-2.5 lg:mb-3.5 xl:mb-5"
             >
-              {/* Original Graphic Team Icon Image */}
-              <div className="h-12 xl:h-16 2xl:h-20 mb-3 xl:mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  className="max-h-full max-w-full object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
-                />
-              </div>
+              WHAT IS
+              <br />
+              VERTEX?
+            </motion.h1>
 
-              {/* Exact Original Typography Label */}
-              <div className="space-y-0.5">
-                {item.lines.map((line, lIdx) => (
-                  <p
-                    key={lIdx}
-                    className="font-outfit-light text-[9.5px] xl:text-[11px] 2xl:text-[12px] tracking-[0.14em] text-white/95 uppercase leading-tight whitespace-nowrap"
-                  >
-                    {line}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+            {/* Master Description Paragraph */}
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="font-outfit-light text-[10.5px] lg:text-[11.5px] xl:text-[14px] 2xl:text-[16px] leading-[1.6] tracking-[0.12em] text-white/90 uppercase max-w-[560px] xl:max-w-[680px]"
+            >
+              VERTEX IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT
+              ON MORE THAN 60 YEARS OF WOODDEN EXPERTISE IN THE TIMBER INDUSTRY
+              COMBINED WITH RESEARCH-BASED KNOW-HOW FROM THE NATIONAL RESEARCH
+              CENTER.
+            </motion.p>
+          </div>
+
+          {/* Bottom: The 4 Original Icons & Labels */}
+          <div className="flex items-start gap-6 lg:gap-8 xl:gap-14 2xl:gap-20 pointer-events-auto pt-4">
+            {ICONS_DATA.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.65,
+                  delay: 0.35 + index * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="flex flex-col items-center text-center group cursor-default"
+              >
+                {/* Original Graphic Team Icon Image */}
+                <div className="h-10 lg:h-11 xl:h-16 2xl:h-20 mb-2 lg:mb-2.5 xl:mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="max-h-full max-w-full object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                  />
+                </div>
+
+                {/* Exact Original Typography Label */}
+                <div className="space-y-0.5">
+                  {item.lines.map((line, lIdx) => (
+                    <p
+                      key={lIdx}
+                      className="font-outfit-light text-[9px] lg:text-[9.5px] xl:text-[11px] 2xl:text-[12px] tracking-[0.14em] text-white/95 uppercase leading-tight whitespace-nowrap"
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
 

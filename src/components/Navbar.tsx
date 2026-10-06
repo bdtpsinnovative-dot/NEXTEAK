@@ -5,10 +5,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface NavbarProps {
-  activeItem?: "PRODUCTS" | "SUSTAINABILITY" | "GALLERY" | "CONTACT US";
+  activeItem?: "HOME" | "PRODUCTS" | "SUSTAINABILITY" | "GALLERY" | "CONTACT US";
 }
 
 const NAV_ITEMS = [
+  { label: "HOME", href: "/" },
   { label: "PRODUCTS", href: "/products" },
   { label: "SUSTAINABILITY", href: "/sustainability" },
   { label: "GALLERY", href: "/gallery" },
@@ -55,7 +56,7 @@ export default function Navbar({ activeItem }: NavbarProps) {
         </Link>
 
         {/* Desktop Navigation Menu */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-16 font-outfit-thin text-xs lg:text-[14px] uppercase text-white/95">
+        <nav className="hidden md:flex items-center gap-6 md:gap-8 lg:gap-12 xl:gap-14 font-outfit-thin text-xs lg:text-[14px] uppercase text-white/95">
           {NAV_ITEMS.map((item) => {
             const isActive = activeItem === item.label;
             return (

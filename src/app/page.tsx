@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 
@@ -225,7 +226,7 @@ export default function VertexHomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#13262D] font-outfit selection:bg-[#13262D] selection:text-white">
       {/* 1. Header / Navbar */}
-      <Navbar />
+      <Navbar activeItem="HOME" />
 
       <main className="flex-1">
         {/* =========================================================
@@ -761,8 +762,8 @@ export default function VertexHomePage() {
             className="w-full h-auto block"
             loading="lazy"
           />
-          <a
-            href="#innovation"
+          <Link
+            href="/sustainability"
             style={{ letterSpacing: "0.14em" }}
             className="group/sbtn absolute bottom-[6%] sm:bottom-[8%] right-[3.5%] sm:right-[4.2%] inline-flex items-center gap-1.5 sm:gap-3.5 border border-white/85 hover:bg-white hover:text-[#13262D] text-white font-outfit-thin text-[8px] sm:text-xs lg:text-[13px] uppercase px-2.5 sm:px-5 lg:px-6 py-1 sm:py-2.5 rounded-[4px] sm:rounded-[5px] transition-all duration-300"
           >
@@ -770,7 +771,7 @@ export default function VertexHomePage() {
             <span className="transition-transform duration-300 group-hover/sbtn:translate-x-1">
               <LongThinArrow className="w-3.5 sm:w-6 h-2 sm:h-3" />
             </span>
-          </a>
+          </Link>
         </motion.section>
 
         {/* =========================================================
@@ -817,8 +818,8 @@ export default function VertexHomePage() {
                   TECHNOLOGY
                 </h2>
 
-                <a
-                  href="#contact"
+                <Link
+                  href="/products#innovation-research"
                   style={{ letterSpacing: "0.14em" }}
                   className="group/ibtn inline-flex items-center gap-3 border border-[#13262D] hover:bg-[#13262D] hover:text-white text-[#13262D] font-outfit-extralight text-xs uppercase px-5 py-2.5 rounded-[6px] transition-all duration-300"
                 >
@@ -826,7 +827,7 @@ export default function VertexHomePage() {
                   <span className="transition-transform duration-300 group-hover/ibtn:translate-x-1">
                     <LongThinArrow className="w-6 h-3" />
                   </span>
-                </a>
+                </Link>
               </motion.div>
 
               {/* Right 3 Feature Cards */}

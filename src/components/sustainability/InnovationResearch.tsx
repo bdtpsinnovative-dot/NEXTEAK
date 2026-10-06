@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const INNOVATION_CARDS = [
@@ -28,8 +28,32 @@ const INNOVATION_CARDS = [
 ];
 
 export default function InnovationResearch() {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash === "#innovation-research" || hash === "#innovation") {
+        const scrollToSection = () => {
+          const el = document.getElementById("innovation-research");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        };
+        const t1 = setTimeout(scrollToSection, 150);
+        const t2 = setTimeout(scrollToSection, 500);
+        return () => {
+          clearTimeout(t1);
+          clearTimeout(t2);
+        };
+      }
+    }
+  }, []);
+
   return (
-    <section className="relative w-full bg-white text-[#13262D] py-20 sm:py-28 lg:py-36 overflow-hidden select-none">
+    <section
+      id="innovation-research"
+      className="relative w-full bg-white text-[#13262D] py-20 sm:py-28 lg:py-36 overflow-hidden select-none scroll-mt-20 sm:scroll-mt-24 lg:scroll-mt-28"
+    >
+      <div id="innovation" className="absolute -top-24 pointer-events-none" />
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Narrative & MTEC Accreditation */}
