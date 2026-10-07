@@ -45,7 +45,7 @@ const HERO_SLIDES = [
   },
   {
     src: "/images/hero/3.webp",
-    alt: "VERTEX Sunset Yacht Terrace Decking",
+    alt: "VERTEX Superyacht Aerial Teak Decking",
     tagline: "SUSTAINABLE HARMONY",
     titleLines: ["NATURE MEETS", "ADVANCED", "TECHNOLOGY."],
     desc: (
@@ -289,7 +289,7 @@ export default function VertexHomePage() {
                   className="relative w-full h-full shrink-0 overflow-hidden"
                 >
                   <img
-                    src={`${slide.src}?v=2`}
+                    src={`${slide.src}?v=3`}
                     alt={slide.alt}
                     className="w-full h-full object-cover object-[65%_center] sm:object-center"
                     style={{
