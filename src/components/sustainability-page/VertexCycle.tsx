@@ -126,7 +126,7 @@ export default function VertexCycle() {
           >
             <div className="flex items-center gap-4 mb-4 sm:mb-6">
               <span className="font-outfit-light text-sm sm:text-base lg:text-[16px] tracking-[0.28em] text-[#13262D]/85 uppercase">
-                THE VERTEX CYCLE
+                THE NEXTEAK CYCLE
               </span>
               <div className="h-[1px] w-20 sm:w-28 bg-[#13262D]/30" />
             </div>

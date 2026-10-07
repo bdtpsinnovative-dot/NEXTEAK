@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import SustainabilityHero from "@/components/sustainability-page/SustainabilityHero";
 import OurApproach from "@/components/sustainability-page/OurApproach";
+import EnvironmentalAttributes from "@/components/sustainability-page/EnvironmentalAttributes";
 import VertexCycle from "@/components/sustainability-page/VertexCycle";
 import ComparisonTable from "@/components/sustainability-page/ComparisonTable";
 import SustainabilityBottomBanner from "@/components/sustainability-page/SustainabilityBottomBanner";
@@ -54,7 +55,10 @@ export default function SustainabilityPage() {
       {/* SECTION 2: OUR APPROACH / 4 PILLARS OF RESPONSIBLE SOURCING */}
       <OurApproach />
 
-      {/* SECTION 3: THE VERTEX CYCLE / 5-STEP CIRCULAR LIFECYCLE */}
+      {/* SECTION 3: ADDITIONAL ENVIRONMENTAL ATTRIBUTES */}
+      <EnvironmentalAttributes />
+
+      {/* SECTION 4: THE VERTEX CYCLE / 5-STEP CIRCULAR LIFECYCLE */}
       <VertexCycle />
 
       {/* SECTION 4: TRADITIONAL DECKING VS VERTEX & MARINE PERFORMANCE */}
