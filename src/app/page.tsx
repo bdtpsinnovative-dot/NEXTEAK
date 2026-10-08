@@ -291,6 +291,9 @@ export default function VertexHomePage() {
                   <img
                     src={`${slide.src}?v=3`}
                     alt={slide.alt}
+                    loading={idx === 1 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={idx === 1 ? "high" : "auto"}
                     className="w-full h-full object-cover object-[65%_center] sm:object-center"
                     style={{
                       transform: isActive && mounted ? "scale(1.05)" : "scale(1)",
@@ -595,6 +598,8 @@ export default function VertexHomePage() {
                       <img
                         src={card.image}
                         alt={card.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       />
                     </div>

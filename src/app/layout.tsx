@@ -62,6 +62,38 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vertex.com/#organization",
+      name: "VERTEX",
+      url: "https://vertex.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://vertex.com/images/brand/logo-vertex.webp",
+      },
+      description:
+        "Luxury marine teak decking engineered with thin-veneer technology and proprietary protective coatings for superyachts.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        availableLanguage: ["English", "Thai"],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vertex.com/#website",
+      url: "https://vertex.com",
+      name: "VERTEX — Marine Teak Decking",
+      publisher: {
+        "@id": "https://vertex.com/#organization",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,6 +101,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth antialiased">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-white text-[#13262D]">
         {children}
       </body>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function StructureExplosion() {
@@ -12,13 +12,15 @@ export default function StructureExplosion() {
   });
 
   const [userToggled, setUserToggled] = useState<boolean | null>(null);
+  const [prevIsInView, setPrevIsInView] = useState(isInView);
 
-  // Whenever the diagram leaves view, reset manual toggle so scrolling back in replays the opening!
-  useEffect(() => {
+  // When diagram leaves view, reset manual toggle so scrolling back in replays the opening
+  if (prevIsInView !== isInView) {
+    setPrevIsInView(isInView);
     if (!isInView) {
       setUserToggled(null);
     }
-  }, [isInView]);
+  }
 
   const isOpen = userToggled !== null ? userToggled : isInView;
 
