@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { createClient } from "@/supabase/client";
 
 function LongThinArrow({ className = "w-6 h-3" }: { className?: string }) {
   return (
@@ -27,14 +28,66 @@ function LongThinArrow({ className = "w-6 h-3" }: { className?: string }) {
 export default function ContactPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setModalOpen(false);
-    }, 2000);
+    setSubmitting(true);
+    setErrorMsg(null);
+
+    try {
+      if (!formData.name.trim()) {
+        setErrorMsg("Please enter your name.");
+        setSubmitting(false);
+        return;
+      }
+      if (!formData.email.trim() && !formData.phone.trim()) {
+        setErrorMsg("Please provide an email or phone number.");
+        setSubmitting(false);
+        return;
+      }
+
+      const nameParts = formData.name.trim().split(/\s+/);
+      const firstName = nameParts[0];
+      const lastName = nameParts.slice(1).join(" ") || "-";
+
+      const supabase = createClient();
+      const { error: insertError } = await supabase
+        .from("contact_inquiries")
+        .insert({
+          first_name: firstName,
+          last_name: lastName,
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          source: "nexteak",
+          status: "new",
+        });
+
+      if (insertError) {
+        console.error("Supabase insert error:", insertError);
+        setErrorMsg("Unable to submit inquiry. Please try again.");
+      } else {
+        setFormSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setTimeout(() => {
+          setFormSubmitted(false);
+          setModalOpen(false);
+        }, 2500);
+      }
+    } catch (err: any) {
+      console.error("Error submitting inquiry:", err);
+      setErrorMsg("Network error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -239,6 +292,12 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {errorMsg && (
+                    <div className="p-3 text-xs text-rose-700 bg-rose-50 border border-rose-200 rounded">
+                      {errorMsg}
+                    </div>
+                  )}
+
                   <div>
                     <label className="block font-outfit-thin text-xs uppercase text-[#13262D]/70 mb-1">
                       Your Name
@@ -247,6 +306,8 @@ export default function ContactPage() {
                       required
                       type="text"
                       placeholder="e.g. Captain / Owner Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded border border-[#13262D]/20 focus:border-[#13262D] focus:outline-none text-sm"
                     />
                   </div>
@@ -260,6 +321,8 @@ export default function ContactPage() {
                         required
                         type="email"
                         placeholder="name@yacht.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded border border-[#13262D]/20 focus:border-[#13262D] focus:outline-none text-sm"
                       />
                     </div>
@@ -270,6 +333,8 @@ export default function ContactPage() {
                       <input
                         type="tel"
                         placeholder="+66 8X XXX XXXX"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded border border-[#13262D]/20 focus:border-[#13262D] focus:outline-none text-sm"
                       />
                     </div>
@@ -282,16 +347,19 @@ export default function ContactPage() {
                     <textarea
                       rows={3}
                       placeholder="Tell us about your yacht or decking project..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-3.5 py-2.5 rounded border border-[#13262D]/20 focus:border-[#13262D] focus:outline-none text-sm resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
+                    disabled={submitting}
                     style={{ letterSpacing: "0.14em" }}
-                    className="w-full bg-[#13262D] hover:bg-black text-white font-outfit-thin text-xs uppercase py-3 rounded transition-colors cursor-pointer"
+                    className="w-full bg-[#13262D] hover:bg-black text-white font-outfit-thin text-xs uppercase py-3 rounded transition-colors cursor-pointer disabled:opacity-50"
                   >
-                    SEND INQUIRY
+                    {submitting ? "SENDING INQUIRY..." : "SEND INQUIRY"}
                   </button>
                 </form>
               )}
