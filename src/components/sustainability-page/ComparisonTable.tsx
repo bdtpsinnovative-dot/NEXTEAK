@@ -41,13 +41,13 @@ const COMPARISON_ROWS: ComparisonRow[] = [
     traditional:
       "It is not UV-resistant; the color will fade very quickly, often within one month.",
     vertex:
-      "Surface coating with Carbon Quantum Dots Technology helps reduce the wood's UV light absorption, significantly slowing down color fading.",
+      "Surface coating with Advanced Surface Protection Technology helps reduce the wood's UV light absorption, significantly slowing down color fading.",
   },
   {
     feature: "SCRATCH RESISTANCE",
     traditional: "The wood surface has low durability.",
     vertex:
-      "The surface durability is increased by more than 30%, resulting from the product's structure and the scratch-resistant properties provided by the Carbon Quantum Dots Technology coating.",
+      "The surface durability is increased by more than 30%, resulting from the product's structure and the scratch-resistant properties provided by the Advanced Surface Protection Technology coating.",
   },
   {
     feature: "MOLD & FUNGI RESISTANCE",

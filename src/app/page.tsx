@@ -97,8 +97,8 @@ const INNOVATION_CARDS = [
     title: "THIN VENEER ENGINEERING",
   },
   {
-    image: "/images/innovation/carbon-quantum-dot-coating.webp",
-    title: "CARBON QUANTUM DOT COATING",
+    image: "/images/innovation/advanced-surface-protection.webp",
+    title: "ADVANCED SURFACE PROTECTION",
   },
   {
     image: "/images/innovation/engineered-for-the-sea.webp",

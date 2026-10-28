@@ -36,15 +36,15 @@ export const PROJECTS: Project[] = [
     year: "2026",
     deckArea: "380 sq.m",
     teakSpec: "Quarter-Sawn First-European Quality Myanmar Teak (12mm)",
-    coating: "Carbon Quantum Dot (CQD) Hydrophobic Protection",
+    coating: "Advanced Surface Protection (ASP) Hydrophobic Shield",
     shortDescription:
       "Precision-crafted foredeck teak installation engineered to withstand extreme maritime environments while preserving the golden radiance of natural teak wood.",
     overview:
       "Commissioned for a 68-meter custom displacement megayacht, this foredeck installation represents the peak of VERTEK's marine joinery and high-performance composite integration. The deck layout honors traditional maritime aesthetics while utilizing our proprietary vacuum-infused adhesion method to eliminate penetrative mechanical fastenings, ensuring zero risk of water ingress across decades of offshore navigation.",
     craftsmanshipNotes:
-      "Every single teak plank was quarter-sawn with vertical grain orientation exceeding 85%, sourced from sustainably managed heritage reserves. The decking is fortified with VERTEK's proprietary Carbon Quantum Dot coating, which reflects damaging UV wavelengths, suppresses thermal buildup under midday sun, and yields an unmatched velvet tactile grip for barefoot comfort.",
+      "Every single teak plank was quarter-sawn with vertical grain orientation exceeding 85%, sourced from sustainably managed heritage reserves. The decking is fortified with VERTEK's proprietary Advanced Surface Protection coating, which reflects damaging UV wavelengths, suppresses thermal buildup under midday sun, and yields an unmatched velvet tactile grip for barefoot comfort.",
     keyFeatures: [
-      "Proprietary Carbon Quantum Dot UV & Saltwater Molecular Barrier",
+      "Proprietary Advanced Surface Protection UV & Saltwater Molecular Barrier",
       "Vacuum-infusion zero-fastener marine bonding system",
       "Acoustic and thermal dampening honeycomb substructure",
       "Precision-curved king plank and margin board integration",
@@ -56,8 +56,8 @@ export const PROJECTS: Project[] = [
       { label: "Teak Origin", value: "FSC-Certified Heritage Grade" },
       { label: "Plank Profile", value: "Quarter-Sawn Vertical Grain, 48mm × 12mm" },
       { label: "Caulking System", value: "High-Modulus Marine Polymer (Charcoal)" },
-      { label: "Protective Finish", value: "Carbon Quantum Dot Invisible Shield" },
-      { label: "Substrate", value: "Carbon-Reinforced Marine Composite" },
+      { label: "Protective Finish", value: "Advanced Surface Protection Invisible Shield" },
+      { label: "Substrate", value: "Reinforced Marine Composite" },
       { label: "Completion", value: "2026 Season Delivery" },
     ],
   },
@@ -112,7 +112,7 @@ export const PROJECTS: Project[] = [
     year: "2025",
     deckArea: "310 sq.m",
     teakSpec: "Heritage Natural Teak Veneer with Eco-Polymer Core (8mm)",
-    coating: "Thermal Dissipation CQD Matte Clear Coat",
+    coating: "Thermal Dissipation Advanced Surface Matte Coat",
     shortDescription:
       "Sunset observation platform combining ultra-lightweight marine composites with the rich, textured warmth of genuine natural teak.",
     overview:
@@ -122,7 +122,7 @@ export const PROJECTS: Project[] = [
     keyFeatures: [
       "Over 1.2 Metric Tons saved topside weight for multihull speed",
       "Thermal-dissipating technology (up to 8°C cooler barefoot feel)",
-      "Flush-mounted carbon fiber deck hatches and anchor wells",
+      "Flush-mounted marine deck hatches and anchor wells",
       "Superior non-skid performance in heavy sea spray",
       "Rapid maintenance rinse-down protocol with neutral water",
     ],
@@ -132,8 +132,8 @@ export const PROJECTS: Project[] = [
       { label: "Teak Origin", value: "Responsibly Sourced Myanmar Teak" },
       { label: "Plank Profile", value: "Thin-Veneer Micro-Bevel, 42mm × 8mm" },
       { label: "Caulking System", value: "Marine Low-Profile Grey Caulking" },
-      { label: "Protective Finish", value: "Thermal-Reflective CQD Coating" },
-      { label: "Substrate", value: "Carbon Honeycomb Ultra-Lite Subfloor" },
+      { label: "Protective Finish", value: "Thermal-Reflective Advanced Protective Coating" },
+      { label: "Substrate", value: "Honeycomb Ultra-Lite Subfloor" },
       { label: "Completion", value: "2025" },
     ],
   },

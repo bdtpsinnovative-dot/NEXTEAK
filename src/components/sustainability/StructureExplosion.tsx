@@ -110,7 +110,7 @@ export default function StructureExplosion() {
                 >
                   <img
                     src="/images/sustainability/film-layer.webp"
-                    alt="Carbon Quantum Dot Protective Film"
+                    alt="Advanced Surface Protection Film"
                     className="w-full h-full object-contain select-none"
                   />
                 </motion.div>
