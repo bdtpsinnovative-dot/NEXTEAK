@@ -7,21 +7,22 @@ import KeyBenefitsGrid from "@/components/sustainability/KeyBenefitsGrid";
 import InnovationResearch from "@/components/sustainability/InnovationResearch";
 import HeritageBanner from "@/components/sustainability/HeritageBanner";
 import BottomBanner from "@/components/sustainability/BottomBanner";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Products & Innovation",
   description:
-    "Discover VERTEX luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+    "Discover VERTEK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
   openGraph: {
-    title: "VERTEX Products & Marine Decking Innovation",
+    title: "VERTEK Products & Marine Decking Innovation",
     description:
-      "Discover VERTEX luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+      "Discover VERTEK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
     images: [
       {
         url: "/images/sustainability/feature-banner-bg.webp",
         width: 2560,
         height: 909,
-        alt: "VERTEX Luxury Marine Teak Deck",
+        alt: "VERTEK Luxury Marine Teak Deck",
       },
     ],
   },
@@ -33,13 +34,13 @@ export default function ProductsPage() {
       {/* Top Navigation */}
       <Navbar activeItem="PRODUCTS" />
 
-      {/* SECTION 1: HERO / WHAT IS VERTEX? (LAYER-SEPARATED & ANIMATED) */}
+      {/* SECTION 1: HERO / WHAT IS VERTEK? (LAYER-SEPARATED & ANIMATED) */}
       <FeatureBanner />
 
       {/* SECTION 2: INTERACTIVE STRUCTURE (EXPLODED WOOD & FILM SEPARATION) */}
       <StructureExplosion />
 
-      {/* SECTION 3: KEY BENEFITS OF VERTEX (8 INTERACTIVE CARDS ON OCEAN) */}
+      {/* SECTION 3: KEY BENEFITS OF VERTEK (8 INTERACTIVE CARDS ON OCEAN) */}
       <KeyBenefitsGrid />
 
       {/* SECTION 4: INNOVATION & RESEARCH (MTEC SUPPORT) */}
@@ -50,6 +51,9 @@ export default function ProductsPage() {
 
       {/* SECTION 6: BOTTOM OCEAN TEASER BANNER (5.แถบล่างสุด) */}
       <BottomBanner />
+
+      {/* Corporate Footer */}
+      <Footer />
     </main>
   );
 }

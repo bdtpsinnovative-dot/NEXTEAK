@@ -108,7 +108,7 @@ export default function VertexCycle() {
 
   return (
     <section
-      id="vertex-cycle"
+      id="vertek-cycle"
       className="relative w-full bg-white text-[#13262D] py-16 sm:py-24 lg:py-32 overflow-hidden select-none border-t border-[#13262D]/10"
     >
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
@@ -126,7 +126,7 @@ export default function VertexCycle() {
           >
             <div className="flex items-center gap-4 mb-4 sm:mb-6">
               <span className="font-outfit-light text-sm sm:text-base lg:text-[16px] tracking-[0.28em] text-[#13262D]/85 uppercase">
-                THE NEXTEAK CYCLE
+                THE VERTEK CYCLE
               </span>
               <div className="h-[1px] w-20 sm:w-28 bg-[#13262D]/30" />
             </div>
@@ -152,10 +152,11 @@ export default function VertexCycle() {
             className="lg:col-span-5 flex items-center"
           >
             <p className="font-outfit-light text-sm sm:text-base lg:text-[16px] xl:text-[18px] leading-[2.1] lg:leading-[2.2] tracking-[0.08em] text-[#13262D]/90 uppercase">
-              WE BELIEVE TEAK IS A RENEWABLE RESOURCE WHEN MANAGED RESPONSIBLY.
-              OUR CIRCULAR APPROACH FOCUSES ON REDUCING ENVIRONMENTAL IMPACT,
-              MAXIMIZING MATERIAL VALUE AND CREATING A CLEANER, MORE SUSTAINABLE
-              FUTURE.
+              WE BELIEVE TRUE SUSTAINABILITY BEGINS WITH FAIR VALUE FOR GROWERS.
+              FROM RESPONSIBLY GROWN THAI PLANTATION TEAK TO ADVANCED PRODUCTION
+              TECHNOLOGY AND STRICT QUALITY CONTROL, EVERY STEP IS DESIGNED TO
+              ENHANCE MATERIAL VALUE, EXTEND PRODUCT LIFESPAN, AND ENCOURAGE
+              CONTINUOUS REPLANTING.
             </p>
           </motion.div>
         </div>
@@ -177,7 +178,7 @@ export default function VertexCycle() {
 
             <img
               src="/images/sustainability/page3/cycle-center.webp"
-              alt="Vertex Circular Economy Cycle"
+              alt="VERTEK Circular Economy Cycle"
               className="w-full h-full object-contain relative z-10 transition-transform duration-700 hover:rotate-12"
               loading="lazy"
             />
@@ -250,7 +251,7 @@ export default function VertexCycle() {
             <div className="absolute inset-0 rounded-full bg-[#2DD4BF]/5 blur-xl animate-pulse" />
             <img
               src="/images/sustainability/page3/cycle-center.webp"
-              alt="Vertex Cycle"
+              alt="VERTEK Cycle"
               className="w-full h-full object-contain relative z-10"
               loading="lazy"
             />

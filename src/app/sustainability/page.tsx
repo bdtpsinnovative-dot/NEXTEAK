@@ -5,15 +5,15 @@ import SustainabilityHero from "@/components/sustainability-page/SustainabilityH
 import OurApproach from "@/components/sustainability-page/OurApproach";
 import EnvironmentalAttributes from "@/components/sustainability-page/EnvironmentalAttributes";
 import VertexCycle from "@/components/sustainability-page/VertexCycle";
-import ComparisonTable from "@/components/sustainability-page/ComparisonTable";
 import SustainabilityBottomBanner from "@/components/sustainability-page/SustainabilityBottomBanner";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Sustainability — Grown For a Brighter Tomorrow",
   description:
-    "VERTEX is made from responsibly sourced plantation teak, supporting sustainable forestry, local communities, carbon absorption, and circular lifecycle engineering.",
+    "VERTEK is made from responsibly sourced plantation teak, supporting sustainable forestry, local communities, carbon absorption, and circular lifecycle engineering.",
   keywords: [
-    "VERTEX Sustainability",
+    "VERTEK Sustainability",
     "Sustainable Teak Decking",
     "Plantation Teak",
     "Circular Marine Decking",
@@ -22,24 +22,24 @@ export const metadata: Metadata = {
     "Eco Friendly Yacht Decking",
   ],
   openGraph: {
-    title: "Sustainability — Grown For a Brighter Tomorrow | VERTEX",
+    title: "Sustainability — Grown For a Brighter Tomorrow | VERTEK",
     description:
-      "VERTEX is made from responsibly sourced plantation teak, supporting sustainable forestry, local communities, and a healthier planet.",
+      "VERTEK is made from responsibly sourced plantation teak, supporting sustainable forestry, local communities, and a healthier planet.",
     images: [
       {
-        url: "/images/sustainability/page3/sustainability-hero.webp",
-        width: 2560,
-        height: 900,
-        alt: "VERTEX Sustainability — Grown For a Brighter Tomorrow",
+        url: "/images/brand/og-vertek.jpg",
+        width: 1200,
+        height: 630,
+        alt: "VERTEK Sustainability — Grown For a Brighter Tomorrow",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sustainability — Grown For a Brighter Tomorrow | VERTEX",
+    title: "Sustainability — Grown For a Brighter Tomorrow | VERTEK",
     description:
       "Responsibly sourced plantation teak, carbon absorption, and circular marine decking engineering.",
-    images: ["/images/sustainability/page3/sustainability-hero.webp"],
+    images: ["/images/brand/og-vertek.jpg"],
   },
 };
 
@@ -58,14 +58,14 @@ export default function SustainabilityPage() {
       {/* SECTION 3: ADDITIONAL ENVIRONMENTAL ATTRIBUTES */}
       <EnvironmentalAttributes />
 
-      {/* SECTION 4: THE VERTEX CYCLE / 5-STEP CIRCULAR LIFECYCLE */}
+      {/* SECTION 4: THE VERTEK CYCLE / 5-STEP CIRCULAR LIFECYCLE */}
       <VertexCycle />
-
-      {/* SECTION 4: TRADITIONAL DECKING VS VERTEX & MARINE PERFORMANCE */}
-      <ComparisonTable />
 
       {/* SECTION 5: BOTTOM RIVER TEASER BANNER */}
       <SustainabilityBottomBanner />
+
+      {/* Corporate Footer */}
+      <Footer />
     </main>
   );
 }

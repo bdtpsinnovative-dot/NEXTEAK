@@ -4,16 +4,17 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const HERO_SLIDES = [
   {
     src: "/images/hero/1.webp",
-    alt: "VERTEX Luxury Superyacht Decking Aerial View",
+    alt: "VERTEK Luxury Superyacht Decking Aerial View",
     tagline: "THE FUTURE OF TEAK",
     titleLines: ["REFINED", "FOR MARINE", "DECKING."],
     desc: (
       <>
-        VERTEX COMBINES THE BEAUTY OF NATURAL TEAK WITH
+        VERTEK COMBINES THE BEAUTY OF NATURAL TEAK WITH
         <br className="hidden sm:inline" /> ADVANCED TECHNOLOGY AND A
         COMMITMENT TO A MORE
         <br className="hidden sm:inline" /> SUSTAINABLE FUTURE, DELIVERING
@@ -22,22 +23,25 @@ const HERO_SLIDES = [
         TOMORROW.
       </>
     ),
-    cta: "EXPLORE VERTEX",
+    cta: "EXPLORE VERTEK",
     href: "/products",
   },
   {
     src: "/images/hero/2.webp",
-    alt: "VERTEX Precision Marine Teak Foredeck",
+    alt: "VERTEK Precision Marine Teak Foredeck",
     tagline: "ENGINEERED PRECISION",
     titleLines: ["CRAFTED", "FOR THE", "OPEN OCEAN."],
     desc: (
       <>
         ADVANCED THIN-VENEER TIMBER INTEGRATION ENGINEERED TO
-        <br className="hidden sm:inline" /> WITHSTAND SALTWATER, INTENSE UV
-        RADIATION, AND
-        <br className="hidden sm:inline" /> EXTREME MARITIME CONDITIONS WITH
-        ZERO
-        <br className="hidden sm:inline" /> STRUCTURAL COMPROMISE.
+        <br className="hidden sm:inline" /> WITHSTAND SALTWATER AND EXTREME
+        MARITIME CONDITIONS,
+        <br className="hidden sm:inline" /> WHILE ENHANCING SURFACE STRENGTH,
+        LONG-LASTING
+        <br className="hidden sm:inline" /> DURABILITY, AND DIMENSIONAL STABILITY
+        TO PRESERVE
+        <br className="hidden sm:inline" /> THE NATURAL BEAUTY OF WOOD ACROSS
+        DIVERSE CLIMATIC CONDITIONS.
       </>
     ),
     cta: "DISCOVER INNOVATION",
@@ -45,20 +49,21 @@ const HERO_SLIDES = [
   },
   {
     src: "/images/hero/3.webp",
-    alt: "VERTEX Superyacht Aerial Teak Decking",
+    alt: "VERTEK Superyacht Aerial Teak Decking",
     tagline: "SUSTAINABLE HARMONY",
-    titleLines: ["NATURE MEETS", "ADVANCED", "TECHNOLOGY."],
+    titleLines: ["ROOTED IN NATURE.", "DESIGNED FOR", "CIRCULARITY."],
     desc: (
       <>
-        REVOLUTIONIZING SUPERYACHT DECKING WITH OUR PROPRIETARY
-        <br className="hidden sm:inline" /> CARBON QUANTUM DOT COATING FOR
-        UNMATCHED
-        <br className="hidden sm:inline" /> THERMAL COMFORT AND TIMELESS
-        ELEGANCE
-        <br className="hidden sm:inline" /> ACROSS DECADES OF NAVIGATION.
+        SOURCING NATIVE THAI TEAK FROM OUR OWN PLANTATIONS, WE
+        <br className="hidden sm:inline" /> CREATE FAIR VALUE FOR GROWERS AND
+        ENCOURAGE CONTINUOUS
+        <br className="hidden sm:inline" /> REPLANTING, COMBINING TECHNOLOGY,
+        CIRCULARITY, AND
+        <br className="hidden sm:inline" /> NATURAL BEAUTY FOR A MORE SUSTAINABLE
+        FUTURE.
       </>
     ),
-    cta: "SUSTAINABILITY JOURNEY",
+    cta: "EXPLORE OUR SUSTAINABILITY",
     href: "/sustainability",
   },
 ];
@@ -168,7 +173,7 @@ const fadeUp = {
   }),
 };
 
-export default function VertexHomePage() {
+export default function VertekHomePage() {
   // Infinite loop slider: starts at index 1 (the real first slide)
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -399,7 +404,7 @@ export default function VertexHomePage() {
                   {currentHero.desc}
                 </motion.p>
 
-                {/* 4. Dynamic Button: EXPLORE VERTEX -> */}
+                {/* 4. Dynamic Button: EXPLORE VERTEK -> */}
                 <motion.div
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -469,7 +474,7 @@ export default function VertexHomePage() {
               style={{ letterSpacing: "0.22em" }}
               className="font-outfit-thin text-[11px] uppercase text-white/60"
             >
-              DISCOVER VERTEX
+              DISCOVER VERTEK
             </span>
             <motion.div
               animate={{ y: [0, 5, 0] }}
@@ -540,7 +545,7 @@ export default function VertexHomePage() {
                 BUSINESS CRAFTING TEAK AND TIMBER HAS GROWN{" "}
                 <br className="hidden xl:inline" />
                 INTO WOODDEN — A TRUSTED NAME IN WOOD SOLUTIONS, AND THE
-                FOUNDATION OF VERTEX. WITH DEEP EXPERTISE{" "}
+                FOUNDATION OF VERTEK. WITH DEEP EXPERTISE{" "}
                 <br className="hidden xl:inline" />
                 FROM SOURCE TO FINISH, WE BRING THE BEAUTY OF TEAK TO THE WORLD
                 WITH INTEGRITY, INNOVATION AND A COMMITMENT{" "}
@@ -913,7 +918,7 @@ export default function VertexHomePage() {
                   transition={{ duration: 0.75, delay: 0.25 }}
                   className="font-outfit-thin text-[0.85vw] leading-[1.7] tracking-[0.08em] text-white/85 uppercase max-w-[34vw]"
                 >
-                  VERTEX IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
+                  VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
                   SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
                   PLANET.
                 </motion.p>
@@ -963,7 +968,7 @@ export default function VertexHomePage() {
 
                 {/* Subtitle */}
                 <p className="font-outfit-thin text-xs sm:text-sm leading-relaxed tracking-[0.08em] text-white/85 uppercase max-w-md mb-8">
-                  VERTEX IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
+                  VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
                   SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
                   PLANET.
                 </p>
@@ -1104,21 +1109,7 @@ export default function VertexHomePage() {
       {/* =========================================================
           6. FOOTER / FINAL SECTION
       ========================================================= */}
-      <motion.footer
-        id="contact"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.9 }}
-        className="w-full overflow-hidden bg-[#0A181E]"
-      >
-        <img
-          src="/images/brand/footer-bg.webp"
-          alt="More Than a Deck, A Brighter Tomorrow."
-          className="w-full h-auto block"
-          loading="lazy"
-        />
-      </motion.footer>
+      <Footer />
     </div>
   );
 }

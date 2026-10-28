@@ -3,15 +3,80 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const BENEFIT_CARDS = [
-  { id: "01", src: "/images/sustainability/benefits/benefit-01.webp", alt: "01 Regal Teak Appearance", delay: 0 },
-  { id: "02", src: "/images/sustainability/benefits/benefit-02.webp", alt: "02 2 mm Veneer Engineering", delay: 0.06 },
-  { id: "03", src: "/images/sustainability/benefits/benefit-03.webp", alt: "03 High Durability", delay: 0.12 },
-  { id: "04", src: "/images/sustainability/benefits/benefit-04.webp", alt: "04 Minimal Maintenance", delay: 0.18 },
-  { id: "05", src: "/images/sustainability/benefits/benefit-05.webp", alt: "05 Plantation-Grown & Traceable", delay: 0.08 },
-  { id: "06", src: "/images/sustainability/benefits/benefit-06.webp", alt: "06 60 Years of Expertise", delay: 0.14 },
-  { id: "07", src: "/images/sustainability/benefits/benefit-07.webp", alt: "07 Precision Manufacturing", delay: 0.20 },
-  { id: "08", src: "/images/sustainability/benefits/benefit-08.webp", alt: "08 Research Center Know-How and Material Development", delay: 0.26 },
+interface BenefitCard {
+  id: string;
+  icon: string;
+  alt: string;
+  title: string;
+  desc: string;
+  delay: number;
+}
+
+const BENEFIT_CARDS: BenefitCard[] = [
+  {
+    id: "01",
+    icon: "/images/sustainability/benefits/icons/icon-01.png",
+    alt: "Regal Teak Appearance",
+    title: "REGAL TEAK APPEARANCE",
+    desc: "A REFINED STRAIGHT-GRAIN LOOK WITH TIMELESS NATURAL ELEGANCE.",
+    delay: 0,
+  },
+  {
+    id: "02",
+    icon: "/images/sustainability/benefits/icons/icon-02.png",
+    alt: "2 mm Veneer Engineering",
+    title: "2 MM VENEER ENGINEERING",
+    desc: "TEAK IS SLICED INTO THIN VENEERS AND LAMINATED WITH PRECISION FOR CONSISTENCY AND BEAUTY.",
+    delay: 0.06,
+  },
+  {
+    id: "03",
+    icon: "/images/sustainability/benefits/icons/icon-03.png",
+    alt: "High Durability",
+    title: "HIGH DURABILITY",
+    desc: "ENGINEERED FOR LONG-TERM PERFORMANCE AND STABILITY IN DEMANDING MARINE CONDITIONS.",
+    delay: 0.12,
+  },
+  {
+    id: "04",
+    icon: "/images/sustainability/benefits/icons/icon-04.png",
+    alt: "Minimal Maintenance",
+    title: "MINIMAL MAINTENANCE",
+    desc: "BUILT FOR PRACTICAL CARE WITH A DURABLE, EASY-TO-MAINTAIN SURFACE.",
+    delay: 0.18,
+  },
+  {
+    id: "05",
+    icon: "/images/sustainability/benefits/icons/icon-05.png",
+    alt: "Plantation-Grown & Traceable",
+    title: "PLANTATION-GROWN & TRACEABLE",
+    desc: "SOURCE NATIVE THAI TEAK FROM OUR OWN PLANTATIONS, PROMOTING FAIR VALUE AND CONTINUOUS REPLANTING.",
+    delay: 0.08,
+  },
+  {
+    id: "06",
+    icon: "/images/sustainability/benefits/icons/icon-06.png",
+    alt: "60 Years of Expertise",
+    title: "60 YEARS OF EXPERTISE",
+    desc: "BACKED BY WOODDEN'S DEEP KNOWLEDGE FROM UPSTREAM TO DOWNSTREAM.",
+    delay: 0.14,
+  },
+  {
+    id: "07",
+    icon: "/images/sustainability/benefits/icons/icon-07.png",
+    alt: "Precision Manufacturing",
+    title: "PRECISION MANUFACTURING",
+    desc: "PRODUCED WITH ADVANCED MACHINERY, STRICT STANDARDS, AND METICULOUS ATTENTION TO DETAIL.",
+    delay: 0.2,
+  },
+  {
+    id: "08",
+    icon: "/images/sustainability/benefits/icons/icon-08.png",
+    alt: "Research Center Know-How",
+    title: "RESEARCH CENTER KNOW-HOW AND MATERIAL DEVELOPMENT.",
+    desc: "ENHANCED BY KNOW-HOW AND MATERIAL DEVELOPMENT FROM THAILAND NATIONAL RESEARCH CENTER.",
+    delay: 0.26,
+  },
 ];
 
 export default function KeyBenefitsGrid() {
@@ -24,7 +89,8 @@ export default function KeyBenefitsGrid() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-85 pointer-events-none transition-transform duration-1000"
         style={{
-          backgroundImage: "url('/images/sustainability/keybenefits-ocean-bg.webp')",
+          backgroundImage:
+            "url('/images/sustainability/keybenefits-ocean-bg.webp')",
         }}
       />
       {/* Dark luxury ocean overlay with gradient */}
@@ -70,12 +136,12 @@ export default function KeyBenefitsGrid() {
 
           {/* Main Title */}
           <h2 className="font-mistical text-2xl sm:text-4xl lg:text-5xl xl:text-[56px] tracking-wide text-white uppercase leading-tight">
-            KEY BENEFITS OF VERTEX
+            KEY BENEFITS OF VERTEK
           </h2>
         </motion.div>
 
         {/* 8 Interactive Cards Grid: 2 columns on mobile, 4 columns on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6 xl:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 xl:gap-8">
           {BENEFIT_CARDS.map((card, index) => {
             const isOdd = index % 2 === 1;
             return (
@@ -90,31 +156,53 @@ export default function KeyBenefitsGrid() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 whileHover={{
-                  y: -10,
-                  scale: 1.025,
+                  y: -8,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 380, damping: 22 },
                 }}
-                whileTap={{ scale: 0.97 }}
-                className="group relative rounded-xl sm:rounded-2xl overflow-hidden cursor-pointer shadow-[0_10px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_22px_45px_rgba(0,0,0,0.55)] transition-shadow duration-300 border border-white/20 hover:border-white/60 bg-white"
+                whileTap={{ scale: 0.98 }}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-[0_10px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_22px_45px_rgba(0,0,0,0.55)] transition-all duration-300 border border-white/30 hover:border-white/70 bg-[#FBFBFB]"
               >
-                {/* Subtle Ambient Ocean Float (Living Card Animation) */}
+                {/* Subtle Ambient Ocean Float */}
                 <motion.div
                   animate={{
-                    y: isOdd ? [0, -3.5, 0] : [0, 3.5, 0],
+                    y: isOdd ? [0, -3, 0] : [0, 3, 0],
                   }}
                   transition={{
                     duration: isOdd ? 4.6 : 5.2,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="w-full h-full relative"
+                  className="w-full h-full p-6 sm:p-7 xl:p-8 flex flex-col justify-between min-h-[220px] sm:min-h-[240px] xl:min-h-[260px]"
                 >
-                  <img
-                    src={card.src}
-                    alt={card.alt}
-                    className="w-full h-auto block select-none group-hover:contrast-[1.02] transition-all duration-300"
-                    loading="lazy"
-                  />
+                  {/* Top: Number + Line */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-5">
+                      <span className="font-outfit-light text-2xl sm:text-3xl tracking-tight text-[#13262D]">
+                        {card.id}
+                      </span>
+                      <span className="flex-1 h-[1px] bg-[#13262D]/20" />
+                    </div>
+
+                    {/* Middle: Icon + Title */}
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center">
+                        <img
+                          src={card.icon}
+                          alt={card.alt}
+                          className="max-w-full max-h-full object-contain filter drop-shadow-xs group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <h3 className="font-outfit-bold text-xs sm:text-[13px] xl:text-[14px] tracking-[0.08em] text-[#13262D] uppercase leading-tight pt-1">
+                        {card.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Bottom: Description */}
+                  <p className="font-outfit-light text-[10.5px] sm:text-[11.5px] leading-[1.65] tracking-[0.05em] text-[#13262D]/75 uppercase mt-2">
+                    {card.desc}
+                  </p>
 
                   {/* Diagonal Shimmer Reflection on Hover */}
                   <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-hidden">
@@ -122,7 +210,7 @@ export default function KeyBenefitsGrid() {
                       initial={{ x: "-120%" }}
                       whileHover={{ x: "200%" }}
                       transition={{ duration: 0.8, ease: "easeInOut" }}
-                      className="w-full h-full bg-gradient-to-r from-transparent via-white/35 to-transparent -skew-x-20"
+                      className="w-full h-full bg-gradient-to-r from-transparent via-sky-100/25 to-transparent -skew-x-20"
                     />
                   </div>
                 </motion.div>

@@ -2,36 +2,36 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vertex.com"),
+  metadataBase: new URL("https://vertek.com"),
   title: {
-    default: "VERTEX — The Future of Teak Refined for Marine Decking",
-    template: "%s | VERTEX",
+    default: "VERTEK — The Future of Teak Refined for Marine Decking",
+    template: "%s | VERTEK",
   },
   description:
-    "VERTEX combines the beauty of natural teak with advanced technology and a commitment to a more sustainable future, delivering high-performance marine decking for a better tomorrow.",
+    "VERTEK combines the beauty of natural teak with advanced technology and a commitment to a more sustainable future, delivering high-performance marine decking for a better tomorrow.",
   keywords: [
-    "VERTEX",
+    "VERTEK",
     "Marine Teak Decking",
     "Superyacht Teak Deck",
     "Sustainable Plantation Teak",
     "Thin-Veneer Timber Integration",
     "Luxury Marine Yacht Flooring",
   ],
-  authors: [{ name: "VERTEX" }],
-  creator: "VERTEX",
-  publisher: "VERTEX",
+  authors: [{ name: "VERTEK" }],
+  creator: "VERTEK",
+  publisher: "VERTEK",
   openGraph: {
-    title: "VERTEX — The Future of Teak Refined for Marine Decking",
+    title: "VERTEK — The Future of Teak Refined for Marine Decking",
     description:
-      "VERTEX combines the beauty of natural teak with advanced technology, delivering high-performance marine decking for superyachts.",
-    url: "https://vertex.com",
-    siteName: "VERTEX",
+      "VERTEK combines the beauty of natural teak with advanced technology, delivering high-performance marine decking for superyachts.",
+    url: "https://vertek.com",
+    siteName: "VERTEK",
     images: [
       {
-        url: "/images/hero/1.webp",
-        width: 2560,
-        height: 1265,
-        alt: "VERTEX Marine Teak Decking",
+        url: "/images/brand/og-vertek.jpg",
+        width: 1200,
+        height: 630,
+        alt: "VERTEK Marine Teak Decking",
       },
     ],
     locale: "en_US",
@@ -39,10 +39,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VERTEX — The Future of Teak Refined for Marine Decking",
+    title: "VERTEK — The Future of Teak Refined for Marine Decking",
     description:
       "High-performance marine decking engineered with thin-veneer technology and research-based know-how.",
-    images: ["/images/hero/1.webp"],
+    images: ["/images/brand/og-vertek.jpg"],
   },
   robots: {
     index: true,
@@ -56,9 +56,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/icon.png?v=2",
-    shortcut: "/icon.png?v=2",
-    apple: "/apple-icon.png?v=2",
+    icon: [
+      { url: "/favicon.ico?v=3" },
+      { url: "/icon.png?v=3", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico?v=3",
+    apple: [
+      { url: "/apple-icon.png?v=3", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
@@ -67,12 +72,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://vertex.com/#organization",
-      name: "VERTEX",
-      url: "https://vertex.com",
+      "@id": "https://vertek.com/#organization",
+      name: "VERTEK",
+      url: "https://vertek.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://vertex.com/images/brand/logo-vertex.webp",
+        url: "https://vertek.com/images/brand/logo-vertek.webp",
       },
       description:
         "Luxury marine teak decking engineered with thin-veneer technology and proprietary protective coatings for superyachts.",
@@ -84,11 +89,11 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://vertex.com/#website",
-      url: "https://vertex.com",
-      name: "VERTEX — Marine Teak Decking",
+      "@id": "https://vertek.com/#website",
+      url: "https://vertek.com",
+      name: "VERTEK — Marine Teak Decking",
       publisher: {
-        "@id": "https://vertex.com/#organization",
+        "@id": "https://vertek.com/#organization",
       },
     },
   ],

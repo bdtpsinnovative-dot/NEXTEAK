@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (!project) {
     return {
       title: "Project Not Found",
-      description: "VERTEX luxury marine teak decking project not found.",
+      description: "VERTEK luxury marine teak decking project not found.",
     };
   }
 
@@ -28,12 +28,12 @@ export async function generateMetadata({
     title: `${project.title} — ${project.subtitle}`,
     description: project.shortDescription,
     openGraph: {
-      title: `${project.title} — ${project.subtitle} | VERTEX`,
+      title: `${project.title} — ${project.subtitle} | VERTEK`,
       description: project.shortDescription,
-      url: `https://vertex.com/gallery/${project.slug}`,
+      url: `https://vertek.com/gallery/${project.slug}`,
       images: [
         {
-          url: "/images/hero/1.webp",
+          url: project.image || "/images/hero/1.webp",
           width: 2560,
           height: 1265,
           alt: project.title,
@@ -42,9 +42,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | VERTEX Marine Decking`,
+      title: `${project.title} | VERTEK Marine Decking`,
       description: project.shortDescription,
-      images: ["/images/hero/1.webp"],
+      images: [project.image || "/images/hero/1.webp"],
     },
   };
 }

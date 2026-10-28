@@ -21,7 +21,7 @@ export default function SustainabilityBottomBanner() {
           {/* Clean Background Image (River & Tropical Rainforest) */}
           <img
             src="/images/sustainability/page3/sustainability-bottom-clean.webp"
-            alt="VERTEX Sustainability Banner"
+            alt="VERTEK Sustainability Banner"
             className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none transition-transform duration-1000 ease-out group-hover:scale-[1.01]"
             loading="lazy"
           />
@@ -57,10 +57,10 @@ export default function SustainabilityBottomBanner() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="flex flex-col items-end text-right"
               >
-                {/* Brand Logo (VERTEX) */}
+                {/* Brand Logo (VERTEK) */}
                 <img
-                  src="/images/brand/logo-vertex.webp"
-                  alt="VERTEX"
+                  src="/images/brand/logo-vertek.webp"
+                  alt="VERTEK"
                   className="h-5 sm:h-7 md:h-8 lg:h-9 xl:h-10 w-auto object-contain drop-shadow-md"
                 />
                 {/* Subtitle */}

@@ -110,7 +110,7 @@ export default function ProjectDetailClient({ project }: { project?: Project }) 
                 style={{ letterSpacing: "0.18em" }}
                 className="font-outfit-regular text-xs sm:text-[13px] uppercase text-[#13262D]"
               >
-                VERTEX BESPOKE DECKING
+                VERTEK BESPOKE DECKING
               </span>
               <span className="w-16 sm:w-28 h-[1px] bg-[#13262D]" />
               <span
@@ -171,14 +171,13 @@ export default function ProjectDetailClient({ project }: { project?: Project }) 
               </div>
             </div>
 
-            {/* Project Hero Solid Block matching Wireframe Theme */}
-            <div className="w-full aspect-[21/9] sm:aspect-[24/9] bg-[#14252C] rounded-[2px] mb-14 sm:mb-20 flex items-center justify-center p-8">
-              <span
-                style={{ letterSpacing: "0.2em" }}
-                className="font-outfit-thin text-xs sm:text-sm uppercase text-white/30"
-              >
-                PROJECT SHOWCASE {project.id}
-              </span>
+            {/* Project Hero Visual */}
+            <div className="w-full aspect-[21/9] sm:aspect-[24/9] bg-[#14252C] rounded-[2px] overflow-hidden mb-14 sm:mb-20 relative shadow-xl">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </section>

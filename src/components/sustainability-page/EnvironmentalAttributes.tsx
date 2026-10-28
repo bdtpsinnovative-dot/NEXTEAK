@@ -122,11 +122,21 @@ export default function EnvironmentalAttributes() {
 
             {/* Card Content */}
             <div className="relative z-10 flex flex-col items-center justify-center w-full">
+              {/* EUDR Compliant Badge Icon */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 flex items-center justify-center">
+                <img
+                  src="/images/sustainability/page3/eudr-badge-circle.png"
+                  alt="EUDR Compliant Seal"
+                  className="w-full h-full object-contain filter drop-shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+
               {/* Title */}
-              <h3 className="font-outfit-bold text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] leading-[1.08] text-white tracking-wider uppercase mb-5 sm:mb-6 drop-shadow-md">
-                EUDR-
+              <h3 className="font-outfit-bold text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-[2.85rem] leading-[1.08] text-white tracking-wider uppercase mb-5 sm:mb-6 drop-shadow-md">
+                EUDR
                 <br />
-                READY
+                COMPLIANT
               </h3>
 
               {/* Description */}

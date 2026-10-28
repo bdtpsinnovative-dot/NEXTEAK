@@ -117,10 +117,10 @@ export default function ComparisonTable() {
                 </span>
               </div>
 
-              {/* Right Column: VERTEX */}
+              {/* Right Column: VERTEK */}
               <div className="text-center flex flex-col items-center justify-end">
                 <span className="font-mistical text-4xl xl:text-5xl tracking-[0.08em] text-white uppercase">
-                  VERTEX
+                  VERTEK
                 </span>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function ComparisonTable() {
                     </span>
                   </div>
 
-                  {/* Right Cell: VERTEX */}
+                  {/* Right Cell: VERTEK */}
                   <div className="flex items-center justify-center p-4 sm:p-5 lg:py-6 lg:px-8 text-white">
                     {row.isHeroRow ? (
                       <span className="font-bodoni text-3xl lg:text-4xl xl:text-5xl text-white font-bold tracking-[0.06em]">
@@ -189,7 +189,7 @@ export default function ComparisonTable() {
                 VS
               </span>
               <h2 className="font-outfit-regular text-xs sm:text-sm tracking-[0.2em] text-white/90 uppercase mt-2">
-                TRADITIONAL DECKING vs VERTEX
+                TRADITIONAL DECKING vs VERTEK
               </h2>
             </div>
 
@@ -204,7 +204,7 @@ export default function ComparisonTable() {
                     : "text-white/70 hover:text-white"
                 }`}
               >
-                VERTEX
+                VERTEK
               </button>
               <button
                 type="button"

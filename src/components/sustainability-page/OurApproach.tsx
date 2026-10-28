@@ -9,7 +9,7 @@ const PILLARS = [
     icon: "/images/sustainability/page3/approach-icon-1.webp",
     title: "PLANTATION TEAK",
     description:
-      "SOURCED FROM WELL-MANAGED PLANTATIONS, A RENEWABLE RESOURCE FOR THE FUTURE.",
+      "SOURCE NATIVE THAI TEAK FROM OUR OWN PLANTATIONS, PROMOTING FAIR VALUE AND CONTINUOUS REPLANTING.",
   },
   {
     id: 2,
@@ -77,7 +77,7 @@ export default function OurApproach() {
             </p>
           </motion.div>
 
-          {/* Right Column: Teak Canopy Photo */}
+          {/* Right Column: Native Teak Tree Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -87,8 +87,8 @@ export default function OurApproach() {
           >
             <div className="relative aspect-[2462/1978] w-full overflow-hidden bg-[#E7E2DA]/30">
               <img
-                src="/images/sustainability/page3/approach-photo.webp"
-                alt="Plantation Teak Tree Canopy"
+                src="/images/sustainability/page3/real-teak-tree.webp"
+                alt="Native Thai Plantation Teak Tree"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 loading="lazy"
               />

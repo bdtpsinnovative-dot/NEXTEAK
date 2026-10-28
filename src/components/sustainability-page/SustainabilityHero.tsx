@@ -170,7 +170,7 @@ export default function SustainabilityHero() {
               transition={{ duration: 0.9, delay: 0.3 }}
               className="font-outfit-thin text-[0.88vw] leading-[1.75] tracking-[0.08em] text-white/85 uppercase max-w-[34vw]"
             >
-              VERTEX IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
+              VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
               SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
               PLANET.
             </motion.p>
@@ -322,7 +322,7 @@ export default function SustainabilityHero() {
 
           {/* Subtitle */}
           <p className="font-outfit-thin text-xs sm:text-sm leading-relaxed tracking-[0.08em] text-white/85 uppercase max-w-md">
-            VERTEX IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
+            VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
             SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
             PLANET.
           </p>
