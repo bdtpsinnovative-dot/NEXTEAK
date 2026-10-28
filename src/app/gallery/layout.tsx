@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Project Showcase | VERTEK Luxury Marine Decking",
     description:
       "Explore VERTEK's portfolio of precision-engineered luxury marine teak decking projects across international waters.",
-    url: "https://vertek.com/gallery",
+    url: "https://vertekteak.com/gallery",
     images: [
       {
         url: "/images/hero/2.webp",

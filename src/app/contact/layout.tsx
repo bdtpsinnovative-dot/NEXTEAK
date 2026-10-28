@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Contact Us | VERTEK Luxury Marine Decking",
     description:
       "Connect with VERTEK marine teak specialists. Inquire about superyacht decking solutions, request wood samples, or schedule a private consultation.",
-    url: "https://vertek.com/contact",
+    url: "https://vertekteak.com/contact",
     images: [
       {
         url: "/images/contact/showroom-1.webp",

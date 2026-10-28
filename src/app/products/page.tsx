@@ -17,14 +17,22 @@ export const metadata: Metadata = {
     title: "VERTEK Products & Marine Decking Innovation",
     description:
       "Discover VERTEK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+    url: "https://vertekteak.com/products",
     images: [
       {
-        url: "/images/sustainability/feature-banner-bg.webp",
-        width: 2560,
-        height: 909,
+        url: "https://vertekteak.com/images/brand/og-vertek.jpg",
+        width: 1200,
+        height: 630,
         alt: "VERTEK Luxury Marine Teak Deck",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "VERTEK Products & Marine Decking Innovation",
+    description:
+      "Discover VERTEK luxury marine decking solutions, precision thin-veneer structure engineering, plantation-grown traceable teak, and advanced materials.",
+    images: ["https://vertekteak.com/images/brand/og-vertek.jpg"],
   },
 };
 

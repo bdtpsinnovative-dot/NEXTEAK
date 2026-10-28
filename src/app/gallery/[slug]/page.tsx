@@ -30,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${project.title} — ${project.subtitle} | VERTEK`,
       description: project.shortDescription,
-      url: `https://vertek.com/gallery/${project.slug}`,
+      url: `https://vertekteak.com/gallery/${project.slug}`,
       images: [
         {
           url: project.image || "/images/hero/1.webp",

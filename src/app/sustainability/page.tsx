@@ -25,9 +25,10 @@ export const metadata: Metadata = {
     title: "Sustainability — Grown For a Brighter Tomorrow | VERTEK",
     description:
       "VERTEK is made from responsibly sourced plantation teak, supporting sustainable forestry, local communities, and a healthier planet.",
+    url: "https://vertekteak.com/sustainability",
     images: [
       {
-        url: "/images/brand/og-vertek.jpg",
+        url: "https://vertekteak.com/images/brand/og-vertek.jpg",
         width: 1200,
         height: 630,
         alt: "VERTEK Sustainability — Grown For a Brighter Tomorrow",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     title: "Sustainability — Grown For a Brighter Tomorrow | VERTEK",
     description:
       "Responsibly sourced plantation teak, carbon absorption, and circular marine decking engineering.",
-    images: ["/images/brand/og-vertek.jpg"],
+    images: ["https://vertekteak.com/images/brand/og-vertek.jpg"],
   },
 };
 

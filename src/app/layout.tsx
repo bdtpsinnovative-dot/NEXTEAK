@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vertek.com"),
+  metadataBase: new URL("https://vertekteak.com"),
   title: {
     default: "VERTEK — The Future of Teak Refined for Marine Decking",
     template: "%s | VERTEK",
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
     title: "VERTEK — The Future of Teak Refined for Marine Decking",
     description:
       "VERTEK combines the beauty of natural teak with advanced technology, delivering high-performance marine decking for superyachts.",
-    url: "https://vertek.com",
+    url: "https://vertekteak.com",
     siteName: "VERTEK",
     images: [
       {
-        url: "/images/brand/og-vertek.jpg",
+        url: "https://vertekteak.com/images/brand/og-vertek.jpg",
         width: 1200,
         height: 630,
         alt: "VERTEK Marine Teak Decking",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "VERTEK — The Future of Teak Refined for Marine Decking",
     description:
       "High-performance marine decking engineered with thin-veneer technology and research-based know-how.",
-    images: ["/images/brand/og-vertek.jpg"],
+    images: ["https://vertekteak.com/images/brand/og-vertek.jpg"],
   },
   robots: {
     index: true,
@@ -72,12 +72,12 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://vertek.com/#organization",
+      "@id": "https://vertekteak.com/#organization",
       name: "VERTEK",
-      url: "https://vertek.com",
+      url: "https://vertekteak.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://vertek.com/images/brand/logo-vertek.webp",
+        url: "https://vertekteak.com/images/brand/logo-vertek.webp",
       },
       description:
         "Luxury marine teak decking engineered with thin-veneer technology and proprietary protective coatings for superyachts.",
@@ -89,11 +89,11 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://vertek.com/#website",
-      url: "https://vertek.com",
+      "@id": "https://vertekteak.com/#website",
+      url: "https://vertekteak.com",
       name: "VERTEK — Marine Teak Decking",
       publisher: {
-        "@id": "https://vertek.com/#organization",
+        "@id": "https://vertekteak.com/#organization",
       },
     },
   ],
