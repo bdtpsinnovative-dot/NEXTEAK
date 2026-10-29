@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -59,7 +58,7 @@ export default function GalleryPage() {
               </h1>
             </motion.div>
 
-            {/* 3 Showcase Project Cards with Real Visuals */}
+            {/* 3 Showcase Project Cards with Real Visuals (Display only - non-clickable) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
               {projects.map((project, idx) => (
                 <motion.div
@@ -70,18 +69,16 @@ export default function GalleryPage() {
                   animate="visible"
                   className="w-full"
                 >
-                  <Link
-                    href={`/gallery/${project.slug}`}
-                    className="group block w-full aspect-[14/19] bg-[#14252C] rounded-[3px] overflow-hidden relative shadow-md transition-all duration-500 hover:shadow-2xl cursor-pointer"
-                    aria-label={project.title}
+                  <div
+                    className="w-full aspect-[14/19] bg-[#14252C] rounded-[3px] overflow-hidden relative shadow-md select-none"
                   >
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="w-full h-full object-cover"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 inset-x-0 p-6 sm:p-7 z-10">
                       <p className="font-outfit-thin text-[11px] tracking-[0.2em] uppercase text-white/75 mb-1.5">
                         {project.category}
@@ -90,7 +87,7 @@ export default function GalleryPage() {
                         {project.title}
                       </h2>
                     </div>
-                  </Link>
+                  </div>
                 </motion.div>
               ))}
             </div>
