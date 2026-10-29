@@ -10,7 +10,7 @@ const HERO_SLIDES = [
   {
     src: "/images/hero/1.webp",
     alt: "VERTEK Luxury Superyacht Decking Aerial View",
-    tagline: "REFINED FOR MARINE DECKING",
+    tagline: "",
     titleLines: ["THE FUTURE", "OF MARINE", "TEAK."],
     desc: (
       <>
@@ -367,15 +367,17 @@ export default function VertekHomePage() {
                 className="max-w-[680px] pointer-events-auto"
               >
                 {/* 1. Dynamic Tagline */}
-                <motion.p
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.08 }}
-                  style={{ letterSpacing: "0.26em" }}
-                  className="font-outfit-thin text-white text-sm sm:text-xl lg:text-[24px] xl:text-[26px] uppercase mb-2 lg:mb-2.5"
-                >
-                  {currentHero.tagline}
-                </motion.p>
+                {currentHero.tagline ? (
+                  <motion.p
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.08 }}
+                    style={{ letterSpacing: "0.26em" }}
+                    className="font-outfit-thin text-white text-sm sm:text-xl lg:text-[24px] xl:text-[26px] uppercase mb-2 lg:mb-2.5"
+                  >
+                    {currentHero.tagline}
+                  </motion.p>
+                ) : null}
 
                 {/* 2. Dynamic Headline */}
                 <motion.h1
