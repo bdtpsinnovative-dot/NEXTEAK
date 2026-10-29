@@ -65,7 +65,7 @@ export default function SustainabilityBottomBanner() {
                 />
                 {/* Subtitle */}
                 <span className="font-outfit-light text-[9px] sm:text-[11px] md:text-xs lg:text-[12px] xl:text-[13.5px] tracking-[0.26em] text-white/90 uppercase mt-2 sm:mt-2.5 drop-shadow-sm">
-                  REDEFINED MARINE DECKING
+                  THE FUTURE OF MARINE TEAK
                 </span>
               </motion.div>
             </div>
