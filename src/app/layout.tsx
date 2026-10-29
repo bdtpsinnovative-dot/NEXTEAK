@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://vertekteak.com"),
   title: {
-    default: "VERTEK — The Future of Teak Refined for Marine Decking",
+    default: "VERTEK — The Future of Marine Teak",
     template: "%s | VERTEK",
   },
   description:
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   creator: "VERTEK",
   publisher: "VERTEK",
   openGraph: {
-    title: "VERTEK — The Future of Teak Refined for Marine Decking",
+    title: "VERTEK — The Future of Marine Teak",
     description:
       "VERTEK combines the beauty of natural teak with advanced technology, delivering high-performance marine decking for superyachts.",
     url: "https://vertekteak.com",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VERTEK — The Future of Teak Refined for Marine Decking",
+    title: "VERTEK — The Future of Marine Teak",
     description:
       "High-performance marine decking engineered with thin-veneer technology and research-based know-how.",
     images: ["https://vertekteak.com/images/brand/og-vertek.jpg"],

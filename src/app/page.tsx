@@ -10,8 +10,8 @@ const HERO_SLIDES = [
   {
     src: "/images/hero/1.webp",
     alt: "VERTEK Luxury Superyacht Decking Aerial View",
-    tagline: "THE FUTURE OF MARINE TEAK",
-    titleLines: ["REFINED", "FOR MARINE", "DECKING."],
+    tagline: "REFINED FOR MARINE DECKING",
+    titleLines: ["THE FUTURE", "OF MARINE", "TEAK."],
     desc: (
       <>
         VERTEK COMBINES THE BEAUTY OF NATURAL TEAK WITH
