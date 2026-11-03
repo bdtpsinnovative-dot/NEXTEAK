@@ -136,7 +136,7 @@ export default function EnvironmentalAttributes() {
               <h3 className="font-outfit-bold text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] xl:text-[2.85rem] leading-[1.08] text-white tracking-wider uppercase mb-5 sm:mb-6 drop-shadow-md">
                 EUDR
                 <br />
-                COMPLIANT
+                READY
               </h3>
 
               {/* Description */}
@@ -184,8 +184,7 @@ export default function EnvironmentalAttributes() {
               {/* Description */}
               <p className="font-outfit-light text-xs sm:text-[13px] lg:text-[12.5px] xl:text-[13.5px] leading-[1.85] tracking-[0.06em] text-white/95 uppercase max-w-[340px] mx-auto drop-shadow-sm">
                 OUR ENGINEERED PRODUCTION PROCESS IS DESIGNED TO MAXIMIZE WOOD
-                UTILIZATION, REDUCE UNNECESSARY OFFCUTS AND MINIMIZE WASTE
-                THROUGHOUT PRODUCTION.
+                UTILIZATION AND MINIMIZE WASTE.
               </p>
             </div>
           </motion.div>

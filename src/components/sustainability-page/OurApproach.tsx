@@ -9,7 +9,7 @@ const PILLARS = [
     icon: "/images/sustainability/page3/approach-icon-1.webp",
     title: "PLANTATION TEAK",
     description:
-      "SOURCE NATIVE THAI TEAK FROM OUR OWN PLANTATIONS, PROMOTING FAIR VALUE AND CONTINUOUS REPLANTING.",
+      "SOURCING THAI TEAK FROM THAILAND’S FINEST TEAK PLANTATIONS, WE CREATE FAIR VALUE FOR GROWERS AND ENCOURAGE CONTINUOUS REPLANTING.",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const PILLARS = [
   {
     id: 3,
     icon: "/images/sustainability/page3/approach-icon-3.webp",
-    title: "TRACEABLE SOURCING",
+    title: "TRACEABLE SOURCING AND EUDR READY",
     description:
       "VERIFIED SUPPLY CHAIN FROM TRUSTED SOURCES, WITH FULL TRANSPARENCY AND COMPLIANCE.",
   },

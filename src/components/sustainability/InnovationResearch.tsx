@@ -9,21 +9,21 @@ const INNOVATION_CARDS = [
     image: "/images/sustainability/inno-1.webp",
     alt: "Thin Veneer Engineering Teak Sheet",
     title: "THIN VENEER ENGINEERING",
-    desc: "TEAK IS CUT INTO THIN VENEERS (ABOUT 2 MM) AND LAMINATED WITH PRECISION, CREATING A STRAIGHT-GRAIN APPEARANCE WITH ENHANCED STABILITY AND EFFICIENT USE OF NATURAL RESOURCES.",
+    desc: "TEAK IS CUT INTO THIN VENEERS AND LAMINATED WITH PRECISION, CREATING A STRAIGHT-GRAIN APPEARANCE WITH ENHANCED STABILITY AND EFFICIENT USE OF NATURAL RESOURCES.",
   },
   {
     id: 2,
-    image: "/images/sustainability/inno-2.webp",
-    alt: "Advanced Surface Protection Hydrophobic Droplets",
-    title: "ADVANCED SURFACE PROTECTION",
-    desc: "IMPROVES SURFACE HARDNESS, UV RESISTANCE AND EASY-CLEAN PERFORMANCE, WHILE PRESERVING THE NATURAL LOOK AND FEEL OF REAL TEAK.",
-  },
-  {
-    id: 3,
     image: "/images/sustainability/inno-3.webp",
     alt: "Engineered For The Sea Luxury Marine Deck Cleat",
     title: "ENGINEERED FOR THE SEA",
     desc: "A HIGH-PERFORMANCE STRUCTURE DESIGNED FOR MARINE ENVIRONMENTS BEAUTIFUL, STABLE AND BUILT TO LAST.",
+  },
+  {
+    id: 3,
+    image: "/images/sustainability/inno-2.webp",
+    alt: "Enhanced Surface Strength Hydrophobic Droplets",
+    title: "ENHANCED SURFACE STRENGTH",
+    desc: "IMPROVES SURFACE HARDNESS, WHILE PRESERVING THE NATURAL LOOK AND FEEL OF REAL TEAK.",
   },
 ];
 
@@ -78,11 +78,10 @@ export default function InnovationResearch() {
 
               {/* Body Text */}
               <p className="font-outfit-extralight text-xs sm:text-sm leading-relaxed tracking-wider text-[#13262D]/80 uppercase mb-10 max-w-md">
-                WITH OVER 5 YEARS OF DEDICATED RESEARCH AND DEVELOPMENT, VERTEK
-                COMBINES ADVANCED MATERIAL ENGINEERING WITH THE NATURAL BEAUTY OF
-                TEAK. DESIGNED FOR ENHANCED DURABILITY, STABILITY, AND EASE OF
-                MAINTENANCE, VERTEK DELIVERS LONG-LASTING PERFORMANCE WHILE
-                PRESERVING THE AUTHENTIC CHARACTER OF NATURAL WOOD.
+                VERTEK COMBINES ADVANCED MATERIAL ENGINEERING WITH THE NATURAL
+                BEAUTY OF TEAK. DESIGNED FOR ENHANCED DURABILITY, STABILITY, AND
+                EASE OF MAINTENANCE, VERTEK DELIVERS LONG-LASTING PERFORMANCE
+                WHILE PRESERVING THE AUTHENTIC CHARACTER OF NATURAL WOOD.
               </p>
             </div>
 

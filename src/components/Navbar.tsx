@@ -47,12 +47,15 @@ export default function Navbar({ activeItem }: NavbarProps) {
     >
       <div className="w-full px-5 sm:px-8 lg:px-12 xl:px-16 h-16 sm:h-20 lg:h-[92px] flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center shrink-0 group">
+        <Link href="/" className="flex flex-col items-start shrink-0 group">
           <img
             src="/images/brand/logo-vertek.webp"
             alt="VERTEK"
-            className="h-[19px] sm:h-[26px] lg:h-[32px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+            className="h-[18px] sm:h-[24px] lg:h-[28px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
           />
+          <span className="font-outfit-light text-[7px] sm:text-[8px] lg:text-[8.5px] tracking-[0.22em] text-white/80 uppercase mt-1">
+            THE FUTURE OF MARINE TEAK
+          </span>
         </Link>
 
         {/* Desktop Navigation Menu */}

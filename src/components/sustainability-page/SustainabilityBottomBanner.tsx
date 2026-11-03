@@ -70,32 +70,15 @@ export default function SustainabilityBottomBanner() {
               </motion.div>
             </div>
 
-            {/* Bottom Row: Headline on left, Pillars on right */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 sm:gap-8 w-full mt-auto pt-8">
-              {/* Left Headline + Horizontal Underline */}
-              <motion.div
-                initial={{ opacity: 0, x: -25 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex flex-col items-start"
-              >
-                <h3 className="font-outfit-light text-base sm:text-lg md:text-xl lg:text-[1.35rem] xl:text-[1.65rem] leading-[1.35] tracking-[0.18em] text-white uppercase drop-shadow-md">
-                  MORE THAN A DECK,
-                  <br />
-                  A BRIGHTER TOMORROW.
-                </h3>
-                {/* Thin underline */}
-                <div className="h-[1.5px] w-48 sm:w-60 md:w-72 lg:w-80 xl:w-96 bg-white/70 mt-3 sm:mt-4" />
-              </motion.div>
-
+            {/* Bottom Row: Pillars on right (Left headline removed per PDF instructions) */}
+            <div className="flex justify-end items-end w-full mt-auto pt-8">
               {/* Right Words: PEOPLE CULTURE OCEANS NATURE TOGETHER */}
               <motion.div
                 initial={{ opacity: 0, x: 25 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-wrap items-center justify-start md:justify-end gap-x-4 sm:gap-x-6 md:gap-x-5 lg:gap-x-8 gap-y-1 font-outfit-light text-[10px] sm:text-xs md:text-[11.5px] lg:text-[13px] xl:text-[14px] tracking-[0.24em] text-white/90 uppercase drop-shadow-sm"
+                className="flex flex-wrap items-center justify-end gap-x-4 sm:gap-x-6 md:gap-x-5 lg:gap-x-8 gap-y-1 font-outfit-light text-[10px] sm:text-xs md:text-[11.5px] lg:text-[13px] xl:text-[14px] tracking-[0.24em] text-white/90 uppercase drop-shadow-sm"
               >
                 <span>PEOPLE</span>
                 <span>CULTURE</span>

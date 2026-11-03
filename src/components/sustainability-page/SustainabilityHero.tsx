@@ -156,11 +156,9 @@ export default function SustainabilityHero() {
               transition={{ duration: 0.9, delay: 0.15 }}
               className="font-mistical text-[3.8vw] leading-[1.08] tracking-[0.06em] text-white uppercase mb-[1.8vw]"
             >
-              GROWN
+              SUSTAINABLE TEAK.
               <br />
-              FOR A BRIGHTER
-              <br />
-              TOMORROW
+              A BETTER FUTURE
             </motion.h1>
 
             {/* Subtitle */}
@@ -171,8 +169,8 @@ export default function SustainabilityHero() {
               className="font-outfit-thin text-[0.88vw] leading-[1.75] tracking-[0.08em] text-white/85 uppercase max-w-[34vw]"
             >
               VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
-              SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
-              PLANET.
+              PROMOTING SUSTAINABLE FORESTRY, SUPPORTING LOCAL COMMUNITIES, AND
+              PROTECTING OUR PLANET FOR FUTURE GENERATIONS.
             </motion.p>
           </div>
 
@@ -313,18 +311,16 @@ export default function SustainabilityHero() {
 
           {/* Headline */}
           <h1 className="font-mistical text-3xl sm:text-5xl leading-[1.1] tracking-[0.05em] text-white uppercase mb-4">
-            GROWN
+            SUSTAINABLE TEAK.
             <br />
-            FOR A BRIGHTER
-            <br />
-            TOMORROW
+            A BETTER FUTURE
           </h1>
 
           {/* Subtitle */}
           <p className="font-outfit-thin text-xs sm:text-sm leading-relaxed tracking-[0.08em] text-white/85 uppercase max-w-md">
             VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
-            SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
-            PLANET.
+            PROMOTING SUSTAINABLE FORESTRY, SUPPORTING LOCAL COMMUNITIES, AND
+            PROTECTING OUR PLANET FOR FUTURE GENERATIONS.
           </p>
         </div>
 

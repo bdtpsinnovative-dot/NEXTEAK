@@ -19,14 +19,14 @@ const ICONS_DATA = [
   {
     id: 3,
     src: "/images/sustainability/feature-icon-3.webp",
-    alt: "Traceable Material Selection",
-    lines: ["TRACEABLE MATERIAL", "SELECTION"],
+    alt: "Traceable & EUDR-Ready",
+    lines: ["TRACEABLE &", "EUDR-READY"],
   },
   {
     id: 4,
     src: "/images/sustainability/feature-icon-4.webp",
-    alt: "Research Center Know-How and Material Development",
-    lines: ["RESEARCH CENTER KNOW-HOW", "AND MATERIAL DEVELOPMENT."],
+    alt: "Co-Developed with Thailand's National Research Centre",
+    lines: ["CO-DEVELOPED WITH", "THAILAND'S NATIONAL", "RESEARCH CENTRE"],
   },
 ];
 
@@ -110,10 +110,10 @@ export default function FeatureBanner() {
               transition={{ duration: 0.75, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="font-outfit-light text-[10.5px] lg:text-[11.5px] xl:text-[14px] 2xl:text-[16px] leading-[1.6] tracking-[0.12em] text-white/90 uppercase max-w-[560px] xl:max-w-[680px]"
             >
-              VERTEK IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT
-              ON MORE THAN 60 YEARS OF WOODDEN EXPERTISE IN THE TIMBER INDUSTRY
-              COMBINED WITH RESEARCH-BASED KNOW-HOW FROM THE NATIONAL RESEARCH
-              CENTER.
+              VERTEK IS ADVANCED ENGINEERED THIN-VENEER LAMINATED TEAK DECKING
+              MATERIAL, COMBINING THE NATURAL BEAUTY OF REAL THAI TEAK WITH
+              ADVANCED TECHNOLOGY TO ENHANCE DURABILITY, DIMENSIONAL STABILITY,
+              AND LONG-TERM PERFORMANCE IN MARINE ENVIRONMENTS.
             </motion.p>
           </div>
 
@@ -219,9 +219,10 @@ export default function FeatureBanner() {
             transition={{ duration: 0.65, delay: 0.2 }}
             className="font-outfit-light text-xs sm:text-sm leading-relaxed tracking-[0.12em] text-white/90 uppercase drop-shadow-sm"
           >
-            VERTEK IS A NEW GENERATION OF MARINE DECKING MATERIAL BUILT ON MORE
-            THAN 60 YEARS OF WOODDEN EXPERTISE IN THE TIMBER INDUSTRY COMBINED
-            WITH RESEARCH-BASED KNOW-HOW FROM THE NATIONAL RESEARCH CENTER.
+            VERTEK IS ADVANCED ENGINEERED THIN-VENEER LAMINATED TEAK DECKING
+            MATERIAL, COMBINING THE NATURAL BEAUTY OF REAL THAI TEAK WITH
+            ADVANCED TECHNOLOGY TO ENHANCE DURABILITY, DIMENSIONAL STABILITY,
+            AND LONG-TERM PERFORMANCE IN MARINE ENVIRONMENTS.
           </motion.p>
         </div>
 

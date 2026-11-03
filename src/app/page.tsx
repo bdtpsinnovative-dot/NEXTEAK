@@ -54,11 +54,11 @@ const HERO_SLIDES = [
     titleLines: ["ROOTED IN NATURE.", "DESIGNED FOR", "CIRCULARITY."],
     desc: (
       <>
-        SOURCING NATIVE THAI TEAK FROM OUR OWN PLANTATIONS, WE
-        <br className="hidden sm:inline" /> CREATE FAIR VALUE FOR GROWERS AND
-        ENCOURAGE CONTINUOUS
-        <br className="hidden sm:inline" /> REPLANTING, COMBINING TECHNOLOGY,
-        CIRCULARITY, AND
+        SOURCING NATIVE THAI TEAK FROM THAILAND’S FINEST TEAK
+        <br className="hidden sm:inline" /> PLANTATIONS, WE
+        CREATE FAIR VALUE FOR GROWERS AND ENCOURAGE
+        <br className="hidden sm:inline" /> CONTINUOUS
+        REPLANTING, COMBINING TECHNOLOGY, CIRCULARITY, AND
         <br className="hidden sm:inline" /> NATURAL BEAUTY FOR A MORE SUSTAINABLE
         FUTURE.
       </>
@@ -97,12 +97,12 @@ const INNOVATION_CARDS = [
     title: "THIN VENEER ENGINEERING",
   },
   {
-    image: "/images/innovation/advanced-surface-protection.webp",
-    title: "ADVANCED SURFACE PROTECTION",
-  },
-  {
     image: "/images/innovation/engineered-for-the-sea.webp",
     title: "ENGINEERED FOR THE SEA",
+  },
+  {
+    image: "/images/innovation/advanced-surface-protection.webp",
+    title: "ENHANCED SURFACE STRENGTH",
   },
 ];
 
@@ -666,23 +666,16 @@ export default function VertekHomePage() {
                 FROM MATERIAL KNOWLEDGE TO BETTER PERFORMANCE
               </motion.h2>
 
-              {/* 3-Line Centered Description matching exact line breaks in ตำแหน่งฟอนต์ 2.png */}
+              {/* Description updated per National Research Center collaboration */}
               <motion.p
                 variants={fadeUp}
                 custom={0.2}
                 style={{ letterSpacing: "0.055em" }}
                 className="font-outfit-extralight text-[11px] sm:text-[12.5px] lg:text-[13.5px] leading-[1.85] uppercase text-[#13262D] text-center max-w-[1220px] mx-auto"
               >
-                OUR NATIONAL RESEARCH CENTER BRINGS TOGETHER DECADES OF WOOD
-                EXPERTISE AND MODERN MATERIAL SCIENCE. THROUGH CONTINUOUS
-                RESEARCH, TESTING, AND{" "}
-                <br className="hidden lg:inline" />
-                DEVELOPMENT, WE EXPLORE HOW NATURAL TEAK CAN BE USED MORE
-                EFFICIENTLY AND ENGINEERED TO PERFORM BEYOND CONVENTIONAL
-                LIMITATIONS — WHILE{" "}
-                <br className="hidden lg:inline" />
-                PRESERVING THE BEAUTY, CHARACTER, AND AUTHENTICITY THAT MAKE
-                TEAK UNIQUE.
+                WE AND NATIONAL RESEARCH CENTER COLLABORATE TO COMBINE OUR
+                EXPERTISE IN WOOD AND TEAK WITH THEIR ADVANCED TECHNOLOGY AND
+                SCIENTIFIC KNOW-HOW.
               </motion.p>
 
               {/* 3 Metrics Row with Balanced Spacing & Vertical Bars */}

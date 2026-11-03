@@ -27,14 +27,20 @@ export default function BottomBanner() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative w-full"
+          className="relative w-full aspect-[5158/759] min-h-[140px] sm:min-h-[190px] md:min-h-[240px] lg:min-h-0 flex items-center justify-center overflow-hidden"
         >
           <img
-            src="/images/sustainability/bottom-banner.webp"
-            alt="VERTEK — The Future of Marine Teak"
-            className="w-full h-auto block select-none transition-transform duration-700 hover:scale-[1.015]"
+            src="/images/sustainability/bottom-banner-clean.webp"
+            alt="Engineered for Performance. Designed for Sustainability."
+            className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none transition-transform duration-700 hover:scale-[1.015]"
             loading="lazy"
           />
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+          <div className="relative z-10 text-center px-4">
+            <p className="font-outfit-light text-xs sm:text-base md:text-xl lg:text-2xl xl:text-[26px] tracking-[0.14em] text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+              Engineered for Performance. Designed for Sustainability.
+            </p>
+          </div>
         </motion.div>
 
         {/* Ambient Sunlight & Water Shimmer Sweep */}
