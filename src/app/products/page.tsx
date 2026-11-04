@@ -6,7 +6,6 @@ import StructureExplosion from "@/components/sustainability/StructureExplosion";
 import KeyBenefitsGrid from "@/components/sustainability/KeyBenefitsGrid";
 import InnovationResearch from "@/components/sustainability/InnovationResearch";
 import HeritageBanner from "@/components/sustainability/HeritageBanner";
-import BottomBanner from "@/components/sustainability/BottomBanner";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -57,10 +56,7 @@ export default function ProductsPage() {
       {/* SECTION 5: HERITAGE SUPERYACHT CIRCULAR DECK BANNER (LIVE TYPOGRAPHY) */}
       <HeritageBanner />
 
-      {/* SECTION 6: BOTTOM OCEAN TEASER BANNER (5.แถบล่างสุด) */}
-      <BottomBanner />
-
-      {/* Corporate Footer */}
+      {/* Corporate Footer (Includes Ocean Banner) */}
       <Footer />
     </main>
   );

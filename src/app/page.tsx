@@ -666,7 +666,7 @@ export default function VertekHomePage() {
                 FROM MATERIAL KNOWLEDGE TO BETTER PERFORMANCE
               </motion.h2>
 
-              {/* Description updated per National Research Center collaboration */}
+              {/* Description: Highlighted first sentence replaced, continuous research retained */}
               <motion.p
                 variants={fadeUp}
                 custom={0.2}
@@ -675,7 +675,14 @@ export default function VertekHomePage() {
               >
                 WE AND NATIONAL RESEARCH CENTER COLLABORATE TO COMBINE OUR
                 EXPERTISE IN WOOD AND TEAK WITH THEIR ADVANCED TECHNOLOGY AND
-                SCIENTIFIC KNOW-HOW.
+                SCIENTIFIC KNOW-HOW. THROUGH CONTINUOUS RESEARCH, TESTING, AND{" "}
+                <br className="hidden lg:inline" />
+                DEVELOPMENT, WE EXPLORE HOW NATURAL TEAK CAN BE USED MORE
+                EFFICIENTLY AND ENGINEERED TO PERFORM BEYOND CONVENTIONAL
+                LIMITATIONS — WHILE{" "}
+                <br className="hidden lg:inline" />
+                PRESERVING THE BEAUTY, CHARACTER, AND AUTHENTICITY THAT MAKE
+                TEAK UNIQUE.
               </motion.p>
 
               {/* 3 Metrics Row with Balanced Spacing & Vertical Bars */}

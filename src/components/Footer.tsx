@@ -20,7 +20,7 @@ export default function Footer() {
         />
         <div className="absolute inset-0 bg-black/20 pointer-events-none" />
         <div className="relative z-10 text-center px-4">
-          <p className="font-outfit-light text-xs sm:text-base md:text-xl lg:text-2xl xl:text-[26px] tracking-[0.14em] text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <p className="font-outfit-light text-[7.5px] sm:text-[9.5px] md:text-[11px] lg:text-[13.5px] xl:text-[15px] tracking-[0.2em] text-white uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Engineered for Performance. Designed for Sustainability.
           </p>
         </div>
