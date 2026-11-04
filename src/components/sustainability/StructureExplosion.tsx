@@ -6,26 +6,11 @@ import { motion, useInView } from "framer-motion";
 export default function StructureExplosion() {
   const diagramRef = useRef<HTMLDivElement>(null);
 
-  // Trigger open/close automatically when scrolling in/out of view
-  const isInView = useInView(diagramRef, {
-    amount: 0.35,
-  });
-
-  const [userToggled, setUserToggled] = useState<boolean | null>(null);
-  const [prevIsInView, setPrevIsInView] = useState(isInView);
-
-  // Reset manual toggle when scrolled out of view so it replays smoothly on scroll
-  if (prevIsInView !== isInView) {
-    setPrevIsInView(isInView);
-    if (!isInView) {
-      setUserToggled(null);
-    }
-  }
-
-  const isOpen = userToggled !== null ? userToggled : isInView;
+  // Starts closed as plain wood ("ทีแรกมันจะเป็นไม้เปล่า พอกดจะใหญ่ขึ้นแล้วมีเส้นและคำ")
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
-    setUserToggled((prev) => (prev !== null ? !prev : !isOpen));
+    setIsOpen((prev) => !prev);
   };
 
   return (
@@ -67,14 +52,14 @@ export default function StructureExplosion() {
               {/* Clean Wood Planks Base (State 1: Clean Wood, State 2: Floating/Active) */}
               <motion.div
                 animate={{
-                  scale: isOpen ? 1 : 0.95,
+                  scale: isOpen ? 1.04 : 0.88,
                   y: isOpen ? 0 : 12,
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 80,
-                  damping: 16,
-                  mass: 1.0,
+                  stiffness: 85,
+                  damping: 17,
+                  mass: 0.95,
                 }}
                 className="absolute inset-0 w-full h-full pointer-events-none z-10"
               >
@@ -287,7 +272,7 @@ export default function StructureExplosion() {
 
               <span className="font-outfit-extralight text-[11px] sm:text-xs tracking-wider text-[#13262D]/60 uppercase flex items-center gap-1.5">
                 <span className="text-[#2DD4BF]">✦</span>
-                <span>Scroll or tap wood to toggle</span>
+                <span>Click or tap wood to toggle</span>
               </span>
             </div>
           </div>

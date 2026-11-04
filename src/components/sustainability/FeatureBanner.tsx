@@ -43,11 +43,11 @@ export default function FeatureBanner() {
       <div className="hidden lg:block relative w-full aspect-[5196/1846] min-h-[480px] lg:min-h-[500px] xl:min-h-0">
         {/* Layer 1: 100% Original High-Res Yacht Photo (Cleaned of text) */}
         <img
-          src="/images/sustainability/feature-banner-bg.webp"
+          src="/images/sustainability/feature-banner-bg.webp?v=5k-sharp"
           alt="VERTEK Luxury Marine Teak Deck"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none transform-gpu"
         />
 
         {/* Ambient Subtle Ocean Shimmer Sweep */}
@@ -166,11 +166,11 @@ export default function FeatureBanner() {
         {/* Layer 1: Original Yacht Photo Background with Subtle Responsive Contrast */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/sustainability/feature-banner-bg.webp"
+            src="/images/sustainability/feature-banner-bg.webp?v=5k-sharp"
             alt="VERTEK Luxury Marine Teak Deck"
             fetchPriority="high"
             decoding="async"
-            className="w-full h-full object-cover object-[70%_center] filter brightness-[0.92]"
+            className="w-full h-full object-cover object-[70%_center] filter brightness-[0.92] transform-gpu"
           />
           {/* Subtle natural dark gradient for perfect readability without boxes */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#071720]/85 via-[#071720]/50 to-[#071720]/85 pointer-events-none" />

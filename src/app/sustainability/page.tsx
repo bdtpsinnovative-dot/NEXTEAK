@@ -9,9 +9,9 @@ import SustainabilityBottomBanner from "@/components/sustainability-page/Sustain
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sustainability — Grown For a Brighter Tomorrow",
+  title: "Sustainability — Sustainable Teak. A Better Future",
   description:
-    "VERTEK is made from responsibly sourced plantation teak, supporting sustainable forestry, local communities, carbon absorption, and circular lifecycle engineering.",
+    "VERTEK is made from responsibly sourced plantation teak, promoting sustainable forestry, supporting local communities, and protecting our planet for future generations.",
   keywords: [
     "VERTEK Sustainability",
     "Sustainable Teak Decking",
@@ -22,24 +22,24 @@ export const metadata: Metadata = {
     "Eco Friendly Yacht Decking",
   ],
   openGraph: {
-    title: "Sustainability — Grown For a Brighter Tomorrow | VERTEK",
+    title: "Sustainability — Sustainable Teak. A Better Future | VERTEK",
     description:
-      "VERTEK is made from responsibly sourced plantation teak, supporting sustainable forestry, local communities, and a healthier planet.",
+      "VERTEK is made from responsibly sourced plantation teak, promoting sustainable forestry, supporting local communities, and protecting our planet for future generations.",
     url: "https://vertekteak.com/sustainability",
     images: [
       {
         url: "https://vertekteak.com/images/brand/og-vertek.jpg",
         width: 1200,
         height: 630,
-        alt: "VERTEK Sustainability — Grown For a Brighter Tomorrow",
+        alt: "VERTEK Sustainability — Sustainable Teak. A Better Future",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sustainability — Grown For a Brighter Tomorrow | VERTEK",
+    title: "Sustainability — Sustainable Teak. A Better Future | VERTEK",
     description:
-      "Responsibly sourced plantation teak, carbon absorption, and circular marine decking engineering.",
+      "VERTEK is made from responsibly sourced plantation teak, promoting sustainable forestry, supporting local communities, and protecting our planet for future generations.",
     images: ["https://vertekteak.com/images/brand/og-vertek.jpg"],
   },
 };

@@ -7,7 +7,7 @@ export default function HeritageBanner() {
   return (
     <section className="relative w-full overflow-hidden bg-[#0A181E] select-none text-white">
       {/* Container matching master banner aspect ratio */}
-      <div className="relative w-full aspect-[2560/808] min-h-[320px] sm:min-h-[420px] lg:min-h-0">
+      <div className="relative w-full aspect-[5203/1612] min-h-[320px] sm:min-h-[420px] lg:min-h-0">
         {/* Clean Background Image (Ocean & Superyacht Deck, text removed) */}
         <img
           src="/images/sustainability/heritage-banner-clean.webp"

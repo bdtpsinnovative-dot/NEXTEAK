@@ -28,11 +28,45 @@ export default function Footer() {
 
       {/* Corporate Information & Social Media Bar */}
       <div className="border-t border-white/10 bg-[#061219]">
-        <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 py-12 sm:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start justify-between">
-            {/* Left: Brand & Address */}
-            <div className="md:col-span-7 flex flex-col items-start">
-              <div className="flex items-center gap-3 mb-6">
+        <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 py-10 sm:py-14">
+          {/* Mobile-only VERTEK Logo at the very top of footer */}
+          <div className="md:hidden flex items-center justify-start mb-6">
+            <img
+              src="/images/brand/logo-vertek.webp"
+              alt="VERTEK"
+              className="h-6 w-auto object-contain"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-stretch justify-between">
+            {/* Left Column: Woodden Gallery & Address (Balanced, No VERTEK on Desktop) */}
+            <div className="md:col-span-6 lg:col-span-7 flex flex-col justify-between items-start">
+              <div>
+                <h4 className="font-outfit-medium text-base sm:text-lg tracking-wider text-white mb-2.5">
+                  Woodden Gallery
+                </h4>
+
+                <div className="font-outfit-light text-xs sm:text-sm text-white/70 space-y-1.5 tracking-wider uppercase leading-relaxed max-w-md">
+                  <p>332 PRADIT MANUTHAM ROAD, WANG THONGLANG</p>
+                  <p>BANGKOK 10310, THAILAND</p>
+                </div>
+              </div>
+
+              <div className="pt-6 md:pt-0 font-outfit-light text-xs sm:text-sm text-white/90 tracking-wider uppercase">
+                <span className="text-white/60">MOBILE: </span>
+                <a
+                  href="tel:+66636933636"
+                  className="hover:text-white hover:underline transition-colors font-outfit-normal text-white"
+                >
+                  +66 63 693 3636
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: VERTEK Logo on Top + Connect & Copyright at Bottom */}
+            <div className="md:col-span-6 lg:col-span-5 flex flex-col md:items-end justify-between">
+              {/* Desktop Top: VERTEK Logo */}
+              <div className="hidden md:flex md:justify-end items-center mb-6 md:mb-0">
                 <img
                   src="/images/brand/logo-vertek.webp"
                   alt="VERTEK"
@@ -40,33 +74,13 @@ export default function Footer() {
                 />
               </div>
 
-              <h4 className="font-outfit-medium text-base sm:text-lg tracking-wider text-white mb-3">
-                Woodden Gallery
-              </h4>
-
-              <div className="font-outfit-light text-xs sm:text-sm text-white/70 space-y-1 tracking-wider uppercase leading-relaxed max-w-md">
-                <p>332 PRADIT MANUTHAM ROAD, WANG THONGLANG</p>
-                <p>BANGKOK 10310, THAILAND</p>
-                <p className="pt-2 text-white/90">
-                  MOBILE:{" "}
-                  <a
-                    href="tel:+66636933636"
-                    className="hover:text-white hover:underline transition-colors"
-                  >
-                    +66 63 693 3636
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            {/* Right: Social Media & Quick Links */}
-            <div className="md:col-span-5 flex flex-col md:items-end justify-between h-full pt-2">
-              <div className="flex flex-col md:items-end mb-6">
-                <span className="font-outfit-light text-xs tracking-[0.2em] text-white/60 uppercase mb-3">
+              {/* Bottom: Social Media & Copyright (ต่ำ ติดกะ ลิขสิทธิ์) */}
+              <div className="flex flex-col md:items-end space-y-3 pt-6 md:pt-0">
+                <span className="font-outfit-light text-[11px] sm:text-xs tracking-[0.2em] text-white/60 uppercase">
                   CONNECT WITH US
                 </span>
 
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3 md:justify-end">
                   {/* Instagram Button */}
                   <a
                     href="https://www.instagram.com/vertek_thailand/"
@@ -101,12 +115,12 @@ export default function Footer() {
                     <span>WHATSAPP +66 63 693 3636</span>
                   </a>
                 </div>
-              </div>
 
-              {/* Copyright */}
-              <p className="font-outfit-extralight text-[11px] tracking-[0.16em] text-white/50 uppercase md:text-right">
-                © {new Date().getFullYear()} VERTEK. ALL RIGHTS RESERVED.
-              </p>
+                {/* Copyright (ต่ำ ติดกะ ลิขสิทธิ์) */}
+                <p className="font-outfit-extralight text-[11px] tracking-[0.16em] text-white/50 uppercase md:text-right pt-1.5">
+                  © {new Date().getFullYear()} VERTEK. ALL RIGHTS RESERVED.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -834,7 +834,7 @@ export default function VertekHomePage() {
               {/* Upper Section: Headline (Left) & 5 Icons Row (Right) */}
               <div className="flex items-start justify-between w-full">
                 {/* Left: Category Tag + Headline */}
-                <div className="max-w-[42vw] flex flex-col">
+                <div className="max-w-[48vw] flex flex-col">
                   {/* Category Tag */}
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -863,13 +863,11 @@ export default function VertekHomePage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.75, delay: 0.1 }}
-                    className="font-mistical text-[3.8vw] leading-[1.06] tracking-[0.06em] text-white uppercase"
+                    className="font-mistical text-[3.2vw] xl:text-[3.5vw] 2xl:text-[3.8vw] leading-[1.08] tracking-[0.06em] text-white uppercase"
                   >
-                    GROWN
+                    SUSTAINABLE TEAK.
                     <br />
-                    FOR A BRIGHTER
-                    <br />
-                    TOMORROW
+                    A BETTER FUTURE
                   </motion.h2>
                 </div>
 
@@ -918,11 +916,11 @@ export default function VertekHomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.75, delay: 0.25 }}
-                  className="font-outfit-thin text-[0.85vw] leading-[1.7] tracking-[0.08em] text-white/85 uppercase max-w-[34vw]"
+                  className="font-outfit-thin text-[0.85vw] leading-[1.7] tracking-[0.08em] text-white/85 uppercase max-w-[38vw] xl:max-w-[36vw]"
                 >
                   VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
-                  SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
-                  PLANET.
+                  PROMOTING SUSTAINABLE FORESTRY, SUPPORTING LOCAL COMMUNITIES,
+                  AND PROTECTING OUR PLANET FOR FUTURE GENERATIONS.
                 </motion.p>
 
                 {/* Bottom Right: LEARN MORE Button */}
@@ -961,18 +959,16 @@ export default function VertekHomePage() {
 
                 {/* Headline */}
                 <h2 className="font-mistical text-3xl sm:text-4xl leading-[1.08] tracking-[0.06em] text-white uppercase mb-3">
-                  GROWN
+                  SUSTAINABLE TEAK.
                   <br />
-                  FOR A BRIGHTER
-                  <br />
-                  TOMORROW
+                  A BETTER FUTURE
                 </h2>
 
                 {/* Subtitle */}
                 <p className="font-outfit-thin text-xs sm:text-sm leading-relaxed tracking-[0.08em] text-white/85 uppercase max-w-md mb-8">
                   VERTEK IS MADE FROM RESPONSIBLY SOURCED PLANTATION TEAK,
-                  SUPPORTING SUSTAINABLE FORESTRY, LOCAL COMMUNITIES, AND A HEALTHIER
-                  PLANET.
+                  PROMOTING SUSTAINABLE FORESTRY, SUPPORTING LOCAL COMMUNITIES,
+                  AND PROTECTING OUR PLANET FOR FUTURE GENERATIONS.
                 </p>
 
                 {/* 5 Icons Row/Grid */}
