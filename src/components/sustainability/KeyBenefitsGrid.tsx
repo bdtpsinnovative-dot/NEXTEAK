@@ -26,7 +26,7 @@ const BENEFIT_CARDS: BenefitCard[] = [
     icon: "/images/sustainability/benefits/icons/icon-02.png",
     alt: "2 mm Veneer Engineering",
     title: "2 MM VENEER ENGINEERING",
-    desc: "TEAK IS SLICED INTO THIN VENEERS AND LAMINATED WITH PRECISION FOR CONSISTENCY AND BEAUTY.",
+    desc: "TEAK IS CUT INTO THIN VENEERS AND LAMINATED WITH PRECISION FOR CONSISTENCY AND BEAUTY.",
     delay: 0.06,
   },
   {

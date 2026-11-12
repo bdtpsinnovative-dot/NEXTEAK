@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
   {
     id: "03",
     slug: "project-3",
-    title: "CATAMARAN SUNDECK",
+    title: "SUNDECK",
     subtitle: "CUSTOM CATAMARAN SUNDECK & SALON",
     category: "Custom Marine Solutions",
     image: "/images/hero/2.webp",

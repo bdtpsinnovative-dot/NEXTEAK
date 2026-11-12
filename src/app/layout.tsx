@@ -83,9 +83,13 @@ const jsonLd = {
         "Luxury marine teak decking engineered with thin-veneer technology and proprietary protective coatings for superyachts.",
       contactPoint: {
         "@type": "ContactPoint",
+        telephone: "+66-63-693-3636",
         contactType: "customer service",
         availableLanguage: ["English", "Thai"],
       },
+      sameAs: [
+        "https://www.instagram.com/vertek_thailand/",
+      ],
     },
     {
       "@type": "WebSite",
