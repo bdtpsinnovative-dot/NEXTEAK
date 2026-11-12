@@ -278,25 +278,6 @@ export default function ContactPage() {
               >
                 <InstagramIcon className="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
-
-              {/* LINE Official Account Icon Button */}
-              <a
-                href="https://line.me/ti/p/~@woodden"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contact us on LINE"
-                className="shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 shadow-md cursor-pointer block"
-              >
-                <img
-                  src="/images/contact/line.webp"
-                  alt="LINE Official Account"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                  width={48}
-                  height={48}
-                />
-              </a>
             </div>
           </div>
         </section>

@@ -49,7 +49,7 @@ const HERO_SLIDES = [
   },
   {
     src: "/images/hero/3.webp",
-    alt: "VERTEK Superyacht Aerial Teak Decking",
+    alt: "VERTEK Sustainable Teak Forest and River Aerial View",
     tagline: "SUSTAINABLE HARMONY",
     titleLines: ["ROOTED IN NATURE.", "DESIGNED FOR", "CIRCULARITY."],
     desc: (
@@ -294,7 +294,7 @@ export default function VertekHomePage() {
                   className="relative w-full h-full shrink-0 overflow-hidden"
                 >
                   <img
-                    src={`${slide.src}?v=3`}
+                    src={`${slide.src}?v=4`}
                     alt={slide.alt}
                     loading={idx === 1 ? "eager" : "lazy"}
                     decoding="async"
