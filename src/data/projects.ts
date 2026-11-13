@@ -105,7 +105,7 @@ export const PROJECTS: Project[] = [
     title: "SUNDECK",
     subtitle: "CUSTOM CATAMARAN SUNDECK & SALON",
     category: "Custom Marine Solutions",
-    image: "/images/hero/2.webp",
+    image: "/images/gallery/gallery-3.webp?v=1",
     vessel: "45M High-Performance Sailing Catamaran",
     vesselType: "Performance Multihull / Luxury Cruiser",
     location: "Royal Phuket Marina, Andaman Sea",
