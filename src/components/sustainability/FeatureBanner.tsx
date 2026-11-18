@@ -41,14 +41,17 @@ export default function FeatureBanner() {
       {/* Matches the Graphic Team's 5196x1846 Master Design 100% EXACTLY */}
       {/* ============================================================== */}
       <div className="hidden lg:block relative w-full aspect-[5196/1846] min-h-[480px] lg:min-h-[500px] xl:min-h-0">
-        {/* Layer 1: 100% Original High-Res Yacht Photo (Cleaned of text) */}
+        {/* Layer 1: High-Res Sharp Yacht Photo */}
         <img
-          src="/images/sustainability/feature-banner-bg.webp?v=5k-sharp"
+          src="/images/sustainability/feature-banner-bg.webp?v=yacht-hd2"
           alt="VERTEK Luxury Marine Teak Deck"
           fetchPriority="high"
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none transform-gpu"
+          className="absolute inset-0 w-full h-full object-cover object-[center_77%] select-none pointer-events-none transform-gpu"
         />
+
+        {/* Subtle left-side scrim for crisp white typography & icon readability */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#071720]/65 via-[#071720]/25 to-transparent" />
 
         {/* Ambient Subtle Ocean Shimmer Sweep */}
         <motion.div
@@ -166,11 +169,11 @@ export default function FeatureBanner() {
         {/* Layer 1: Original Yacht Photo Background with Subtle Responsive Contrast */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/sustainability/feature-banner-bg.webp?v=5k-sharp"
+            src="/images/sustainability/feature-banner-bg.webp?v=yacht-hd2"
             alt="VERTEK Luxury Marine Teak Deck"
             fetchPriority="high"
             decoding="async"
-            className="w-full h-full object-cover object-[70%_center] filter brightness-[0.92] transform-gpu"
+            className="w-full h-full object-cover object-[center_75%] filter brightness-[0.92] transform-gpu"
           />
           {/* Subtle natural dark gradient for perfect readability without boxes */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#071720]/85 via-[#071720]/50 to-[#071720]/85 pointer-events-none" />
